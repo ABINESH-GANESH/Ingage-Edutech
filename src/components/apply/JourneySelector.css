@@ -1,0 +1,157 @@
+/* ==========================================================================
+   InGage Apply Now Portal - Journey Selector Styles
+   ========================================================================== */
+
+.journey-selector-root {
+  padding: 84px 0 90px;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.journey-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.journey-card {
+  position: relative;
+  background: var(--bg-page);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-2xl);
+  padding: 34px 28px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journey-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--brand-navy);
+  box-shadow: var(--shadow-lg);
+  background: #ffffff;
+}
+
+.journey-card.selected {
+  background: #ffffff;
+  border-color: var(--brand-navy);
+  box-shadow: 0 16px 36px -8px rgba(21, 66, 143, 0.2), 0 0 0 2px var(--brand-green);
+  transform: translateY(-4px);
+}
+
+.journey-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.journey-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background: var(--brand-navy-light);
+  border: 1px solid rgba(21, 66, 143, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.journey-card:hover .journey-icon-box {
+  transform: scale(1.08);
+}
+
+.journey-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-navy);
+  background: var(--bg-white);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+}
+
+.journey-card-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.journey-card-tagline {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand-green-dark);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.journey-card-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.journey-card-footer {
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.journey-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--brand-navy);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.journey-card:hover .journey-cta-btn {
+  color: var(--brand-green-dark);
+  gap: 12px;
+}
+
+.journey-arrow {
+  transition: transform 0.2s ease;
+}
+
+.journey-card:hover .journey-arrow {
+  transform: translateX(3px);
+}
+
+.journey-active-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: var(--brand-green);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.journey-card.selected .journey-active-bar {
+  opacity: 1;
+}
+
+@media (max-width: 960px) {
+  .journey-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

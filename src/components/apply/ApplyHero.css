@@ -1,0 +1,181 @@
+/* ==========================================================================
+   InGage Apply Now Portal - Hero Section Styles
+   ========================================================================== */
+
+.apply-hero-root {
+  position: relative;
+  padding: 124px 0 76px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 65%, var(--bg-page) 100%);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.apply-hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at 50% 35%, black 50%, transparent 92%);
+  -webkit-mask-image: radial-gradient(circle at 50% 35%, black 50%, transparent 92%);
+  pointer-events: none;
+}
+
+.apply-hero-light-beam {
+  position: absolute;
+  top: -60px;
+  right: 15%;
+  width: 600px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(128, 188, 0, 0.12) 0%, rgba(21, 66, 143, 0.06) 50%, transparent 70%);
+  filter: blur(55px);
+  pointer-events: none;
+}
+
+.apply-hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+.apply-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.apply-hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.apply-hero-badge-wrap {
+  margin-bottom: 20px;
+}
+
+.apply-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-primary);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.apply-hero-lead-text {
+  font-size: clamp(15.5px, 1.3vw, 17.5px);
+  line-height: 1.68;
+  color: var(--color-secondary);
+  max-width: 540px;
+  margin-bottom: 34px;
+}
+
+.apply-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.apply-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 18px rgba(128, 188, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+.apply-hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(128, 188, 0, 0.5);
+}
+
+.btn-arrow-icon {
+  transition: transform 0.25s ease;
+}
+
+.apply-hero-btn:hover .btn-arrow-icon {
+  transform: translateY(3px);
+}
+
+/* Right Visual */
+.apply-hero-visual-side {
+  position: relative;
+}
+
+.apply-hero-img-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: 0 24px 50px -12px rgba(15, 23, 42, 0.16), 0 0 1px rgba(0, 0, 0, 0.1);
+  border: 1.5px solid var(--border-subtle);
+  background-color: var(--bg-white);
+}
+
+.apply-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.apply-hero-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(15, 23, 42, 0.65) 100%);
+  pointer-events: none;
+}
+
+.apply-hero-floating-pill {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 960px) {
+  .apply-hero-root {
+    padding: 100px 0 60px;
+  }
+  .apply-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 540px) {
+  .apply-hero-actions {
+    width: 100%;
+  }
+  .apply-hero-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .apply-hero-floating-pill {
+    font-size: 9.5px;
+    padding: 5px 12px;
+  }
+}

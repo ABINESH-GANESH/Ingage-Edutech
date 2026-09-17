@@ -1,0 +1,142 @@
+/* ==========================================================================
+   InGage About Us - Mission Section Styles
+   ========================================================================== */
+
+.about-mission-root {
+  position: relative;
+  background-color: #070c18;
+  color: #ffffff;
+  padding: 96px 0 92px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-mission-ambient-grid {
+  position: absolute;
+  inset: 0;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  pointer-events: none;
+}
+
+.about-mission-glow {
+  position: absolute;
+  top: -100px;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(128, 188, 0, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.about-mission-container {
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-mission-badge-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.mission-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9fe805;
+  background: rgba(15, 23, 42, 0.85);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(128, 188, 0, 0.35);
+}
+
+.about-mission-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 4.4vw, 50px);
+  font-weight: 900;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.about-mission-lead {
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.7;
+  color: #cbd5e1;
+  max-width: 780px;
+  margin: 0 auto 52px;
+  text-wrap: pretty;
+}
+
+.about-mission-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.mission-pillar-card {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.mission-pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(128, 188, 0, 0.4);
+}
+
+.pillar-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.pillar-num {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  color: #80bc00;
+}
+
+.pillar-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-wrap: balance;
+}
+
+.pillar-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #94a3b8;
+  text-wrap: pretty;
+}
+
+@media (max-width: 860px) {
+  .about-mission-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

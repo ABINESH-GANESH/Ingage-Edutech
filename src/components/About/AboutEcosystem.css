@@ -1,0 +1,99 @@
+/* ==========================================================================
+   InGage About Us - Ecosystem Flow Styles
+   ========================================================================== */
+
+.about-ecosystem-root {
+  padding: 88px 0 94px;
+  background-color: var(--bg-page);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ecosystem-flow-wrapper {
+  margin-top: 52px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
+
+.ecosystem-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  min-width: 900px;
+}
+
+.ecosystem-step-node {
+  position: relative;
+  background: var(--bg-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ecosystem-step-node:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-navy);
+  box-shadow: var(--shadow-md);
+}
+
+.node-number-pill {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--brand-navy);
+  background: var(--brand-navy-light);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  margin-bottom: 12px;
+}
+
+.node-title {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.node-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-secondary);
+}
+
+.node-connector-arrow {
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-white);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.arrow-icon {
+  color: var(--brand-green-dark);
+}
+
+@media (max-width: 900px) {
+  .ecosystem-flow-grid {
+    grid-template-columns: 1fr;
+    min-width: 0;
+    gap: 16px;
+  }
+  .node-connector-arrow {
+    display: none;
+  }
+}

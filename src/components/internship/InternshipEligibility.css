@@ -1,0 +1,68 @@
+.intern-eligibility-section {
+  padding: 96px 0;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.intern-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.intern-audience-card {
+  background: var(--bg-page);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-xs);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.intern-audience-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-navy);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-white);
+}
+
+.audience-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.audience-emoji {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.audience-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.audience-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+}
+
+@media (max-width: 960px) {
+  .intern-audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .intern-audience-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

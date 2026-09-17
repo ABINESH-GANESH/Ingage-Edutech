@@ -1,0 +1,141 @@
+/* ==========================================================================
+   InGage Apply Now Portal - Application Success Dialog Styles
+   ========================================================================== */
+
+.application-success-dialog {
+  position: relative;
+  background: #ffffff;
+  border-radius: var(--radius-2xl);
+  border: 1.5px solid var(--border-subtle);
+  width: 100%;
+  max-width: 540px;
+  padding: 44px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.25);
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.success-badge-top {
+  margin-bottom: 18px;
+}
+
+.success-icon-halo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(128, 188, 0, 0.12);
+  border: 2px solid rgba(128, 188, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: haloPulse 2s infinite ease-in-out;
+}
+
+@keyframes haloPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.success-checkmark {
+  animation: popCheck 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popCheck {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.success-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-green-dark);
+  margin-bottom: 8px;
+}
+
+.success-main-title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.success-lead-text {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  max-width: 440px;
+  margin-bottom: 26px;
+}
+
+.success-lead-text strong {
+  color: var(--brand-navy);
+}
+
+.success-checklist-box {
+  background: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.success-check-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.success-actions-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn-success-primary {
+  width: 100%;
+  justify-content: center;
+  padding: 13px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-pill);
+}
+
+.btn-success-secondary {
+  width: 100%;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 13.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-pill);
+}
+
+@media (max-width: 540px) {
+  .application-success-dialog {
+    padding: 32px 20px 24px;
+  }
+}

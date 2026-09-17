@@ -1,0 +1,51 @@
+.careers-intro-section {
+  padding: 60px 0 40px;
+  background-color: var(--bg-white);
+}
+
+.careers-intro-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.careers-intro-eyebrow-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.eyebrow-icon {
+  margin-right: 2px;
+}
+
+.careers-intro-heading {
+  font-size: clamp(28px, 3.8vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.careers-intro-divider {
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand-navy) 0%, var(--brand-green) 100%);
+  margin: 0 auto 24px;
+  border-radius: var(--radius-pill);
+}
+
+.careers-intro-copy {
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.75;
+  color: var(--color-secondary);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 600px) {
+  .careers-intro-section {
+    padding: 44px 0 30px;
+  }
+}

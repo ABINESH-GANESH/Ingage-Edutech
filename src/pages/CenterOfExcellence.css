@@ -1,0 +1,838 @@
+/* Dedicated Center of Excellence Page Styles */
+.coe-page-root {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  font-family: var(--font-sans);
+  padding-top: 72px; /* For fixed navbar */
+  animation: coePageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* InGage Brand Color Tokens */
+.brand-navy-text {
+  color: #15428f;
+}
+
+.brand-green-text {
+  color: #76b82a;
+}
+
+.text-brand-green {
+  color: #76b82a !important;
+}
+
+.coe-hero-badge-brand {
+  background-color: #f2f9eb !important;
+  border-color: #d6eec0 !important;
+  color: #437a11 !important;
+}
+
+@keyframes coePageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SECTION 1: HERO / INSTITUTIONAL UPGRADE PORTAL */
+.coe-hero-section {
+  padding: 64px 0 54px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.coe-hero-header {
+  max-width: 860px;
+  margin: 0 auto 44px auto;
+}
+
+.coe-hero-badge {
+  margin-bottom: 20px;
+}
+
+.coe-hero-main-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 3.8vw, 48px);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  margin-bottom: 18px;
+  text-wrap: balance;
+}
+
+.coe-hero-lead-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #475569;
+  text-wrap: pretty;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Flagship Lab Hero Image Showcase */
+.coe-hero-visual-wrap {
+  max-width: 1140px;
+  margin: 0 auto 40px auto;
+}
+
+.coe-hero-image-card {
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 46vw, 540px);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.14);
+  background-color: #0f172a;
+}
+
+.coe-hero-img,
+.coe-hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.coe-hero-image-card:hover .coe-hero-img,
+.coe-hero-image-card:hover .coe-hero-video {
+  transform: scale(1.02);
+}
+
+.coe-hero-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.35) 0%,
+    rgba(15, 23, 42, 0.1) 40%,
+    rgba(15, 23, 42, 0.85) 100%
+  );
+  pointer-events: none;
+}
+
+/* Floating Glass Badges */
+.coe-hero-float-badge {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+}
+
+.badge-icon-green {
+  color: #80bc00;
+  flex-shrink: 0;
+}
+
+.coe-hero-float-badge.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.coe-hero-float-badge.bottom-left {
+  bottom: 84px;
+  left: 24px;
+}
+
+.coe-hero-float-badge.bottom-right {
+  bottom: 84px;
+  right: 24px;
+}
+
+/* Action Bar inside Hero Image Card */
+.coe-hero-img-action-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 4;
+}
+
+.coe-hero-img-action-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e2e8f0;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #80bc00;
+  box-shadow: 0 0 8px #80bc00;
+  display: inline-block;
+  animation: pulseLive 2s infinite ease-in-out;
+}
+
+@keyframes pulseLive {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+}
+
+.coe-hero-img-btn {
+  font-size: 13.5px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 14px rgba(128, 188, 0, 0.4);
+}
+
+/* Responsive adjustments for CoE Hero Visual */
+@media (max-width: 860px) {
+  .coe-hero-float-badge.bottom-left,
+  .coe-hero-float-badge.bottom-right {
+    display: none;
+  }
+  .coe-hero-img-action-bar {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+    padding: 14px 18px;
+  }
+  .coe-hero-img-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .coe-hero-image-card {
+    border-radius: 14px;
+    height: 300px;
+  }
+  .coe-hero-float-badge.top-left {
+    top: 12px;
+    left: 12px;
+    font-size: 11.5px;
+    padding: 6px 12px;
+  }
+  .coe-hero-img-action-info {
+    font-size: 12px;
+  }
+}
+
+/* 4 Statistic Cards */
+.coe-stat-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.coe-stat-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coe-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: #15428f;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.coe-stat-card.coe-stat-highlight-green {
+  background-color: #fbfdf9;
+  border-color: #d2ecc0;
+}
+
+.coe-stat-card.coe-stat-highlight-green:hover {
+  border-color: #76b82a;
+}
+
+.coe-stat-value {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.coe-stat-value.stat-navy-text {
+  color: #15428f;
+}
+
+.coe-stat-value.stat-green-text {
+  color: #76b82a;
+}
+
+.coe-stat-label {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.coe-stat-sub {
+  font-size: 11.5px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* SECTION 2: COMPLETE CENTER OF EXCELLENCE CARDS */
+.coe-turnkey-section {
+  padding: 80px 0;
+  background-color: #f8fafc;
+}
+
+.coe-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.coe-showcase-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.coe-showcase-card:hover {
+  transform: translateY(-4px);
+  border-color: #85c300;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.09);
+}
+
+/* Card Image */
+.coe-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.coe-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.coe-showcase-card:hover .coe-card-image {
+  transform: scale(1.05);
+}
+
+.coe-card-img-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Card Body */
+.coe-card-content {
+  padding: 22px 22px 16px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.coe-card-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+  letter-spacing: -0.015em;
+}
+
+.coe-card-description {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.55;
+}
+
+/* Card Footer Action Bar */
+.coe-card-action-bar {
+  padding: 14px 20px;
+  background-color: #fafbfd;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.coe-card-bottom-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.01em;
+}
+
+.btn-coe-card-cta {
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  border-radius: 8px !important;
+}
+
+/* SECTION 3: INSTITUTIONAL VALUES (GRADIENT CARDS) */
+.coe-values-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.coe-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.coe-value-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.coe-value-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+/* Gradient accents matching reference design */
+.val-gradient-blue-green::before {
+  background: linear-gradient(90deg, #15428f 0%, #85c300 100%);
+}
+
+.val-gradient-green::before {
+  background: linear-gradient(90deg, #85c300 0%, #059669 100%);
+}
+
+.val-gradient-purple-pink::before {
+  background: linear-gradient(90deg, #7c3aed 0%, #db2777 100%);
+}
+
+.coe-value-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.coe-value-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.coe-value-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.coe-value-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.015em;
+}
+
+.coe-value-divider {
+  height: 1px;
+  background-color: #f1f5f9;
+  margin-bottom: 18px;
+}
+
+.coe-value-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.coe-value-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.value-check-icon {
+  color: #85c300;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* SECTION 4: SPECIAL OFFER ANNOUNCEMENT BANNER */
+.coe-special-offer-section {
+  padding: 24px 0;
+  background-color: #f8fafc;
+}
+
+.coe-special-offer-banner {
+  background: linear-gradient(135deg, #15428f 0%, #0f3370 100%);
+  border-radius: 14px;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 8px 24px rgba(21, 66, 143, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.offer-heading-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.offer-gift-icon {
+  font-size: 22px;
+}
+
+.offer-main-text {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.offer-supporting-badge {
+  background-color: #85c300;
+  color: #112204;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* SECTION 5: CTA */
+.coe-cta-section {
+  padding: 72px 0 80px 0;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+}
+
+.coe-cta-box {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.coe-cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+}
+
+.coe-cta-desc {
+  font-size: 15.5px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.btn-cta-large {
+  padding: 14px 34px !important;
+  font-size: 16px !important;
+}
+
+/* RESPONSIVE DESIGN BREAKPOINTS */
+
+/* Tablet : 768px – 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+  .coe-stat-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .coe-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .coe-values-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .coe-special-offer-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 22px;
+  }
+}
+
+/* Large Mobile : 576px – 767px */
+@media (min-width: 576px) and (max-width: 767px) {
+  .coe-hero-section {
+    padding: 48px 0;
+  }
+  .coe-stat-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .coe-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .coe-values-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .coe-hero-image-card {
+    border-radius: 16px;
+  }
+  .coe-hero-img-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .coe-hero-img-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Mobile : 375px – 575px */
+@media (min-width: 375px) and (max-width: 575px) {
+  .coe-hero-section {
+    padding: 36px 0;
+  }
+  .coe-hero-main-heading {
+    font-size: 26px;
+    line-height: 1.22;
+  }
+  .coe-hero-lead-text {
+    font-size: 14px;
+  }
+  .coe-hero-float-badge.bottom-left,
+  .coe-hero-float-badge.bottom-right {
+    display: none;
+  }
+  .coe-hero-float-badge.top-left {
+    top: 12px;
+    left: 12px;
+    font-size: 10.5px;
+    padding: 4px 10px;
+  }
+  .coe-hero-img-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 14px;
+  }
+  .coe-hero-img-action-info {
+    font-size: 12px;
+  }
+  .coe-hero-img-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 13px;
+  }
+  .coe-stat-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .coe-stat-card {
+    padding: 16px 12px;
+  }
+  .coe-stat-value {
+    font-size: 24px;
+  }
+  .coe-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .coe-values-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .coe-card-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .btn-coe-card-cta {
+    width: 100%;
+  }
+  .coe-cta-box {
+    padding: 32px 20px;
+    border-radius: 18px;
+  }
+}
+
+/* Small Mobile : 320px – 374px */
+@media (max-width: 374px) {
+  .coe-hero-section {
+    padding: 28px 0;
+  }
+  .coe-hero-main-heading {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+  .coe-hero-lead-text {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .coe-hero-float-badge {
+    display: none !important;
+  }
+  .coe-hero-img-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 12px 10px;
+  }
+  .coe-hero-img-action-info {
+    font-size: 11px;
+  }
+  .coe-hero-img-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 12px;
+    padding: 10px 14px;
+  }
+  .coe-stat-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .coe-stat-card {
+    padding: 14px 10px;
+  }
+  .coe-stat-value {
+    font-size: 22px;
+  }
+  .coe-stat-label {
+    font-size: 12.5px;
+  }
+  .coe-stat-sub {
+    font-size: 10.5px;
+  }
+  .coe-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .coe-showcase-card {
+    border-radius: 12px;
+  }
+  .coe-card-image-wrap {
+    height: 160px;
+  }
+  .coe-card-content {
+    padding: 14px 12px;
+  }
+  .coe-card-title {
+    font-size: 16px;
+  }
+  .coe-card-description {
+    font-size: 12.5px;
+  }
+  .coe-card-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px 12px 14px 12px;
+  }
+  .coe-card-bottom-label {
+    font-size: 10px;
+  }
+  .btn-coe-card-cta {
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 12.5px;
+  }
+  .coe-values-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .coe-value-card {
+    padding: 18px 14px;
+  }
+  .coe-cta-box {
+    padding: 24px 14px;
+    border-radius: 14px;
+  }
+  .coe-cta-title {
+    font-size: 20px;
+  }
+  .coe-cta-desc {
+    font-size: 12.5px;
+  }
+  .btn-cta-large {
+    width: 100%;
+    padding: 11px 16px !important;
+    font-size: 13.5px !important;
+  }
+}

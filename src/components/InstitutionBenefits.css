@@ -1,0 +1,179 @@
+/* Institutional Value Section Styles */
+.institutional-editorial-root {
+  background-color: #f8fafc;
+  padding: 88px 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.institutions-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.institution-benefit-column {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.institution-benefit-column:hover {
+  border-color: #15428f;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.benefit-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.benefit-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: #e8eef8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #15428f;
+}
+
+.benefit-stat-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #112204;
+  background-color: #85c300;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+.benefit-col-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.benefit-col-summary {
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.benefit-divider-line {
+  height: 1px;
+  background-color: #f1f5f9;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.benefit-points-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.benefit-points-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.benefit-check-icon {
+  color: #85c300;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Highlight Box */
+.institution-partnership-highlight-box {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.partner-highlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #15428f;
+  background-color: #e8eef8;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.partner-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #85c300;
+}
+
+.partner-highlight-content {
+  flex: 1;
+}
+
+.partner-highlight-heading {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.partner-highlight-sub {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .institutions-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .institution-partnership-highlight-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+  }
+
+  .institution-partnership-highlight-box .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .institutional-editorial-root {
+    padding: 60px 0;
+  }
+}

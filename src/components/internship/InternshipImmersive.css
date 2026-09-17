@@ -1,0 +1,105 @@
+.intern-immersive-section {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  overflow: hidden;
+  background-color: #0b1120;
+}
+
+.intern-immersive-bg-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.intern-immersive-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: saturate(1.1) brightness(0.88);
+  will-change: transform;
+  transition: transform 0.15s ease-out;
+}
+
+.intern-immersive-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 50% 50%, rgba(11, 17, 32, 0.55) 0%, rgba(11, 17, 32, 0.85) 75%, rgba(11, 17, 32, 0.98) 100%),
+    linear-gradient(180deg, rgba(11, 17, 32, 0.5) 0%, rgba(11, 17, 32, 0.88) 100%);
+  pointer-events: none;
+}
+
+.intern-immersive-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.intern-immersive-content {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.intern-immersive-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 24px;
+}
+
+.intern-immersive-headline {
+  font-size: clamp(38px, 6vw, 68px);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+}
+
+.intern-immersive-desc {
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.7;
+  color: #cbd5e1;
+  max-width: 680px;
+  margin: 0 auto 36px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.intern-immersive-btn {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 30px;
+  box-shadow: 0 6px 24px rgba(128, 188, 0, 0.45);
+}
+
+@media (max-width: 600px) {
+  .intern-immersive-section {
+    min-height: auto;
+    padding: 70px 0;
+  }
+}

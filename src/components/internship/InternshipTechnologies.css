@@ -1,0 +1,251 @@
+.intern-tech-section {
+  position: relative;
+  padding: 110px 0 100px;
+  background-color: #060913;
+  color: #ffffff;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.intern-tech-grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  pointer-events: none;
+}
+
+.intern-tech-glow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(21, 66, 143, 0.25) 0%, rgba(128, 188, 0, 0.08) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+.intern-tech-container {
+  position: relative;
+  z-index: 2;
+}
+
+.intern-tech-header {
+  max-width: 780px;
+  margin-bottom: 48px;
+}
+
+.intern-tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9fe805;
+  background: rgba(128, 188, 0, 0.12);
+  border: 1px solid rgba(128, 188, 0, 0.3);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 18px;
+}
+
+.badge-sparkle {
+  color: #9fe805;
+}
+
+.intern-tech-title {
+  font-size: clamp(36px, 5.2vw, 60px);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  color: #ffffff;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.intern-tech-sub {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #94a3b8;
+}
+
+/* Horizontal Oversized Tech Strip */
+.intern-tech-strip-wrapper {
+  overflow-x: auto;
+  padding: 10px 0 24px;
+  margin-bottom: 32px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.intern-tech-strip-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.intern-tech-strip-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.intern-tech-strip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: max-content;
+}
+
+.tech-oversized-btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+  padding: 14px 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.tech-btn-name {
+  font-family: var(--font-heading);
+  font-size: clamp(16px, 1.8vw, 22px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #cbd5e1;
+  transition: color 0.2s ease;
+}
+
+.tech-oversized-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.tech-oversized-btn:hover .tech-btn-name {
+  color: #ffffff;
+}
+
+.tech-oversized-btn.active {
+  background: var(--brand-green);
+  border-color: var(--brand-green);
+  box-shadow: 0 0 24px rgba(128, 188, 0, 0.4);
+}
+
+.tech-oversized-btn.active .tech-btn-name {
+  color: #0b1120;
+}
+
+.tech-btn-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0b1120;
+}
+
+/* Detailed Inspector Card */
+.intern-tech-inspector-card {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-xl);
+  padding: 36px 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr;
+  gap: 36px;
+  align-items: center;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6);
+  animation: inspectorFade 0.3s ease;
+}
+
+@keyframes inspectorFade {
+  from {
+    opacity: 0.85;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.inspector-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.inspector-badge {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--brand-green);
+}
+
+.inspector-status {
+  font-size: 10.5px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  color: #cbd5e1;
+}
+
+.inspector-title {
+  font-size: clamp(22px, 2.8vw, 30px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.inspector-desc {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #cbd5e1;
+}
+
+.inspector-app-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.inspector-app-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #9fe805;
+  margin-bottom: 10px;
+}
+
+.app-icon {
+  color: #9fe805;
+}
+
+.inspector-app-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+@media (max-width: 860px) {
+  .intern-tech-inspector-card {
+    grid-template-columns: 1fr;
+    padding: 28px 24px;
+    gap: 24px;
+  }
+}

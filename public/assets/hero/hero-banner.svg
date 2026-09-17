@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A50" />
+      <stop offset="100%" stop-color="#FF5722" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#FFF5F0" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#FF7A50" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Background Glow & Shapes -->
+  <circle cx="400" cy="300" r="220" fill="#FFEFE9" />
+  <circle cx="400" cy="300" r="170" fill="#FFDFC6" />
+  
+  <!-- Central Device Frame -->
+  <rect x="220" y="100" width="360" height="420" rx="36" fill="url(#cardGrad)" stroke="#FFDAC9" stroke-width="4" filter="url(#shadow)" />
+  
+  <!-- Screen Elements -->
+  <rect x="250" y="140" width="120" height="14" rx="7" fill="#FF7A50" />
+  <rect x="250" y="170" width="300" height="120" rx="20" fill="url(#heroGrad)" />
+  
+  <!-- Content in card -->
+  <circle cx="310" cy="230" r="30" fill="white" fill-opacity="0.9" />
+  <polygon points="305,218 322,230 305,242" fill="#FF7A50" />
+  <rect x="360" y="215" width="160" height="14" rx="7" fill="white" />
+  <rect x="360" y="238" width="110" height="10" rx="5" fill="white" fill-opacity="0.8" />
+  
+  <!-- Stats pills -->
+  <g transform="translate(130, 240)" filter="url(#shadow)">
+    <rect width="170" height="65" rx="18" fill="white" stroke="#FFE3D6" stroke-width="2"/>
+    <circle cx="35" cy="32" r="18" fill="#FFF0EB"/>
+    <text x="35" y="38" font-family="Arial" font-size="20" text-anchor="middle" fill="#FF7A50">⭐</text>
+    <text x="65" y="28" font-family="Arial" font-size="13" font-weight="bold" fill="#20243A">4.9 / 5.0</text>
+    <text x="65" y="46" font-family="Arial" font-size="11" fill="#707383">10M+ Learners</text>
+  </g>
+  
+  <g transform="translate(500, 360)" filter="url(#shadow)">
+    <rect width="180" height="65" rx="18" fill="white" stroke="#FFE3D6" stroke-width="2"/>
+    <circle cx="35" cy="32" r="18" fill="#E8F8F0"/>
+    <text x="35" y="38" font-family="Arial" font-size="18" text-anchor="middle" fill="#00B074">🎯</text>
+    <text x="65" y="28" font-family="Arial" font-size="13" font-weight="bold" fill="#20243A">99.4% Pass Rate</text>
+    <text x="65" y="46" font-family="Arial" font-size="11" fill="#707383">AI Assessment</text>
+  </g>
+  
+  <!-- Interactive elements -->
+  <circle cx="400" cy="470" r="22" fill="#FF7A50" />
+  <path d="M394 470 L406 470 M400 464 L400 476" stroke="white" stroke-width="3" stroke-linecap="round"/>
+</svg>

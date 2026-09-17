@@ -1,0 +1,115 @@
+/* ==========================================================================
+   InGage About Us - People & Culture Section Styles
+   ========================================================================== */
+
+.about-people-root {
+  padding: 88px 0 92px;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.about-people-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.people-img-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.14);
+  border: 1.5px solid var(--border-subtle);
+}
+
+.people-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.people-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(15, 23, 42, 0.65) 100%);
+  pointer-events: none;
+}
+
+.people-img-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: #ffffff;
+}
+
+.about-people-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.people-badge-wrap {
+  margin-bottom: 16px;
+}
+
+.people-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.people-description {
+  font-size: 15.5px;
+  line-height: 1.72;
+  color: var(--color-secondary);
+  margin-bottom: 28px;
+}
+
+.people-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.people-highlight-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.45;
+}
+
+.highlight-check {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 960px) {
+  .about-people-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}

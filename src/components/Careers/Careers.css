@@ -1,0 +1,36 @@
+.careers-box {
+  padding: 60px 40px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(18, 26, 47, 0.9) 0%, rgba(10, 15, 27, 0.98) 100%);
+  border: 1px solid var(--border-cyan);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.careers-roles-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 850px;
+  margin: 36px auto;
+}
+
+.career-role-tag {
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-white);
+  transition: all 0.25s ease;
+}
+
+.career-role-tag:hover {
+  background: rgba(0, 242, 254, 0.12);
+  border-color: var(--cyan-main);
+  color: var(--cyan-main);
+  transform: translateY(-2px);
+}

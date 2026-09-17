@@ -1,0 +1,490 @@
+/* CoE Setup Interactive Modal Styles */
+.coe-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: coeFadeIn 0.22s ease-out;
+}
+
+@keyframes coeFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.coe-modal-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.25);
+  width: 100%;
+  max-width: 840px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: coeSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes coeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Modal Header */
+.coe-modal-header {
+  padding: 24px 28px 18px 28px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  background-color: #ffffff;
+}
+
+.coe-modal-header-text {
+  flex: 1;
+}
+
+.coe-modal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #15428f;
+  margin-bottom: 10px;
+}
+
+.coe-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #85c300;
+}
+
+.coe-modal-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.coe-modal-subtitle {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.coe-modal-close-btn {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.coe-modal-close-btn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+/* Modal Body */
+.coe-modal-body {
+  padding: 24px 28px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.coe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.coe-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.coe-section-label-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.coe-step-pill {
+  background-color: #15428f;
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.coe-section-title {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.coe-selected-count {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 600;
+  color: #85c300;
+  background-color: rgba(133, 195, 0, 0.12);
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+/* Step 1: Domain Chips Grid */
+.coe-domains-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.coe-domain-chip {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.coe-domain-chip:hover {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.coe-domain-chip.selected {
+  background-color: #f6faed;
+  border-color: #85c300;
+  box-shadow: 0 0 0 1px #85c300;
+}
+
+.coe-chip-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1.5px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #85c300;
+  background-color: #ffffff;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.coe-domain-chip.selected .coe-chip-checkbox {
+  border-color: #85c300;
+  background-color: #85c300;
+  color: #ffffff;
+}
+
+.coe-chip-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.coe-chip-name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.coe-chip-category {
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+/* Step 2: Tier Cards */
+.coe-tier-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.coe-tier-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 16px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.coe-tier-card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.coe-tier-card.active {
+  border-color: #15428f;
+  background-color: #f8fafc;
+  box-shadow: 0 0 0 1.5px #15428f;
+}
+
+.coe-tier-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.coe-tier-name {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.coe-tier-badge {
+  font-size: 10px;
+  font-weight: 700;
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 2px 7px;
+  border-radius: 9999px;
+}
+
+.coe-tier-badge.recommended {
+  background-color: #85c300;
+  color: #112204;
+}
+
+.coe-tier-desc {
+  font-size: 11.5px;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+/* Step 3: Fields Grid */
+.coe-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.coe-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.coe-field-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.coe-field-label .req {
+  color: #ef4444;
+}
+
+.coe-input,
+.coe-select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: #0f172a;
+  transition: all 0.15s ease;
+  outline: none;
+}
+
+.coe-input:focus,
+.coe-select:focus {
+  border-color: #15428f;
+  box-shadow: 0 0 0 3px rgba(21, 66, 143, 0.12);
+}
+
+/* Form Footer */
+.coe-form-footer {
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.coe-guarantee-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: #64748b;
+  max-width: 360px;
+}
+
+.coe-shield-icon {
+  color: #85c300;
+  flex-shrink: 0;
+}
+
+.coe-form-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Success Screen */
+.coe-success-screen {
+  padding: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.coe-success-icon-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #f2f9e6;
+  border: 1px solid rgba(133, 195, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.coe-success-icon {
+  color: #85c300;
+}
+
+.coe-success-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.coe-success-message {
+  font-size: 14.5px;
+  color: #475569;
+  max-width: 540px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.coe-success-summary-box {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  width: 100%;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.coe-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #475569;
+  gap: 12px;
+}
+
+.coe-summary-row strong {
+  color: #0f172a;
+  text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .coe-modal-overlay {
+    padding: 12px;
+  }
+
+  .coe-modal-header {
+    padding: 18px 20px;
+  }
+
+  .coe-modal-body {
+    padding: 18px 20px;
+  }
+
+  .coe-domains-selector-grid,
+  .coe-tier-selector-grid,
+  .coe-fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coe-form-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .coe-form-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .coe-form-buttons .btn {
+    width: 100%;
+  }
+
+  .coe-summary-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .coe-summary-row strong {
+    text-align: left;
+  }
+}

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#4FACFE"/>
+    </linearGradient>
+    <linearGradient id="neonPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B721FF"/>
+      <stop offset="100%" stop-color="#7928CA"/>
+    </linearGradient>
+    <linearGradient id="cubeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121A2F" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#080C16" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#00F2FE" flood-opacity="0.5"/>
+    </filter>
+    <filter id="purpleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#B721FF" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient background grid and glow -->
+  <circle cx="350" cy="300" r="240" fill="#00F2FE" fill-opacity="0.04" filter="blur(60px)"/>
+  <circle cx="350" cy="300" r="180" fill="#B721FF" fill-opacity="0.05" filter="blur(50px)"/>
+
+  <!-- Orbital Cyber Rings -->
+  <ellipse cx="350" cy="300" rx="270" ry="110" fill="none" stroke="#00F2FE" stroke-width="1.5" stroke-opacity="0.4" stroke-dasharray="10 8" transform="rotate(-15 350 300)"/>
+  <ellipse cx="350" cy="300" rx="230" ry="90" fill="none" stroke="#B721FF" stroke-width="1.5" stroke-opacity="0.35" stroke-dasharray="6 6" transform="rotate(25 350 300)"/>
+
+  <!-- 3D VR Headset Representation -->
+  <g transform="translate(180, 160)" filter="url(#cyanGlow)">
+    <!-- Headset Visor Body -->
+    <rect x="50" y="70" width="240" height="130" rx="35" fill="url(#cubeGlow)" stroke="url(#neonCyan)" stroke-width="2.5"/>
+    <!-- Sleek front screen reflection -->
+    <rect x="65" y="85" width="210" height="100" rx="24" fill="#050811" stroke="#38BDF8" stroke-width="1" stroke-opacity="0.5"/>
+    <path d="M85 95 L220 95" stroke="url(#neonCyan)" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- AR Dual Sensor Nodes -->
+    <circle cx="110" cy="135" r="14" fill="#0D162B" stroke="#00F2FE" stroke-width="2"/>
+    <circle cx="110" cy="135" r="6" fill="#00F2FE"/>
+    <circle cx="230" cy="135" r="14" fill="#0D162B" stroke="#00F2FE" stroke-width="2"/>
+    <circle cx="230" cy="135" r="6" fill="#00F2FE"/>
+
+    <!-- Head Strap -->
+    <path d="M50 120 C 10 120, 10 200, 50 200" fill="none" stroke="#334155" stroke-width="14" stroke-linecap="round"/>
+    <path d="M290 120 C 330 120, 330 200, 290 200" fill="none" stroke="#334155" stroke-width="14" stroke-linecap="round"/>
+  </g>
+
+  <!-- Floating Holographic Digital Twin Cube -->
+  <g transform="translate(430, 80)" filter="url(#purpleGlow)">
+    <polygon points="60,10 110,38 60,68 10,38" fill="#B721FF" fill-opacity="0.3" stroke="#B721FF" stroke-width="2"/>
+    <polygon points="10,38 60,68 60,128 10,98" fill="#7928CA" fill-opacity="0.4" stroke="#B721FF" stroke-width="2"/>
+    <polygon points="60,68 110,38 110,98 60,128" fill="#21D4FD" fill-opacity="0.25" stroke="#00F2FE" stroke-width="2"/>
+    <circle cx="60" cy="68" r="4" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Floating Tech Data Pill: Digital Twin Status -->
+  <g transform="translate(60, 340)">
+    <rect width="210" height="64" rx="16" fill="#0D1426" stroke="#00F2FE" stroke-width="1.5" stroke-opacity="0.6"/>
+    <circle cx="32" cy="32" r="14" fill="#00F2FE" fill-opacity="0.15"/>
+    <text x="32" y="37" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" text-anchor="middle" fill="#00F2FE">⚡</text>
+    <text x="58" y="28" font-family="'Outfit', sans-serif" font-size="13" font-weight="bold" fill="#F8FAFC">Industry 4.0 Digital Twin</text>
+    <text x="58" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#38BDF8">Real-time IoT Telemetry</text>
+  </g>
+
+  <!-- Floating Tech Data Pill: AR Simulation -->
+  <g transform="translate(430, 380)">
+    <rect width="200" height="64" rx="16" fill="#0D1426" stroke="#B721FF" stroke-width="1.5" stroke-opacity="0.6"/>
+    <circle cx="32" cy="32" r="14" fill="#B721FF" fill-opacity="0.15"/>
+    <text x="32" y="37" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" text-anchor="middle" fill="#B721FF">🥽</text>
+    <text x="58" y="28" font-family="'Outfit', sans-serif" font-size="13" font-weight="bold" fill="#F8FAFC">AR / VR Simulation</text>
+    <text x="58" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#A855F7">Experiential Skill Labs</text>
+  </g>
+</svg>

@@ -1,0 +1,175 @@
+.institutional-root {
+  background-color: var(--bg-page);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.institutional-split-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.inst-main-desc {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--color-secondary);
+  margin-bottom: 32px;
+}
+
+.inst-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inst-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.inst-item-indicator {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--brand-green-dark);
+  background-color: var(--brand-green-light);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.inst-item-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.inst-item-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+/* Right Blueprint Box */
+.inst-visual-frame {
+  width: 100%;
+}
+
+.inst-blueprint-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.blueprint-top-bar {
+  padding: 12px 20px;
+  background-color: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blueprint-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.blueprint-status {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--brand-green-dark);
+  background-color: var(--brand-green-light);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.blueprint-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #ffffff;
+}
+
+.blueprint-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.blueprint-node {
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.node-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin-bottom: 6px;
+}
+
+.blueprint-node h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.blueprint-node p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.blueprint-footer {
+  padding: 12px 20px;
+  background-color: var(--bg-subtle);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.blueprint-cta-link {
+  color: var(--brand-navy);
+  font-weight: 700;
+}
+
+.blueprint-cta-link:hover {
+  color: var(--brand-green);
+}
+
+@media (max-width: 960px) {
+  .institutional-split-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .blueprint-grid-row {
+    grid-template-columns: 1fr;
+  }
+}

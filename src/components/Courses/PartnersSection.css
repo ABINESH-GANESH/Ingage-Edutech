@@ -1,0 +1,305 @@
+/* ==========================================================================
+   InGage Courses Portal - Enterprise Partners Section Styles
+   ========================================================================== */
+
+.partners-section-root {
+  padding: 84px 0 96px;
+  background-color: var(--bg-page);
+}
+
+.partners-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+
+/* Partner Card */
+.partner-card {
+  position: relative;
+  background: var(--bg-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 32px 30px 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Card Top Brand Accent Bar */
+.partner-card-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  opacity: 0.85;
+  transition: height 0.25s ease, opacity 0.25s ease;
+}
+
+.partner-card:hover .partner-card-accent-bar {
+  height: 4.5px;
+  opacity: 1;
+}
+
+.partner-bar-red {
+  background: #EA1B25;
+}
+
+.partner-bar-blue {
+  background: #0F62FE;
+}
+
+.partner-bar-green {
+  background: linear-gradient(90deg, #4285F4 0%, #EA4335 33%, #FBBC05 66%, #34A853 100%);
+}
+
+.partner-bar-emerald {
+  background: #76B900;
+}
+
+/* Header */
+.partner-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding-top: 4px;
+}
+
+.partner-brand-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  max-width: 240px;
+}
+
+.partner-vector-svg {
+  height: 100%;
+  max-height: 38px;
+  width: auto;
+  max-width: 220px;
+  display: block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.partner-official-logo {
+  max-height: 36px;
+  width: auto;
+  max-width: 210px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.partner-card:hover .partner-vector-svg,
+.partner-card:hover .partner-official-logo {
+  transform: scale(1.04);
+}
+
+.partner-brand-name {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-primary);
+}
+
+/* Partner Tier Badges */
+.partner-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 11px;
+  border-radius: var(--radius-pill);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.partner-badge-red {
+  color: #c5221f;
+  background: rgba(234, 27, 37, 0.08);
+  border: 1px solid rgba(234, 27, 37, 0.2);
+}
+
+.partner-badge-blue {
+  color: #0F62FE;
+  background: rgba(15, 98, 254, 0.08);
+  border: 1px solid rgba(15, 98, 254, 0.2);
+}
+
+.partner-badge-green {
+  color: #1a73e8;
+  background: rgba(66, 133, 244, 0.08);
+  border: 1px solid rgba(66, 133, 244, 0.2);
+}
+
+.partner-badge-emerald {
+  color: #4c7c00;
+  background: rgba(118, 185, 0, 0.1);
+  border: 1px solid rgba(118, 185, 0, 0.28);
+}
+
+.partner-badge-icon {
+  flex-shrink: 0;
+}
+
+/* Description */
+.partner-card-desc {
+  font-size: 14.2px;
+  line-height: 1.62;
+  color: var(--color-secondary);
+  margin-bottom: 24px;
+}
+
+/* Specialization Box */
+.partner-specs-box {
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.partner-specs-title {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 12px;
+}
+
+.partner-specs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.partner-spec-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+}
+
+.partner-card:hover .partner-spec-pill {
+  background: var(--bg-white);
+  border-color: var(--border-light);
+}
+
+.spec-check {
+  flex-shrink: 0;
+}
+
+.spec-check-red {
+  color: #EA1B25;
+}
+
+.spec-check-blue {
+  color: #0F62FE;
+}
+
+.spec-check-green {
+  color: #34A853;
+}
+
+.spec-check-emerald {
+  color: #76B900;
+}
+
+/* Card Footer */
+.partner-card-footer {
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+}
+
+.btn-partner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--brand-navy);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: gap 0.25s ease, color 0.2s ease;
+}
+
+.partner-card:hover .btn-partner-cta {
+  gap: 12px;
+}
+
+.partner-accent-red:hover .btn-partner-cta {
+  color: #EA1B25;
+}
+
+.partner-accent-blue:hover .btn-partner-cta {
+  color: #0F62FE;
+}
+
+.partner-accent-green:hover .btn-partner-cta {
+  color: #1a73e8;
+}
+
+.partner-accent-emerald:hover .btn-partner-cta {
+  color: #4c7c00;
+}
+
+.partner-cta-arrow {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.partner-card:hover .partner-cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Accent Card Hover Glows */
+.partner-accent-red:hover {
+  border-color: rgba(234, 27, 37, 0.4);
+  box-shadow: 0 12px 28px -6px rgba(234, 27, 37, 0.12), var(--shadow-md);
+}
+
+.partner-accent-blue:hover {
+  border-color: rgba(15, 98, 254, 0.4);
+  box-shadow: 0 12px 28px -6px rgba(15, 98, 254, 0.12), var(--shadow-md);
+}
+
+.partner-accent-green:hover {
+  border-color: rgba(66, 133, 244, 0.4);
+  box-shadow: 0 12px 28px -6px rgba(66, 133, 244, 0.12), var(--shadow-md);
+}
+
+.partner-accent-emerald:hover {
+  border-color: rgba(118, 185, 0, 0.45);
+  box-shadow: 0 12px 28px -6px rgba(118, 185, 0, 0.12), var(--shadow-md);
+}
+
+@media (max-width: 900px) {
+  .partners-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

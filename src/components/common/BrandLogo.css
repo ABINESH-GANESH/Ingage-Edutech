@@ -1,0 +1,116 @@
+/* ==========================================================================
+   InGage EduTech — Brand Logo Vector-Grade Typography
+   Crisp, pixel-perfect rendering across all devices & resolutions
+   ========================================================================== */
+
+.ingage-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0;
+  transform: translateZ(0);
+}
+
+.brand-logo-img {
+  height: 38px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+
+.ingage-brand-logo.logo-sm .brand-logo-img {
+  height: 30px;
+}
+
+.ingage-brand-logo.logo-lg .brand-logo-img {
+  height: 48px;
+}
+
+/* Line 1: 'in' + 'gage' */
+.logo-line-top {
+  display: flex;
+  align-items: baseline;
+  font-size: 19.5px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.logo-in {
+  color: #1e242b;
+}
+
+.logo-gage {
+  color: #76b82a;
+}
+
+/* Line 2: 'EduTech' with dot inside 'c' */
+.logo-line-bottom {
+  display: flex;
+  align-items: baseline;
+  font-size: 18.5px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: #15428f;
+  margin-top: 1.5px;
+}
+
+.logo-edute {
+  color: #15428f;
+}
+
+.logo-c-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #15428f;
+}
+
+.logo-c {
+  display: inline-block;
+}
+
+.logo-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #76b82a;
+  border-radius: 50%;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.logo-h {
+  color: #15428f;
+}
+
+/* Size Modifiers */
+.ingage-brand-logo.logo-sm .logo-line-top {
+  font-size: 16px;
+}
+.ingage-brand-logo.logo-sm .logo-line-bottom {
+  font-size: 15px;
+}
+.ingage-brand-logo.logo-sm .logo-dot {
+  width: 3.2px;
+  height: 3.2px;
+}
+
+.ingage-brand-logo.logo-lg .logo-line-top {
+  font-size: 24px;
+}
+.ingage-brand-logo.logo-lg .logo-line-bottom {
+  font-size: 22.5px;
+}
+.ingage-brand-logo.logo-lg .logo-dot {
+  width: 4.8px;
+  height: 4.8px;
+}

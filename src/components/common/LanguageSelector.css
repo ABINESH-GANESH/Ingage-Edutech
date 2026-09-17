@@ -1,0 +1,206 @@
+/* ==========================================================================
+   Language Selector Dropdown — InGage EduTech
+   ========================================================================== */
+
+.lang-selector-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* 1. Trigger Button in Navbar */
+.lang-selector-navbar .lang-selector-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 11px;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.lang-selector-navbar .lang-selector-trigger:hover {
+  background-color: #f8fafc;
+  color: #15428f;
+  border-color: rgba(21, 66, 143, 0.3);
+}
+
+.lang-selector-trigger:focus-visible {
+  outline: 2px solid #15428f;
+  outline-offset: 2px;
+}
+
+.lang-trigger-text {
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
+.lang-chevron {
+  color: #64748b;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.lang-chevron.rotate-up {
+  transform: rotate(180deg);
+  color: #15428f;
+}
+
+/* 2. Trigger Button in Footer Utility Bar */
+.lang-selector-footer .lang-selector-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-selector-footer .lang-selector-trigger:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* 3. Dropdown Menu Container */
+.lang-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 260px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 12px 36px -4px rgba(15, 23, 42, 0.14), 0 4px 12px rgba(15, 23, 42, 0.06);
+  z-index: 1000;
+  padding: 6px;
+  animation: langDropdownFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes langDropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lang-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px 6px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 4px;
+}
+
+.lang-globe-icon {
+  color: #15428f;
+}
+
+/* 4. Scrollable Language List */
+.lang-options-scrollable {
+  max-height: 280px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lang-options-scrollable::-webkit-scrollbar {
+  width: 5px;
+}
+
+.lang-options-scrollable::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+/* 5. Language Option Item */
+.lang-option-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: #334155;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.lang-option-item:hover {
+  background-color: #f1f5f9;
+  color: #15428f;
+}
+
+.lang-option-item.is-selected {
+  background-color: #eef4ff;
+  color: #15428f;
+  font-weight: 700;
+}
+
+.lang-option-label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lang-check-icon {
+  color: #15428f;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+/* RTL Adjustments */
+[dir="rtl"] .lang-dropdown-menu {
+  right: auto;
+  left: 0;
+  text-align: right;
+}
+
+[dir="rtl"] .lang-option-item {
+  text-align: right;
+}
+
+[dir="rtl"] .lang-check-icon {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .lang-dropdown-menu {
+    width: 230px;
+  }
+}

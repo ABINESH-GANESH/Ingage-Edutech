@@ -1,0 +1,148 @@
+/* ==========================================================================
+   InGage About Us - Introduction Section Styles
+   ========================================================================== */
+
+.about-intro-root {
+  padding: 84px 0 80px;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 56px;
+  align-items: flex-start;
+  margin-bottom: 56px;
+}
+
+.about-intro-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-intro-badge-wrap {
+  margin-bottom: 16px;
+}
+
+.about-intro-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.about-intro-decor-line {
+  width: 60px;
+  height: 3.5px;
+  background: var(--brand-green);
+  border-radius: var(--radius-pill);
+}
+
+.about-intro-right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-intro-para {
+  font-size: 15.5px;
+  line-height: 1.72;
+  color: var(--color-secondary);
+}
+
+.about-intro-para:first-child {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--brand-navy);
+  line-height: 1.65;
+}
+
+/* Metrics Strip */
+.about-intro-metrics-strip {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 24px 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.metrics-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.metric-strip-card {
+  padding: 6px 14px;
+  border-right: 1px solid var(--border-light);
+}
+
+.metric-strip-card:last-child {
+  border-right: none;
+}
+
+.metric-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.metric-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+
+.metric-card-val {
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+}
+
+.metric-card-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 960px) {
+  .about-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .metrics-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .metric-strip-card:nth-child(2) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .about-intro-root {
+    padding: 60px 0 50px;
+  }
+  .metrics-strip-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .metric-strip-card {
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 12px;
+  }
+  .metric-strip-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}

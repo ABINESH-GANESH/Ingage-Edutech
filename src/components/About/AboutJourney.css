@@ -1,0 +1,137 @@
+/* ==========================================================================
+   InGage About Us - Journey Timeline Section Styles
+   ========================================================================== */
+
+.about-journey-root {
+  padding: 88px 0 96px;
+  background-color: var(--bg-page);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.about-timeline-wrapper {
+  position: relative;
+  max-width: 840px;
+  margin: 56px auto 0;
+  padding: 20px 0;
+}
+
+.about-timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: var(--border-subtle);
+}
+
+.about-timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.timeline-row {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.timeline-row.left-row {
+  justify-content: flex-start;
+  padding-right: 50%;
+}
+
+.timeline-row.right-row {
+  justify-content: flex-end;
+  padding-left: 50%;
+}
+
+.timeline-node-marker {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.node-marker-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-white);
+  border: 2px solid var(--brand-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(21, 66, 143, 0.15);
+}
+
+.timeline-content-card {
+  background: var(--bg-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 28px 26px;
+  box-shadow: var(--shadow-sm);
+  width: calc(100% - 36px);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.left-row .timeline-content-card {
+  margin-right: 36px;
+}
+
+.right-row .timeline-content-card {
+  margin-left: 36px;
+}
+
+.timeline-content-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-navy);
+  box-shadow: var(--shadow-md);
+}
+
+.timeline-year-tag {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--brand-green-dark);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.timeline-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.timeline-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  .about-timeline-line {
+    left: 20px;
+  }
+  .timeline-row.left-row,
+  .timeline-row.right-row {
+    padding-left: 54px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+  .timeline-node-marker {
+    left: 20px;
+  }
+  .left-row .timeline-content-card,
+  .right-row .timeline-content-card {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}

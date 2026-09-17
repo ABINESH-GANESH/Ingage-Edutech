@@ -1,0 +1,356 @@
+/* ==========================================================================
+   InGage EduTech — About Us: "What We Believe In" (Core Principles)
+   Theme: Official Logo Colors (InGage Navy #15428f & InGage Green #76b82a)
+   Aesthetic: Ultra-Clean, High Contrast, Glassmorphism, Micro-Elevations
+   ========================================================================== */
+
+.about-values-root {
+  position: relative;
+  padding: 100px 0 110px;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #f8fafc 100%);
+  overflow: hidden;
+}
+
+/* Background Ambient Orbs */
+.values-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.values-bg-glow.glow-green {
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, rgba(118, 184, 42, 0.15) 0%, rgba(118, 184, 42, 0) 70%);
+  top: 10%;
+  left: -120px;
+}
+
+.values-bg-glow.glow-navy {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(21, 66, 143, 0.12) 0%, rgba(21, 66, 143, 0) 70%);
+  bottom: 5%;
+  right: -140px;
+}
+
+.values-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.relative-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Header */
+.values-header-wrap {
+  max-width: 780px;
+  margin: 0 auto 56px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.values-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1.5px solid rgba(118, 184, 42, 0.4);
+  box-shadow: 0 4px 14px rgba(118, 184, 42, 0.12);
+  padding: 6px 18px;
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #15428f;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.eyebrow-sparkle {
+  color: #76b82a;
+}
+
+.values-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 3.6vw, 46px);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  margin: 0 0 16px 0;
+}
+
+.title-gradient-span {
+  background: linear-gradient(135deg, #15428f 0%, #76b82a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.values-lead-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.25vw, 17px);
+  line-height: 1.65;
+  color: #475569;
+  max-width: 680px;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* 6 Core Value Cards Grid */
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Premium Card Architecture */
+.value-card-premium {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 34px 30px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.05), 0 2px 8px -2px rgba(15, 23, 42, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+/* Top Accent Highlight Line */
+.card-top-accent-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #15428f 0%, #76b82a 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.value-card-premium:hover .card-top-accent-line {
+  opacity: 1;
+}
+
+/* Hover Elevation & Border Glow */
+.value-card-premium:hover {
+  transform: translateY(-8px);
+  border-color: #cbd5e1;
+  box-shadow: 0 22px 50px -10px rgba(21, 66, 143, 0.14), 0 8px 18px -4px rgba(15, 23, 42, 0.04);
+}
+
+.value-card-premium.theme-green:hover {
+  border-color: #86efac;
+}
+
+.value-card-premium.theme-navy:hover {
+  border-color: #93c5fd;
+}
+
+/* Card Top Row */
+.value-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+/* Icon Halos */
+.value-icon-halo {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.value-icon-halo.green {
+  background: linear-gradient(135deg, #f2f9e6 0%, #e1f5c4 100%);
+  border: 1.5px solid rgba(118, 184, 42, 0.35);
+  color: #55871b;
+  box-shadow: 0 4px 14px rgba(118, 184, 42, 0.18);
+}
+
+.value-icon-halo.navy {
+  background: linear-gradient(135deg, #e8eef8 0%, #dbeafe 100%);
+  border: 1.5px solid rgba(21, 66, 143, 0.3);
+  color: #15428f;
+  box-shadow: 0 4px 14px rgba(21, 66, 143, 0.16);
+}
+
+.value-card-premium:hover .value-icon-halo {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.value-icon-svg {
+  stroke-width: 2.2px;
+}
+
+/* Number Badge */
+.value-num-badge {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  line-height: 1;
+}
+
+.value-num-badge.green {
+  background: #f2f9e6;
+  color: #55871b;
+  border: 1px solid #c9e88b;
+}
+
+.value-num-badge.navy {
+  background: #e8eef8;
+  color: #15428f;
+  border: 1px solid #bfdbfe;
+}
+
+/* Card Content */
+.value-content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.value-subtitle-tag {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #15428f;
+}
+
+.theme-green .value-subtitle-tag {
+  color: #55871b;
+}
+
+.value-card-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0 0 4px 0;
+  line-height: 1.25;
+}
+
+.value-card-desc {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #334155;
+  margin: 0;
+  font-weight: 450;
+}
+
+/* Card Footer with Tag Pill */
+.value-card-footer {
+  padding-top: 18px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+}
+
+.value-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.value-tag-pill.green {
+  background: #f2f9e6;
+  color: #497516;
+  border: 1px solid #d4ed9f;
+}
+
+.value-tag-pill.navy {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.value-card-premium:hover .value-tag-pill.green {
+  background: #76b82a;
+  color: #ffffff;
+  border-color: #76b82a;
+}
+
+.value-card-premium:hover .value-tag-pill.navy {
+  background: #15428f;
+  color: #ffffff;
+  border-color: #15428f;
+}
+
+.tag-check-icon {
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Responsive Viewports
+   ========================================================================== */
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+  .value-card-premium {
+    padding: 28px 24px 24px;
+  }
+}
+
+/* Mobile (under 767px) */
+@media (max-width: 767px) {
+  .about-values-root {
+    padding: 72px 0 80px;
+  }
+  .values-header-wrap {
+    margin-bottom: 40px;
+  }
+  .about-values-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .value-card-premium {
+    padding: 26px 22px 22px;
+    border-radius: 18px;
+  }
+  .value-card-title {
+    font-size: 18.5px;
+  }
+  .value-card-desc {
+    font-size: 14px;
+  }
+}

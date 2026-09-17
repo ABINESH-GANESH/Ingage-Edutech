@@ -1,0 +1,12 @@
+/* ==========================================================================
+   InGage About Us - Page Root Styles
+   ========================================================================== */
+
+.about-page-root {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  color: var(--color-primary);
+  overflow-x: hidden;
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="220" height="48" role="img" aria-label="NVIDIA Official Logo">
+  <!-- NVIDIA Official Iconic Green Eye Mark -->
+  <g transform="translate(4, 5) scale(0.78)">
+    <path fill="#76B900" d="M29.5 0C13.2 0 0 13.2 0 29.5c0 10.9 6 20.5 14.8 25.5-1.1-3.6-1.7-7.5-1.7-11.5C13.1 24 28.5 11 44.5 17.5 40 7.3 30.5 0 29.5 0z"/>
+    <path fill="#76B900" d="M29.5 9.8c-10.9 0-19.7 8.8-19.7 19.7 0 7.3 4 13.7 9.9 17-1-2.4-1.5-5.1-1.5-7.8 0-9.2 7.5-16.7 16.7-16.7 3.8 0 7.3 1.3 10.1 3.4-3.8-9.4-10-15.6-15.5-15.6z"/>
+    <path fill="#76B900" d="M29.5 19.6c-5.5 0-9.9 4.4-9.9 9.9 0 3.7 2 6.9 5 8.6-.6-1.3-.9-2.7-.9-4.2 0-4.6 3.8-8.4 8.4-8.4 2.1 0 4 .8 5.5 2.1-1.9-5-5-8-8.1-8z"/>
+  </g>
+
+  <!-- NVIDIA Bold Wordmark -->
+  <text x="52" y="32" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="23" font-weight="900" fill="#0F172A" letter-spacing="0.8">
+    NVIDIA
+  </text>
+</svg>

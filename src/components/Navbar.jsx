@@ -1,0 +1,753 @@
+import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { Search, ArrowRight, ChevronDown, Briefcase, GraduationCap, Trophy, Video, Sparkles, Award } from "lucide-react";
+import BrandLogo from "./common/BrandLogo";
+import "./Navbar.css";
+
+// Official Google 4-Color Logo Mark
+function GoogleOfficialLogo({ size = 18, className = "" }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      role="img"
+      aria-label="Google Official Logo"
+    >
+      <path
+        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+        fill="#4285F4"
+      />
+      <path
+        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+        fill="#34A853"
+      />
+      <path
+        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+        fill="#FBBC05"
+      />
+      <path
+        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+        fill="#EA4335"
+      />
+    </svg>
+  );
+}
+
+// Official InGage EduTech Logo Mark
+function InGageOfficialLogo({ size = 20, className = "" }) {
+  return (
+    <img
+      src="/assets/branding/ingage-edutech-logo.png"
+      alt="InGage Official Logo"
+      className={className}
+      style={{
+        width: "100%",
+        height: "100%",
+        maxHeight: `${size + 4}px`,
+        maxWidth: "26px",
+        objectFit: "contain",
+        display: "block",
+      }}
+      loading="eager"
+    />
+  );
+}
+
+export default function Navbar({ currentPath = "/", onNavigate }) {
+  const { t } = useTranslation();
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
+  const [careersDropdownOpen, setCareersDropdownOpen] = useState(false);
+  const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
+  const [mobileCareersOpen, setMobileCareersOpen] = useState(false);
+  const [selectedCourseType, setSelectedCourseType] = useState("google");
+
+  const dropdownRef = useRef(null);
+  const dropdownTimeoutRef = useRef(null);
+  const coursesDropdownRef = useRef(null);
+  const coursesDropdownTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 15) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isCoEPage = currentPath === "/center-of-excellence";
+  const isCareersPage = currentPath === "/careers";
+  const isInternshipsPage = currentPath === "/internships" || currentPath === "/internship";
+  const isHackathonsPage = currentPath === "/hackathons" || currentPath === "/hackathon";
+  const isWebinarPage = currentPath === "/webinar" || currentPath === "/webinars" || currentPath === "/workshop";
+  const isCoursesPage = currentPath === "/courses" || currentPath === "/course";
+  const isAboutPage = currentPath === "/about-us" || currentPath === "/about";
+  const isContactPage = currentPath === "/contact-us" || currentPath === "/contact";
+  const isApplyPage = currentPath === "/apply";
+
+  const isAnyCareerActive = isCareersPage || isInternshipsPage || isHackathonsPage || isWebinarPage;
+
+  // Auto-expand mobile accordions if on corresponding pages
+  useEffect(() => {
+    if (isAnyCareerActive) {
+      setMobileCareersOpen(true);
+    }
+  }, [isAnyCareerActive]);
+
+  useEffect(() => {
+    if (isCoursesPage) {
+      setMobileCoursesOpen(true);
+    }
+  }, [isCoursesPage]);
+
+  // Main Desktop Navigation Link Structure
+  const navLinks = [
+    { key: "home", label: t("navbar.home", { defaultValue: "HOME" }), path: "/", targetId: "home" },
+    {
+      key: "courses",
+      label: t("navbar.courses", { defaultValue: "COURSES" }),
+      path: "/courses",
+      hasDropdown: true,
+      targetId: "courses",
+    },
+    { key: "coe", label: t("navbar.centerOfExcellence", { defaultValue: "CENTER OF EXCELLENCE" }), path: "/center-of-excellence", targetId: "coe" },
+    {
+      key: "careers",
+      label: t("navbar.opportunities", { defaultValue: "OPPORTUNITIES" }),
+      path: "/careers",
+      hasDropdown: true,
+    },
+    { key: "about", label: t("navbar.aboutUs", { defaultValue: "ABOUT US" }), path: "/about-us", targetId: "about" },
+    { key: "contact", label: t("navbar.contactUs", { defaultValue: "CONTACT US" }), path: "/contact-us", targetId: "contact" },
+  ];
+
+  // Courses Dropdown Sub-Items
+  const coursesDropdownItems = [
+    {
+      key: "google",
+      label: "Google Certified Courses",
+      desc: t("navbar.googleCoursesDesc", { defaultValue: "Official Google Cloud, AI & Gen AI curriculum" }),
+      path: "/courses",
+      icon: GoogleOfficialLogo,
+      badge: "Google Certified",
+      badgeType: "subtle-blue",
+    },
+    {
+      key: "ingage",
+      label: "InGage Certified Courses",
+      desc: t("navbar.ingageCoursesDesc", { defaultValue: "Specialized AR/VR, IoT, Unity & Spatial Design" }),
+      path: "/courses",
+      icon: InGageOfficialLogo,
+      badge: "InGage Certified",
+      badgeType: "live-emerald",
+    },
+  ];
+
+  // Career Dropdown Sub-Items
+  const careerDropdownItems = [
+    {
+      key: "careers",
+      label: t("navbar.careersPortal", { defaultValue: "Careers & Job Openings" }),
+      desc: t("navbar.careersDesc", { defaultValue: "Explore full-time engineering, AR/VR & tech roles at InGage" }),
+      path: "/careers",
+      icon: Briefcase,
+      badge: "Hiring Now",
+      badgeType: "live-emerald",
+      isActive: isCareersPage,
+    },
+    {
+      key: "internships",
+      label: t("navbar.internshipsPortal", { defaultValue: "Internship Programs" }),
+      desc: t("navbar.internshipsDesc", { defaultValue: "Live industrial project tracks with 1-on-1 expert mentorship" }),
+      path: "/internships",
+      icon: GraduationCap,
+      badge: "Active Cohorts",
+      badgeType: "subtle-blue",
+      isActive: isInternshipsPage,
+    },
+    {
+      key: "hackathons",
+      label: t("navbar.hackathonsPortal", { defaultValue: "Hackathons & Challenges" }),
+      desc: t("navbar.hackathonsDesc", { defaultValue: "Compete in tech challenges, build prototypes & win prizes" }),
+      path: "/hackathons",
+      icon: Trophy,
+      badge: "Open Sprints",
+      badgeType: "subtle-amber",
+      isActive: isHackathonsPage,
+    },
+    {
+      key: "webinar",
+      label: t("navbar.webinarPortal", { defaultValue: "Live Masterclasses & Workshops" }),
+      desc: t("navbar.webinarDesc", { defaultValue: "Interactive sessions on interview prep, portfolio & emerging tech" }),
+      path: "/webinar",
+      icon: Video,
+      badge: "Live Sessions",
+      badgeType: "subtle-purple",
+      isActive: isWebinarPage,
+    },
+  ];
+
+  const handleMouseEnterCourses = () => {
+    if (coursesDropdownTimeoutRef.current) {
+      clearTimeout(coursesDropdownTimeoutRef.current);
+    }
+    setCareersDropdownOpen(false);
+    setCoursesDropdownOpen(true);
+  };
+
+  const handleMouseLeaveCourses = () => {
+    coursesDropdownTimeoutRef.current = setTimeout(() => {
+      setCoursesDropdownOpen(false);
+    }, 180);
+  };
+
+  const handleMouseEnterCareers = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
+    setCoursesDropdownOpen(false);
+    setCareersDropdownOpen(true);
+  };
+
+  const handleMouseLeaveCareers = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setCareersDropdownOpen(false);
+    }, 180);
+  };
+
+  const handleCourseItemClick = (e, item) => {
+    e.preventDefault();
+    setSelectedCourseType(item.key);
+    setCoursesDropdownOpen(false);
+    setMobileMenuOpen(false);
+    if (onNavigate) {
+      onNavigate(item.path);
+    }
+  };
+
+  const handleSubItemClick = (e, path) => {
+    e.preventDefault();
+    setCareersDropdownOpen(false);
+    setMobileMenuOpen(false);
+    if (onNavigate) {
+      onNavigate(path);
+    }
+  };
+
+  // Close dropdowns on outside click or escape key
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setCareersDropdownOpen(false);
+      }
+      if (coursesDropdownRef.current && !coursesDropdownRef.current.contains(e.target)) {
+        setCoursesDropdownOpen(false);
+      }
+    };
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setCareersDropdownOpen(false);
+        setCoursesDropdownOpen(false);
+        setMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+      if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+      if (coursesDropdownTimeoutRef.current) clearTimeout(coursesDropdownTimeoutRef.current);
+    };
+  }, []);
+
+  const handleLinkClick = (e, link) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    setCareersDropdownOpen(false);
+
+    if (link.path === "/courses") {
+      if (onNavigate) onNavigate("/courses");
+    } else if (link.path === "/center-of-excellence") {
+      if (onNavigate) onNavigate("/center-of-excellence");
+    } else if (link.path === "/careers") {
+      if (onNavigate) onNavigate("/careers");
+    } else if (link.path === "/about-us") {
+      if (onNavigate) onNavigate("/about-us");
+    } else if (link.path === "/contact-us") {
+      if (onNavigate) onNavigate("/contact-us");
+    } else {
+      if (isCoEPage || isCareersPage || isInternshipsPage || isHackathonsPage || isCoursesPage || isAboutPage || isContactPage || isApplyPage) {
+        if (onNavigate) {
+          onNavigate("/");
+          if (link.targetId && link.targetId !== "home") {
+            setTimeout(() => {
+              const target = document.getElementById(link.targetId);
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+              }
+            }, 80);
+          }
+        }
+      } else {
+        const target = document.getElementById(link.targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        }
+      }
+    }
+  };
+
+  const handleSearchClick = () => {
+    if (isCoursesPage) {
+      const input = document.getElementById("course-search-input");
+      if (input) {
+        input.focus();
+        input.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    } else if (isCareersPage) {
+      const input = document.getElementById("careers-search-input");
+      if (input) {
+        input.focus();
+        input.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    } else if (isApplyPage) {
+      const input = document.getElementById("opp-keyword-input");
+      if (input) {
+        input.focus();
+        input.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    } else {
+      if (onNavigate) {
+        onNavigate("/courses");
+      }
+    }
+  };
+
+  return (
+    <header className={`navbar-floating-wrapper ${scrolled ? "scrolled" : ""}`}>
+      <div className="navbar-pill-container">
+        {/* Left: InGage EduTech Brand Lockup */}
+        <a
+          href="/"
+          className="navbar-brand"
+          aria-label="InGage EduTech Home"
+          onClick={(e) => {
+            e.preventDefault();
+            if (onNavigate) onNavigate("/");
+            else window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          <BrandLogo />
+        </a>
+
+        {/* Center: Desktop Navigation Links */}
+        <nav className="navbar-nav-center" aria-label="Main Navigation">
+          {navLinks.map((link) => {
+            // Dropdown Menu Item (Courses)
+            if (link.key === "courses") {
+              return (
+                <div
+                  key={link.key}
+                  className="nav-dropdown-wrapper"
+                  ref={coursesDropdownRef}
+                  onMouseEnter={handleMouseEnterCourses}
+                  onMouseLeave={handleMouseLeaveCourses}
+                >
+                  <button
+                    type="button"
+                    className={`nav-pill-link nav-dropdown-trigger ${isCoursesPage ? "nav-pill-active" : ""} ${coursesDropdownOpen ? "dropdown-open" : ""}`}
+                    onClick={() => setCoursesDropdownOpen((prev) => !prev)}
+                    aria-expanded={coursesDropdownOpen}
+                    aria-haspopup="true"
+                    aria-label={`${link.label} menu`}
+                  >
+                    <span className="nav-link-dropdown-label">
+                      <span>{link.label}</span>
+                      <ChevronDown
+                        size={13}
+                        className={`nav-dropdown-chevron ${coursesDropdownOpen ? "chevron-rotated" : ""}`}
+                        aria-hidden="true"
+                      />
+                    </span>
+                    {isCoursesPage && <span className="nav-active-bar" aria-hidden="true" />}
+                  </button>
+
+                  {/* Floating Courses Dropdown Menu */}
+                  <div
+                    className={`nav-dropdown-menu courses-dropdown-menu ${coursesDropdownOpen ? "dropdown-visible" : ""}`}
+                    role="menu"
+                    aria-label="Courses Dropdown"
+                  >
+                    <div className="nav-dropdown-inner">
+                      {/* Dropdown Header */}
+                      <div className="nav-dropdown-header">
+                        <div className="nav-dropdown-header-left">
+                          <span className="nav-dropdown-kicker">CERTIFIED PATHWAYS</span>
+                          <span className="nav-dropdown-header-title">Industry & Academic Certifications</span>
+                        </div>
+                        <span className="nav-dropdown-verified-pill">
+                          <span className="verified-dot" aria-hidden="true" /> Dual Tracks
+                        </span>
+                      </div>
+
+                      <div className="nav-dropdown-items-stack">
+                        {coursesDropdownItems.map((item) => {
+                          const IconComp = item.icon;
+                          const isItemActive = isCoursesPage && selectedCourseType === item.key;
+                          return (
+                            <a
+                              key={item.key}
+                              href={item.path}
+                              className={`nav-dropdown-item ${isItemActive ? "item-active" : ""}`}
+                              onClick={(e) => handleCourseItemClick(e, item)}
+                              role="menuitem"
+                            >
+                              <div className={`nav-dropdown-icon-box icon-box-${item.key}`}>
+                                <IconComp size={15} className="nav-item-icon" />
+                              </div>
+                              <div className="nav-dropdown-content">
+                                <div className="nav-dropdown-title-row">
+                                  <span className="nav-dropdown-item-title">{item.label}</span>
+                                  {item.badge && (
+                                    <span className={`nav-dropdown-badge badge-${item.badgeType || item.key}`}>
+                                      {item.badgeType === "live-emerald" && <span className="pulse-dot green" aria-hidden="true" />}
+                                      <span>{item.badge}</span>
+                                    </span>
+                                  )}
+                                </div>
+                                <span className="nav-dropdown-item-desc">{item.desc}</span>
+                              </div>
+                              <div className="nav-dropdown-arrow-wrap" aria-hidden="true">
+                                <ArrowRight size={13} className="nav-dropdown-arrow" />
+                              </div>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            // Dropdown Menu Item (Careers)
+            if (link.key === "careers") {
+              return (
+                <div
+                  key={link.key}
+                  className="nav-dropdown-wrapper"
+                  ref={dropdownRef}
+                  onMouseEnter={handleMouseEnterCareers}
+                  onMouseLeave={handleMouseLeaveCareers}
+                >
+                  <button
+                    type="button"
+                    className={`nav-pill-link nav-dropdown-trigger ${isAnyCareerActive ? "nav-pill-active" : ""} ${careersDropdownOpen ? "dropdown-open" : ""}`}
+                    onClick={() => setCareersDropdownOpen((prev) => !prev)}
+                    aria-expanded={careersDropdownOpen}
+                    aria-haspopup="true"
+                    aria-label={`${link.label} menu`}
+                  >
+                    <span className="nav-link-dropdown-label">
+                      <span>{link.label}</span>
+                      <ChevronDown
+                        size={13}
+                        className={`nav-dropdown-chevron ${careersDropdownOpen ? "chevron-rotated" : ""}`}
+                        aria-hidden="true"
+                      />
+                    </span>
+                    {isAnyCareerActive && <span className="nav-active-bar" aria-hidden="true" />}
+                  </button>
+
+                  {/* Floating Mega Dropdown Menu */}
+                  <div
+                    className={`nav-dropdown-menu ${careersDropdownOpen ? "dropdown-visible" : ""}`}
+                    role="menu"
+                    aria-label="Careers & Pathways Dropdown"
+                  >
+                    <div className="nav-dropdown-inner">
+                      {/* Dropdown Header */}
+                      <div className="nav-dropdown-header">
+                        <div className="nav-dropdown-header-left">
+                          <span className="nav-dropdown-kicker">GROWTH & PATHWAYS</span>
+                          <span className="nav-dropdown-header-title">Opportunities for Students & Engineers</span>
+                        </div>
+                        <span className="nav-dropdown-verified-pill">
+                          <span className="verified-dot" aria-hidden="true" /> Verified Hub
+                        </span>
+                      </div>
+
+                      <div className="nav-dropdown-items-stack">
+                        {careerDropdownItems.map((item) => {
+                          const IconComp = item.icon;
+                          return (
+                            <a
+                              key={item.key}
+                              href={item.path}
+                              className={`nav-dropdown-item ${item.isActive ? "item-active" : ""}`}
+                              onClick={(e) => handleSubItemClick(e, item.path)}
+                              role="menuitem"
+                            >
+                              <div className={`nav-dropdown-icon-box icon-box-${item.key}`}>
+                                <IconComp size={15} className="nav-item-icon" />
+                              </div>
+                              <div className="nav-dropdown-content">
+                                <div className="nav-dropdown-title-row">
+                                  <span className="nav-dropdown-item-title">{item.label}</span>
+                                  {item.badge && (
+                                    <span className={`nav-dropdown-badge badge-${item.badgeType || item.key}`}>
+                                      {item.badgeType === "live-emerald" && <span className="pulse-dot green" aria-hidden="true" />}
+                                      {item.badgeType === "subtle-purple" && <span className="pulse-dot purple" aria-hidden="true" />}
+                                      <span>{item.badge}</span>
+                                    </span>
+                                  )}
+                                </div>
+                                <span className="nav-dropdown-item-desc">{item.desc}</span>
+                              </div>
+                              <div className="nav-dropdown-arrow-wrap" aria-hidden="true">
+                                <ArrowRight size={13} className="nav-dropdown-arrow" />
+                              </div>
+                            </a>
+                          );
+                        })}
+                      </div>
+
+                      {/* Dropdown Bottom Quick Callout */}
+                      <div
+                        className="nav-dropdown-footer-interactive"
+                        onClick={(e) => handleSubItemClick(e, "/apply")}
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") handleSubItemClick(e, "/apply");
+                        }}
+                      >
+                        <div className="nav-dropdown-footer-left">
+                          <div className="nav-dropdown-footer-icon-pill">
+                            <Sparkles size={12} />
+                          </div>
+                          <div className="nav-dropdown-footer-texts">
+                            <span className="nav-dropdown-footer-title">Placement & Hiring Support</span>
+                            <span className="nav-dropdown-footer-sub">Portfolio reviews & hiring referrals</span>
+                          </div>
+                        </div>
+                        <span className="nav-dropdown-footer-cta">
+                          <span>Apply</span>
+                          <ArrowRight size={11} />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            const isActive =
+              (link.path === "/courses" && isCoursesPage) ||
+              (link.path === "/center-of-excellence" && isCoEPage) ||
+              (link.path === "/about-us" && isAboutPage) ||
+              (link.path === "/contact-us" && isContactPage) ||
+              (link.path === "/" && !isCoEPage && !isCareersPage && !isInternshipsPage && !isHackathonsPage && !isCoursesPage && !isAboutPage && !isContactPage && !isApplyPage && link.targetId === "home");
+
+            return (
+              <a
+                key={link.key}
+                href={link.path !== "/" ? link.path : `#${link.targetId}`}
+                className={`nav-pill-link ${isActive ? "nav-pill-active" : ""}`}
+                onClick={(e) => handleLinkClick(e, link)}
+              >
+                <span className="nav-link-text">{link.label}</span>
+                {isActive && <span className="nav-active-bar" aria-hidden="true" />}
+              </a>
+            );
+          })}
+        </nav>
+
+        {/* Right: Search Action + Login Button */}
+        <div className="navbar-right-actions">
+          <button
+            type="button"
+            className="nav-search-icon-btn"
+            onClick={handleSearchClick}
+            aria-label={t("navbar.search", { defaultValue: "Search courses and opportunities" })}
+            title={t("navbar.search", { defaultValue: "Search" })}
+          >
+            <Search size={18} />
+          </button>
+
+          <button
+            type="button"
+            className="nav-login-btn"
+            aria-label="Login"
+          >
+            <span>Login</span>
+          </button>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            className={`hamburger-btn ${mobileMenuOpen ? "open" : ""}`}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation Drawer */}
+      <div className={`mobile-nav-drawer ${mobileMenuOpen ? "drawer-open" : ""}`}>
+        <div className="mobile-nav-inner">
+          <nav className="mobile-nav-links">
+            {navLinks.map((link) => {
+              if (link.key === "courses") {
+                return (
+                  <div key={link.key} className="mobile-nav-accordion-group">
+                    <button
+                      type="button"
+                      className={`mobile-nav-link mobile-nav-accordion-btn ${isCoursesPage ? "nav-link-active" : ""}`}
+                      onClick={() => setMobileCoursesOpen((prev) => !prev)}
+                      aria-expanded={mobileCoursesOpen}
+                    >
+                      <span className="mobile-nav-btn-text">
+                        <GraduationCap size={15} className="mobile-nav-prefix-icon" />
+                        <span>{link.label}</span>
+                      </span>
+                      <ChevronDown
+                        size={16}
+                        className={`mobile-accordion-chevron ${mobileCoursesOpen ? "chevron-open" : ""}`}
+                      />
+                    </button>
+
+                    <div className={`mobile-subnav-panel ${mobileCoursesOpen ? "panel-expanded" : ""}`}>
+                      {coursesDropdownItems.map((item) => {
+                        const ItemIcon = item.icon;
+                        const isItemActive = isCoursesPage && selectedCourseType === item.key;
+                        return (
+                          <a
+                            key={item.key}
+                            href={item.path}
+                            className={`mobile-subnav-item ${isItemActive ? "subnav-item-active" : ""}`}
+                            onClick={(e) => handleCourseItemClick(e, item)}
+                          >
+                            <div className={`mobile-subnav-icon-badge icon-box-${item.key}`}>
+                              <ItemIcon size={16} />
+                            </div>
+                            <div className="mobile-subnav-text-block">
+                              <div className="mobile-subnav-title-row">
+                                <span className="mobile-subnav-title">{item.label}</span>
+                                {item.badge && (
+                                  <span className={`mobile-subnav-badge badge-${item.badgeType || item.key}`}>
+                                    {item.badge}
+                                  </span>
+                                )}
+                              </div>
+                              <span className="mobile-subnav-desc">{item.desc}</span>
+                            </div>
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              }
+
+              if (link.key === "careers") {
+                return (
+                  <div key={link.key} className="mobile-nav-accordion-group">
+                    <button
+                      type="button"
+                      className={`mobile-nav-link mobile-nav-accordion-btn ${isAnyCareerActive ? "nav-link-active" : ""}`}
+                      onClick={() => setMobileCareersOpen((prev) => !prev)}
+                      aria-expanded={mobileCareersOpen}
+                    >
+                      <span className="mobile-nav-btn-text">
+                        <Briefcase size={15} className="mobile-nav-prefix-icon" />
+                        <span>{link.label}</span>
+                      </span>
+                      <ChevronDown
+                        size={16}
+                        className={`mobile-accordion-chevron ${mobileCareersOpen ? "chevron-open" : ""}`}
+                      />
+                    </button>
+
+                    <div className={`mobile-subnav-panel ${mobileCareersOpen ? "panel-expanded" : ""}`}>
+                      {careerDropdownItems.map((item) => {
+                        const ItemIcon = item.icon;
+                        return (
+                          <a
+                            key={item.key}
+                            href={item.path}
+                            className={`mobile-subnav-item ${item.isActive ? "subnav-item-active" : ""}`}
+                            onClick={(e) => handleSubItemClick(e, item.path)}
+                          >
+                            <div className={`mobile-subnav-icon-badge icon-box-${item.key}`}>
+                              <ItemIcon size={16} />
+                            </div>
+                            <div className="mobile-subnav-text-block">
+                              <div className="mobile-subnav-title-row">
+                                <span className="mobile-subnav-title">{item.label}</span>
+                                {item.badge && (
+                                  <span className={`mobile-subnav-badge badge-${item.badgeType || item.key}`}>
+                                    {item.badge}
+                                  </span>
+                                )}
+                              </div>
+                              <span className="mobile-subnav-desc">{item.desc}</span>
+                            </div>
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              }
+
+              const isActive =
+                (link.path === "/courses" && isCoursesPage) ||
+                (link.path === "/center-of-excellence" && isCoEPage) ||
+                (link.path === "/about-us" && isAboutPage) ||
+                (link.path === "/contact-us" && isContactPage) ||
+                (link.path === "/" && !isCoEPage && !isCareersPage && !isInternshipsPage && !isHackathonsPage && !isCoursesPage && !isAboutPage && !isContactPage && !isApplyPage && link.targetId === "home");
+
+              return (
+                <a
+                  key={link.key}
+                  href={link.path !== "/" ? link.path : `#${link.targetId}`}
+                  className={`mobile-nav-link ${isActive ? "nav-link-active" : ""}`}
+                  onClick={(e) => handleLinkClick(e, link)}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
+          </nav>
+
+          <div className="mobile-nav-bottom-cta">
+            <button
+              type="button"
+              className="btn btn-primary mobile-login-btn"
+              aria-label="Login"
+            >
+              <span>Login</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}

@@ -1,0 +1,201 @@
+.audience {
+  padding: 120px 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-tag {
+  color: #f58760;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 800;
+  color: #1a1d2d;
+  letter-spacing: -1.5px;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+.section-heading p {
+  margin-top: 16px;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.audience-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.audience-card {
+  padding: 36px 28px;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.audience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.student-card {
+  background: linear-gradient(180deg, #fff3ee 0%, #ffeae0 100%);
+}
+
+.teacher-card {
+  background: linear-gradient(180deg, #f0f7ff 0%, #e1effe 100%);
+}
+
+.school-card {
+  background: linear-gradient(180deg, #f7f3ff 0%, #ede5ff 100%);
+}
+
+.parent-card {
+  background: linear-gradient(180deg, #edfbf5 0%, #d8f5e7 100%);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.card-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.audience-card:hover .card-icon-wrap {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.card-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #4b5563;
+}
+
+.audience-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1d2d;
+  margin-bottom: 12px;
+}
+
+.audience-card p {
+  color: #5c6074;
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-features li {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-features li::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  font-size: 10px;
+  font-weight: 900;
+  color: inherit;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.card-cta-btn {
+  background: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.card-cta-btn:hover {
+  transform: translateX(4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 1080px) {
+  .audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .audience {
+    padding: 80px 20px;
+  }
+  .audience-grid {
+    grid-template-columns: 1fr;
+  }
+}

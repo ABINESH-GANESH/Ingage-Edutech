@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 70" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap');
+      .txt-in { font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif; font-size: 32px; font-weight: 700; fill: #1E242B; letter-spacing: -1.2px; }
+      .txt-gage { font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif; font-size: 32px; font-weight: 700; fill: #76B82A; letter-spacing: -1.2px; }
+      .txt-edutech { font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif; font-size: 30px; font-weight: 800; fill: #15428F; letter-spacing: -0.8px; }
+    </style>
+  </defs>
+  <!-- Top Line: in (dark charcoal) + gage (vibrant lime green) -->
+  <text x="2" y="28">
+    <tspan class="txt-in">in</tspan><tspan class="txt-gage">gage</tspan>
+  </text>
+  <!-- Bottom Line: EduTech (deep brand navy) -->
+  <text x="2" y="60" class="txt-edutech">EduTech</text>
+  <!-- Green dot inside 'c' -->
+  <circle cx="119.5" cy="49" r="3.2" fill="#76B82A" />
+</svg>

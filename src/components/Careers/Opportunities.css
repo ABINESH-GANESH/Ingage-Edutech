@@ -1,0 +1,297 @@
+/* ==========================================================================
+   InGage Careers Experience - Opportunities Section (Horizontal Card Grid)
+   ========================================================================== */
+
+.opportunities-section {
+  padding: 84px 0 96px;
+  background-color: var(--bg-page);
+}
+
+.opportunities-header-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.opportunities-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-subtle);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-xs);
+}
+
+.count-num {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--brand-green-dark);
+}
+
+.count-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+/* 1. Horizontal Grid of Cards */
+.opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+/* 2. Opportunity Card */
+.opportunity-grid-card {
+  position: relative;
+  background: var(--bg-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease;
+  outline: none;
+}
+
+.opportunity-grid-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, var(--brand-navy) 0%, var(--brand-green) 100%);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  opacity: 0.85;
+  transition: height 0.25s ease, opacity 0.25s ease;
+}
+
+.opportunity-grid-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--brand-navy);
+  box-shadow: 0 16px 36px -6px rgba(21, 66, 143, 0.14);
+}
+
+.opportunity-grid-card:hover::before {
+  height: 5px;
+  opacity: 1;
+}
+
+/* 3. Card Header & Title */
+.opp-card-header {
+  margin-bottom: 18px;
+}
+
+.opp-badge-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.opp-dept-pill {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--brand-navy-light);
+  color: var(--brand-navy);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.opp-level-pill {
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--bg-subtle);
+  color: var(--color-secondary);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.opp-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--color-primary);
+  line-height: 1.3;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.opportunity-grid-card:hover .opp-card-title {
+  color: var(--brand-navy);
+}
+
+/* 4. Meta List */
+.opp-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.opp-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--color-secondary);
+}
+
+.opp-meta-icon {
+  color: var(--brand-navy);
+  flex-shrink: 0;
+}
+
+/* 5. Skills Strip */
+.opp-skills-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.opp-skill-tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+}
+
+.opp-skill-more {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--brand-navy);
+  background: var(--brand-navy-light);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+/* 6. Card Footer Button */
+.opp-card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.btn-view-role-grid {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--brand-navy);
+  padding: 11px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-navy-light);
+  border: 1px solid rgba(21, 66, 143, 0.16);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.opportunity-grid-card:hover .btn-view-role-grid {
+  background: var(--brand-navy);
+  color: #ffffff;
+  border-color: var(--brand-navy);
+  box-shadow: 0 4px 12px rgba(21, 66, 143, 0.25);
+}
+
+.view-role-arrow {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.opportunity-grid-card:hover .view-role-arrow {
+  transform: translateX(4px);
+}
+
+/* 7. Empty State */
+.opportunities-empty-state {
+  background: var(--bg-white);
+  border: 2px dashed var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 56px 24px;
+  text-align: center;
+  max-width: 600px;
+  margin: 32px auto 0;
+}
+
+.empty-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--brand-navy-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.empty-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.empty-desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  margin-bottom: 24px;
+}
+
+.empty-reset-btn {
+  font-size: 14px;
+}
+
+/* 8. Responsive Breakpoints */
+@media (max-width: 1080px) {
+  .opportunities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 680px) {
+  .opportunities-section {
+    padding: 60px 0 70px;
+  }
+  .opportunities-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .opportunities-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .opportunity-grid-card {
+    padding: 22px 18px 20px;
+  }
+}
+

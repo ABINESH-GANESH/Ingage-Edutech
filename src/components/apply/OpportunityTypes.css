@@ -1,0 +1,75 @@
+/* ==========================================================================
+   InGage Apply Now Portal - Opportunity Types Filter Bar
+   ========================================================================== */
+
+.opportunity-types-wrapper {
+  position: sticky;
+  top: 76px;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 14px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.opportunity-types-pill-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 2px 0;
+}
+
+.opportunity-types-pill-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.opp-type-pill-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-subtle);
+  color: var(--color-secondary);
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.opp-type-pill-btn:hover {
+  color: var(--brand-navy);
+  border-color: var(--brand-navy);
+  background: var(--bg-subtle);
+}
+
+.opp-type-pill-btn.active {
+  background: var(--brand-navy);
+  border-color: var(--brand-navy);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(21, 66, 143, 0.25);
+}
+
+.opp-pill-count {
+  font-size: 10.5px;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.06);
+  color: inherit;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+}
+
+.opp-type-pill-btn.active .opp-pill-count {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}

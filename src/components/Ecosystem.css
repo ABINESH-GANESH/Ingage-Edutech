@@ -1,0 +1,394 @@
+.ecosystem-root {
+  background-color: #ffffff;
+  padding: 88px 0 96px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+/* Partnership Lockup Banner */
+.ecosystem-partnership-banner {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 32px 36px 28px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 6px 24px -6px rgba(15, 23, 42, 0.05);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.partnership-logos-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.partner-logo-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+}
+
+.ingage-logo-img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.04));
+  transition: transform 0.2s ease;
+}
+
+.tnskill-logo-img,
+.naan-logo-img {
+  height: 62px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.04));
+  transition: transform 0.2s ease;
+}
+
+.partnership-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 0 8px;
+}
+
+.bridge-icon {
+  font-size: 13px;
+  font-weight: 900;
+  color: #94a3b8;
+}
+
+.bridge-label {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+/* Badge cluster inside banner */
+.ecosystem-badge-cluster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.eco-partner-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--brand-navy);
+  background-color: var(--brand-navy-light);
+  border: 1px solid rgba(21, 66, 143, 0.18);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.pill-star {
+  color: #f59e0b;
+}
+
+.eco-scale-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--brand-green-dark);
+  background-color: var(--brand-green-light);
+  border: 1px solid rgba(128, 188, 0, 0.25);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.pill-dot-green {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--brand-green);
+  box-shadow: 0 0 6px var(--brand-green);
+}
+
+/* 3 Pillars Grid */
+.ecosystem-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+  align-items: stretch;
+}
+
+.eco-pillar-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 32px 28px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              background-color 0.25s ease;
+  position: relative;
+}
+
+.eco-pillar-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
+  background-color: #ffffff;
+}
+
+.eco-card-featured {
+  border-color: rgba(21, 66, 143, 0.25);
+  background-color: #ffffff;
+}
+
+.eco-card-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.eco-pillar-index {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--brand-navy);
+  background: rgba(21, 66, 143, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.card-corner-logo {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+
+.card-partner-logos-cluster {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.mini-logo-pill {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mini-logo-pill:hover {
+  transform: translateY(-2px);
+  border-color: #94a3b8;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.08);
+}
+
+.card-metrics-callout {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.card-metrics-callout strong {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: #85c300;
+}
+
+.card-metrics-callout span {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+.eco-pillar-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
+}
+
+.eco-pillar-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #475569;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.eco-card-tag-strip {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.eco-card-tag {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #334155;
+  background: #f1f5f9;
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+
+/* Responsive Viewport Breakpoints */
+
+/* Tablet : 768px – 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+  .ecosystem-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .ecosystem-partnership-banner {
+    padding: 26px 24px;
+  }
+  .partnership-logos-row {
+    gap: 24px;
+  }
+}
+
+/* Large Mobile : 576px – 767px */
+@media (min-width: 576px) and (max-width: 767px) {
+  .ecosystem-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .ecosystem-partnership-banner {
+    padding: 22px 18px;
+  }
+  .partnership-logos-row {
+    gap: 18px;
+  }
+  .ingage-logo-img {
+    height: 48px;
+  }
+  .tnskill-logo-img {
+    height: 52px;
+  }
+}
+
+/* Mobile : 375px – 575px */
+@media (min-width: 375px) and (max-width: 575px) {
+  .ecosystem-root {
+    padding: 48px 0 56px 0;
+  }
+  .ecosystem-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .ecosystem-partnership-banner {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+  .partnership-logos-row {
+    gap: 14px;
+  }
+  .partner-logo-frame {
+    height: 54px;
+  }
+  .ingage-logo-img {
+    height: 42px;
+  }
+  .tnskill-logo-img {
+    height: 46px;
+  }
+  .bridge-label {
+    font-size: 8.5px;
+  }
+  .ecosystem-badge-cluster {
+    gap: 8px;
+  }
+  .eco-partner-pill,
+  .eco-scale-pill {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+}
+
+/* Small Mobile : 320px – 374px */
+@media (max-width: 374px) {
+  .ecosystem-root {
+    padding: 36px 0 44px 0;
+  }
+  .ecosystem-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .ecosystem-partnership-banner {
+    padding: 16px 12px;
+    border-radius: 14px;
+  }
+  .partnership-logos-row {
+    gap: 10px;
+  }
+  .partner-logo-frame {
+    height: 46px;
+  }
+  .ingage-logo-img {
+    height: 36px;
+  }
+  .tnskill-logo-img {
+    height: 40px;
+  }
+  .bridge-icon {
+    font-size: 10px;
+  }
+  .bridge-label {
+    font-size: 7.5px;
+  }
+  .ecosystem-badge-cluster {
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+  }
+  .eco-partner-pill,
+  .eco-scale-pill {
+    width: 100%;
+    justify-content: center;
+    font-size: 9.5px;
+    padding: 4px 8px;
+  }
+  .eco-pillar-card {
+    padding: 20px 16px;
+  }
+  .eco-pillar-title {
+    font-size: 16.5px;
+  }
+  .eco-pillar-desc {
+    font-size: 13px;
+  }
+}

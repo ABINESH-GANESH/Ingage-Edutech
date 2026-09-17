@@ -1,0 +1,138 @@
+.intern-domains-section {
+  padding: 96px 0;
+  background-color: var(--bg-page);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.intern-domains-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.domain-card {
+  background: var(--bg-white);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.domain-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-navy);
+  box-shadow: var(--shadow-md);
+}
+
+/* Featured Asymmetric Span */
+.domain-card-featured {
+  grid-column: span 2;
+}
+
+.domain-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.domain-card-featured .domain-card-img-wrap {
+  height: 240px;
+}
+
+.domain-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.domain-card:hover .domain-card-img {
+  transform: scale(1.05);
+}
+
+.domain-card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.domain-card-body {
+  padding: 24px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.domain-card-title {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.domain-card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.domain-card-footer {
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+}
+
+.domain-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--brand-navy);
+  transition: all 0.2s ease;
+}
+
+.domain-card:hover .domain-link-btn {
+  color: var(--brand-green-dark);
+  gap: 9px;
+}
+
+@media (max-width: 960px) {
+  .intern-domains-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .domain-card-featured {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .intern-domains-grid {
+    grid-template-columns: 1fr;
+  }
+  .domain-card-featured {
+    grid-column: span 1;
+  }
+  .domain-card-img-wrap {
+    height: 180px;
+  }
+}

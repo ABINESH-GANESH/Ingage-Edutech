@@ -1,0 +1,125 @@
+.life-at-ingage-section {
+  padding: 80px 0;
+  background-color: var(--bg-white);
+}
+
+.life-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.life-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.life-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: #cbd5e1;
+}
+
+.life-card-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.life-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.life-card:hover .life-card-img {
+  transform: scale(1.05);
+}
+
+.life-card-tag-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.life-card-icon {
+  color: var(--brand-green);
+}
+
+.life-card-content {
+  padding: 26px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.life-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.life-card-desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--color-secondary);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.life-card-footer {
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+}
+
+.life-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--brand-navy);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.life-card:hover .life-card-link {
+  color: var(--brand-green-dark);
+  gap: 8px;
+}
+
+@media (max-width: 992px) {
+  .life-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+  .life-card-img-wrapper {
+    height: 220px;
+  }
+}
