@@ -38,7 +38,7 @@ export default function CenterOfExcellence({ onNavigate }) {
                   src={tech.image}
                   alt={`${tech.name} Lab`}
                   className="coe-card-img"
-                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="coe-img-overlay">
                   <span className="coe-badge-sub">{tech.sub}</span>

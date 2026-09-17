@@ -45,7 +45,7 @@ export default function CareerCategories({ onSelectCategory }) {
           style={{
             transform: `scale(${scaleZoom}) translateY(${parallaxY}px)`,
           }}
-          loading="lazy"
+          decoding="async"
         />
         <div className="career-cat-bg-overlay" />
         <div className="career-cat-grid-lines" />
@@ -89,7 +89,7 @@ export default function CareerCategories({ onSelectCategory }) {
                   src={cat.image}
                   alt={cat.title}
                   className="cat-card-img"
-                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="cat-card-img-overlay" />
                 

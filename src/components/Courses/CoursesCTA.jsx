@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, ArrowRight, Mail, ArrowUpRight } from "lucide-react";
+import { Sparkles, ArrowRight, Mail } from "lucide-react";
 import "./CoursesCTA.css";
 
 export default function CoursesCTA({ onExploreTracks }) {

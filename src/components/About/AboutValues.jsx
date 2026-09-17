@@ -1,15 +1,13 @@
 import React from "react";
 import {
   Heart,
-  Sparkles,
   Lightbulb,
   Wrench,
   Users,
   ShieldCheck,
   TrendingUp,
+  Sparkles,
   CheckCircle2,
-  Cpu,
-  Layers,
 } from "lucide-react";
 import { coreValuesList } from "../../data/aboutData";
 import "./AboutValues.css";

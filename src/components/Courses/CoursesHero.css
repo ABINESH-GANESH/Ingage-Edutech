@@ -6,8 +6,10 @@
   position: relative;
   padding: 124px 0 68px;
   background: linear-gradient(180deg, #ffffff 0%, #f8fafc 60%, var(--bg-page) 100%);
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: none;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .courses-hero-grid-bg {
@@ -135,12 +137,19 @@
   grid-template-columns: 1.28fr 1fr;
   gap: 52px;
   align-items: center;
+  width: 100%;
 }
 
 /* Left Content */
 .courses-hero-content {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  width: 100%;
+}
+
+.hero-desktop-br {
+  display: inline;
 }
 
 .courses-eyebrow-brand {
@@ -170,6 +179,8 @@
   color: var(--color-primary);
   margin-bottom: 18px;
   text-transform: uppercase;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .title-line {
@@ -181,7 +192,10 @@
   line-height: 1.68;
   color: var(--color-secondary);
   max-width: 580px;
+  width: 100%;
   margin-bottom: 30px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .courses-hero-actions {
@@ -239,6 +253,8 @@
   -webkit-backdrop-filter: blur(10px);
   overflow: hidden;
   max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .marquee-lead-label {
@@ -313,6 +329,8 @@
 .courses-hero-meta-side {
   display: flex;
   justify-content: flex-end;
+  min-width: 0;
+  width: 100%;
 }
 
 .courses-stat-card {
@@ -324,6 +342,7 @@
   box-shadow: 0 24px 50px -12px rgba(15, 23, 42, 0.12), 0 0 1px rgba(0, 0, 0, 0.08);
   width: 100%;
   max-width: 440px;
+  box-sizing: border-box;
   overflow: hidden;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -616,16 +635,18 @@
   }
 }
 
+/* Tablet / Small Desktop : 768px – 1024px */
 @media (max-width: 1024px) {
   .courses-hero-root {
-    padding: 110px 0 60px;
+    padding: 104px 0 54px;
   }
   .courses-hero-layout {
     grid-template-columns: 1fr;
-    gap: 44px;
+    gap: 40px;
   }
   .courses-hero-meta-side {
     justify-content: flex-start;
+    width: 100%;
   }
   .courses-stat-card {
     max-width: 100%;
@@ -635,25 +656,221 @@
   }
 }
 
-@media (max-width: 540px) {
+/* Large Mobile : 576px – 767px */
+@media (max-width: 767px) {
+  .courses-hero-root {
+    padding: 94px 0 44px;
+  }
+  .courses-hero-title {
+    font-size: clamp(26px, 5.5vw, 36px);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .courses-hero-description {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+  .courses-hero-actions {
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .courses-hero-marquee-wrap {
+    max-width: 100%;
+  }
+}
+
+/* Mobile : 375px – 575px */
+@media (max-width: 575px) {
+  .courses-hero-root {
+    padding: 84px 0 36px;
+  }
+  .hero-desktop-br {
+    display: none;
+  }
+  .courses-hero-badge-wrap {
+    margin-bottom: 12px;
+  }
+  .courses-eyebrow-brand {
+    font-size: 10.5px !important;
+    padding: 3px 10px !important;
+    max-width: 100%;
+  }
+  .courses-hero-title {
+    font-size: clamp(22px, 6.4vw, 27px);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    margin-bottom: 14px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .courses-hero-description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
   .courses-hero-actions {
     flex-direction: column;
     width: 100%;
+    gap: 10px;
+    margin-bottom: 24px;
   }
   .courses-hero-btn-primary,
   .courses-hero-btn-secondary {
     width: 100%;
     justify-content: center;
+    padding: 12px 20px;
+    font-size: 13.5px;
+    box-sizing: border-box;
+  }
+  .courses-hero-marquee-wrap {
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .marquee-lead-label {
+    font-size: 9px;
+    margin-bottom: 6px;
+  }
+  .marquee-pill-badge {
+    padding: 4px 10px;
+    gap: 5px;
+  }
+  .marquee-pill-icon {
+    width: 14px;
+    height: 14px;
+  }
+  .marquee-pill-text {
+    font-size: 10.5px;
   }
   .courses-stat-card {
-    padding: 24px 18px;
+    padding: 20px 16px;
+    border-radius: var(--radius-xl);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .stat-card-top {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .stat-number-box {
+    width: 54px;
+    height: 54px;
+    border-radius: var(--radius-md);
+  }
+  .stat-number-val {
+    font-size: 26px;
+  }
+  .stat-label-title {
+    font-size: 15.5px;
+  }
+  .stat-label-sub {
+    font-size: 11.5px;
+  }
+  .hero-track-showcase-box {
+    padding: 12px;
+    border-radius: var(--radius-lg);
+    margin-bottom: 16px;
+  }
+  .hero-track-icon-row {
+    gap: 4px;
+    margin-bottom: 12px;
+    justify-content: space-between;
   }
   .hero-track-circle-btn {
-    width: 38px;
-    height: 38px;
+    width: clamp(34px, 8.5vw, 42px);
+    height: clamp(34px, 8.5vw, 42px);
+    flex-shrink: 0;
   }
   .track-circle-icon {
+    width: clamp(16px, 4.2vw, 20px);
+    height: clamp(16px, 4.2vw, 20px);
+  }
+  .hero-active-track-panel {
+    padding: 12px;
+  }
+  .active-track-tag {
+    font-size: 9px;
+  }
+  .active-track-name {
+    font-size: 14px;
+  }
+  .active-track-icon-badge {
+    width: 30px;
+    height: 30px;
+  }
+  .active-badge-svg {
     width: 18px;
     height: 18px;
+  }
+  .active-track-skill-chip {
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+  .stat-card-divider {
+    margin: 14px 0 14px;
+  }
+  .stat-card-features {
+    gap: 10px;
+  }
+  .stat-feature-item {
+    font-size: 12px;
+    gap: 10px;
+  }
+}
+
+/* Small Mobile : 320px – 374px */
+@media (max-width: 374px) {
+  .courses-hero-root {
+    padding: 76px 0 30px;
+  }
+  .courses-hero-title {
+    font-size: clamp(19px, 5.8vw, 22px);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  .courses-hero-description {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .courses-hero-btn-primary,
+  .courses-hero-btn-secondary {
+    padding: 10px 16px;
+    font-size: 12.5px;
+  }
+  .hero-track-circle-btn {
+    width: 32px;
+    height: 32px;
+  }
+  .track-circle-icon {
+    width: 15px;
+    height: 15px;
+  }
+  .stat-number-box {
+    width: 46px;
+    height: 46px;
+  }
+  .stat-number-val {
+    font-size: 22px;
+  }
+  .stat-label-title {
+    font-size: 14px;
+  }
+  .stat-label-sub {
+    font-size: 10.5px;
+  }
+  .courses-stat-card {
+    padding: 16px 12px;
+  }
+  .hero-track-showcase-box {
+    padding: 10px;
+  }
+  .hero-active-track-panel {
+    padding: 10px;
   }
 }

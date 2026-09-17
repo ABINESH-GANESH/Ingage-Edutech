@@ -1,6 +1,6 @@
 import React from "react";
 import { whoIsThisFor } from "../../data/internshipData";
-import { Users, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import "./InternshipEligibility.css";
 
 export default function InternshipEligibility() {

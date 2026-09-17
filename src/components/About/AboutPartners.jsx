@@ -1,5 +1,5 @@
 import React from "react";
-import { ShieldCheck, Check } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { verifiedPartnersList } from "../../data/aboutData";
 import "./AboutPartners.css";
 
@@ -27,7 +27,7 @@ export default function AboutPartners() {
                   src={partner.logo}
                   alt={`${partner.name} Official Logo`}
                   className="about-partner-svg"
-                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 

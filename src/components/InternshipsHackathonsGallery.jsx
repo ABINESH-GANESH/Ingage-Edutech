@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, Trophy, Award, CheckCircle2, Shield, Sparkles } from "lucide-react";
+import { ArrowRight, Trophy, Shield, Sparkles } from "lucide-react";
 import { approvedData } from "../data/approvedData";
 import "./InternshipsHackathonsGallery.css";
 

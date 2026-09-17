@@ -2,7 +2,34 @@ import { approvedData } from "../data/approvedData";
 import "./Ecosystem.css";
 
 export default function Ecosystem() {
-  const { ecosystem } = approvedData;
+  const ecosystem = approvedData?.ecosystem || {};
+
+  const flagshipText = ecosystem.flagship || "TN SKILL & TNSDC GLOBAL PARTNER";
+  const partnerProgramText = ecosystem.partnerProgram || "AUTHORIZED ACADEMIC PARTNER";
+  const initiativeText =
+    (Array.isArray(ecosystem.initiatives) && ecosystem.initiatives[0]) ||
+    ecosystem.subBadge ||
+    "PAN-INDIA CAMPUS SCALING";
+
+  const leadMsg = ecosystem.leadMessage || "Backed by technology giants including";
+  const subMsg = ecosystem.subMessage
+    ? ecosystem.subMessage.toLowerCase()
+    : "trusted active infrastructure matrix";
+
+  const pillars = ecosystem.pillars || [
+    {
+      title: "TN Skill Integration",
+      desc: "Direct deployment partner supporting the Tamil Nadu Government's TN Skill Development Mission (TNSDC), delivering high-impact technological literacy across engineering colleges.",
+    },
+    {
+      title: "Global Partner Ecosystem",
+      desc: "Backed by technology giants including Google, Oracle, IBM, Skill India, and ICT Academy, establishing institutional testbeds and certified curriculum pipelines.",
+    },
+    {
+      title: "Pan-India Scaling Presence",
+      desc: "Trusted active infrastructure matrix covering more than 1,750+ partner colleges and over 5,00,000+ students trained on campus with job-ready skills.",
+    },
+  ];
 
   return (
     <section className="section section-white ecosystem-root" id="ecosystem">
@@ -16,7 +43,7 @@ export default function Ecosystem() {
                 src="/assets/brand/ingage-edutech-stacked.png"
                 alt="InGage EduTech Official Logo"
                 className="eco-official-logo ingage-logo-img"
-                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -32,7 +59,7 @@ export default function Ecosystem() {
                 src="/assets/brand/tn-skill-logo.png"
                 alt="TN Skill Official Logo"
                 className="eco-official-logo tnskill-logo-img"
-                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -41,11 +68,15 @@ export default function Ecosystem() {
           <div className="ecosystem-badge-cluster">
             <div className="eco-partner-pill">
               <span className="pill-star">★</span>
-              <span>{ecosystem.flagship}</span>
+              <span>{flagshipText}</span>
             </div>
-            <div className="eco-scale-pill">
-              <span className="pill-dot-green" />
-              <span>{ecosystem.subBadge}</span>
+            <div className="eco-partner-pill">
+              <span className="pill-star">★</span>
+              <span>{partnerProgramText}</span>
+            </div>
+            <div className="eco-partner-pill">
+              <span className="pill-star">★</span>
+              <span>{initiativeText}</span>
             </div>
           </div>
         </div>
@@ -54,25 +85,25 @@ export default function Ecosystem() {
         <div className="section-header center-text" style={{ maxWidth: "820px", marginTop: "36px" }}>
           <h2 className="section-title">National Transformation Ecosystem</h2>
           <p className="section-subtitle">
-            {ecosystem.leadMessage} Google, Oracle, IBM, Skill India, and ICT Academy — operating a {ecosystem.subMessage.toLowerCase()} delivering verified career outcomes across India's premier academic institutions.
+            {leadMsg} Google, Oracle, IBM, Skill India, and ICT Academy — operating a {subMsg} delivering verified career outcomes across India's premier academic institutions.
           </p>
         </div>
 
-        {/* 3 Ecosystem Pillar Columns */}
+        {/* 3-Pillar Ecosystem Grid */}
         <div className="ecosystem-pillars-grid">
-          {/* Pillar 1: TN Skill & TNSDC Integration */}
-          <div className="eco-pillar-card eco-card-featured">
+          {/* Pillar 01: Naan Mudhalvan */}
+          <div className="eco-pillar-card card-naan">
             <div className="eco-card-top-bar">
               <span className="eco-pillar-index">01</span>
               <img
                 src="/assets/brand/tn-skill-logo.png"
                 alt="TN Skill Logo"
                 className="card-corner-logo"
-                loading="lazy"
+                decoding="async"
               />
             </div>
-            <h3 className="eco-pillar-title">{ecosystem.pillars[0].title}</h3>
-            <p className="eco-pillar-desc">{ecosystem.pillars[0].desc}</p>
+            <h3 className="eco-pillar-title">{pillars[0]?.title || "TN Skill Integration"}</h3>
+            <p className="eco-pillar-desc">{pillars[0]?.desc || ""}</p>
             <div className="eco-card-tag-strip">
               <span className="eco-card-tag">TN Government Flagship</span>
               <span className="eco-card-tag">State-Wide Rollout</span>
@@ -121,8 +152,8 @@ export default function Ecosystem() {
                 </div>
               </div>
             </div>
-            <h3 className="eco-pillar-title">{ecosystem.pillars[1].title}</h3>
-            <p className="eco-pillar-desc">{ecosystem.pillars[1].desc}</p>
+            <h3 className="eco-pillar-title">{pillars[1]?.title || "Global Partner Ecosystem"}</h3>
+            <p className="eco-pillar-desc">{pillars[1]?.desc || ""}</p>
             <div className="eco-card-tag-strip">
               <span className="eco-card-tag">Industry Curricula</span>
               <span className="eco-card-tag">Global Badges</span>
@@ -138,8 +169,8 @@ export default function Ecosystem() {
                 <span>COLLEGES</span>
               </div>
             </div>
-            <h3 className="eco-pillar-title">{ecosystem.pillars[2].title}</h3>
-            <p className="eco-pillar-desc">{ecosystem.pillars[2].desc}</p>
+            <h3 className="eco-pillar-title">{pillars[2]?.title || "Pan-India Scaling Presence"}</h3>
+            <p className="eco-pillar-desc">{pillars[2]?.desc || ""}</p>
             <div className="eco-card-tag-strip">
               <span className="eco-card-tag">5,00,000+ Trained</span>
               <span className="eco-card-tag">75+ CoE Labs</span>

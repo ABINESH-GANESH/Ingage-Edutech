@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import { opportunitiesList } from "../data/careersData";
 import CareersHero from "../components/Careers/CareersHero";
 import CareersStoryline from "../components/Careers/CareersStoryline";

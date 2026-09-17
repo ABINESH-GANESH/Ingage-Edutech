@@ -434,7 +434,6 @@ export default function Hero({ onNavigate }) {
       {/* Fullscreen Background Video (100% HD Crystal Clear) */}
       <video
         ref={videoRef}
-        src={videoSrc}
         className="hero-fullscreen-bg-video"
         autoPlay
         loop

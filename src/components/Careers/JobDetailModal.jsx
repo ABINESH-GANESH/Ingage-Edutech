@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, MapPin, Briefcase, Clock, CheckCircle2, Send, Sparkles, User, Mail, Phone, Link2, Upload, FileText } from "lucide-react";
+import { X, MapPin, Briefcase, Clock, CheckCircle2, Send, Sparkles, User, Mail, Phone, Link2, Upload } from "lucide-react";
 import { sendContactMessage, fileToBase64 } from "../../utils/contactEmailService";
 import "./JobDetailModal.css";
 

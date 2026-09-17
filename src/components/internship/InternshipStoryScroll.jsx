@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowRight, Compass, Cpu, Sparkles, Trophy } from "lucide-react";
+import { Compass, Cpu, Sparkles, Trophy } from "lucide-react";
 import { internshipStorySteps } from "../../data/internshipData";
 import "./InternshipStoryScroll.css";
 
@@ -41,7 +41,7 @@ export default function InternshipStoryScroll() {
                   src={step.bgImage}
                   alt={step.title}
                   className="story-bg-img"
-                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="story-bg-overlay" />
                 <div className="story-stage-floating-tag">

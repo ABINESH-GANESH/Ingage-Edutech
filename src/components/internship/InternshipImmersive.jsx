@@ -29,7 +29,7 @@ export default function InternshipImmersive({ onExplorePrograms }) {
           alt="InGage Immersive Engineering Lab Experience"
           className="intern-immersive-img"
           style={{ transform: `scale(${scaleVal})` }}
-          loading="lazy"
+          decoding="async"
         />
         <div className="intern-immersive-overlay" />
       </div>

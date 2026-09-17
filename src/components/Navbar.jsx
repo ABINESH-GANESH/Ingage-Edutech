@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Search, ArrowRight, ChevronDown, Briefcase, GraduationCap, Trophy, Video, Sparkles, Award } from "lucide-react";
+import { Search, ArrowRight, ChevronDown, Briefcase, GraduationCap, Trophy, Video, Sparkles } from "lucide-react";
 import BrandLogo from "./common/BrandLogo";
 import "./Navbar.css";
 

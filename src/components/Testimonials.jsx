@@ -1,7 +1,7 @@
 import React from "react";
 import { approvedData } from "../data/approvedData";
 import { useTranslation } from "react-i18next";
-import { Quote, Sparkles, CheckCircle2 } from "lucide-react";
+import { Quote, CheckCircle2 } from "lucide-react";
 import "./Testimonials.css";
 
 export default function Testimonials({ onNavigate }) {

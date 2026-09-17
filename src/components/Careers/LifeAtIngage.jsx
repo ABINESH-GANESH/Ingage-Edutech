@@ -31,7 +31,7 @@ export default function LifeAtIngage() {
                   src={item.image}
                   alt={item.title}
                   className="life-card-img"
-                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="life-card-tag-badge">
                   {cardIcons[item.id]}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, ArrowDown, Compass, ShieldCheck } from "lucide-react";
+import { Sparkles, ArrowDown, ShieldCheck } from "lucide-react";
 import { applyHeroData } from "../../data/applyData";
 import "./ApplyHero.css";
 

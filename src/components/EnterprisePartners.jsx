@@ -34,7 +34,7 @@ export default function EnterprisePartners() {
                     src={partner.logo}
                     alt={`${partner.brand} Official Logo`}
                     className="partner-official-logo"
-                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <span className="partner-headline-pill">

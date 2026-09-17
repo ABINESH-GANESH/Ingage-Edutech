@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { legalContactDetails } from "../../data/legalContent";
 
 export default function LegalSection({ section, isLast = false, onNavigateToPrivacy }) {

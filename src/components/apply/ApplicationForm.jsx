@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { X, Upload, ArrowRight, CheckCircle2, AlertCircle, FileText, Loader2, Sparkles } from "lucide-react";
+import { X, Upload, ArrowRight, FileText, Loader2, Sparkles } from "lucide-react";
 import { sendContactMessage, fileToBase64 } from "../../utils/contactEmailService";
 import "./ApplicationForm.css";
 

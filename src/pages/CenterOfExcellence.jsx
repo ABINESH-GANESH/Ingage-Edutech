@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { approvedData } from "../data/approvedData";
 import CoESetupModal from "../components/CoESetupModal";
-import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Building2, GraduationCap, Trophy, ChevronRight, Gift } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Building2 } from "lucide-react";
 import "./CenterOfExcellence.css";
 
 export default function CenterOfExcellence({ onNavigateHome }) {
-  const { brand } = approvedData;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedDomain, setSelectedDomain] = useState("drone-tech");
 
@@ -249,7 +247,7 @@ export default function CenterOfExcellence({ onNavigateHome }) {
                     src={card.image}
                     alt={`${card.title} Laboratory`}
                     className="coe-card-image"
-                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="coe-card-img-badge">
                     <span>{card.title}</span>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, ArrowRight, Shield, FileText } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import BrandLogo from "../common/BrandLogo";
 
 export default function LegalHeader({ activePage = "privacy", onNavigate }) {

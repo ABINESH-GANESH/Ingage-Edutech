@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Cpu, Terminal, Sparkles } from "lucide-react";
+import { Cpu } from "lucide-react";
 import { technologiesList } from "../../data/careersData";
 import "./TechnologySection.css";
 

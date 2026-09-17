@@ -156,7 +156,7 @@ function App() {
           <Stats />
 
           {/* 4. About InGage (CII Honor & 3 Features) */}
-          <About />
+          <About onNavigate={handleNavigate} />
 
           {/* 5. Google-Certified Tracks & Catalog */}
           <Courses onNavigate={handleNavigate} />

@@ -123,7 +123,7 @@ export default function PartnerCard({ partner, onInquirePartner }) {
               src={logo}
               alt={`${name} Official Logo`}
               className="partner-official-logo"
-              loading="lazy"
+              decoding="async"
             />
           ) : (
             <span className="partner-brand-name">{brand || name}</span>

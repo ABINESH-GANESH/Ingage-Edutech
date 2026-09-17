@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Sparkles, ArrowDown, Award, BookOpen, Layers, CheckCircle, ChevronRight } from "lucide-react";
-import { coursesHeroData, coursesList } from "../../data/coursesData";
+import { Sparkles, ArrowDown, Award, BookOpen, Layers, CheckCircle } from "lucide-react";
+import { coursesHeroData } from "../../data/coursesData";
 import "./CoursesHero.css";
 
 // Vector Logos for Course Technologies & Enterprise Certifications
@@ -228,7 +228,7 @@ export default function CoursesHero({ onExploreClick, onPartnersClick }) {
             </div>
 
             <h1 className="courses-hero-title">
-              GET GOOGLE CERTIFIED. <br />
+              GET GOOGLE CERTIFIED. <br className="hero-desktop-br" />
               <span className="brand-navy-text">GET HIRED</span>{" "}
               <span className="brand-green-text">3× FASTER</span>.
             </h1>

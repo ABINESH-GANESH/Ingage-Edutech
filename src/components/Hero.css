@@ -553,11 +553,11 @@
   position: relative;
   width: 100%;
   background: #ffffff;
-  border-top: 1px solid rgba(21, 66, 143, 0.08);
-  border-bottom: 1px solid rgba(21, 66, 143, 0.08);
+  border-top: none;
+  border-bottom: none;
   padding: 10px 20px;
   margin: 0;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.03);
+  box-shadow: none;
   z-index: 10;
   flex-shrink: 0;
 }

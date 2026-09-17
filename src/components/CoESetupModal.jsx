@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, CheckCircle2, ShieldCheck, Building2, Cpu, ArrowRight, Download, Sparkles } from "lucide-react";
+import { X, CheckCircle2, ShieldCheck, ArrowRight } from "lucide-react";
 import { approvedData } from "../data/approvedData";
 import { sendContactMessage } from "../utils/contactEmailService";
 import "./CoESetupModal.css";

@@ -7,6 +7,9 @@ export default function FooterLinks({ links, onNavigate }) {
     if (href.startsWith("/") && onNavigate) {
       e.preventDefault();
       onNavigate(href);
+    } else if (href.startsWith("#") && onNavigate) {
+      e.preventDefault();
+      onNavigate("/" + href);
     }
   };
 

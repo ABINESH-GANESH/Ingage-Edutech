@@ -298,6 +298,11 @@ export const approvedData = {
     title: "InGage EduTech",
     badge: "EduTech",
     flagship: "TN SKILL & TNSDC GLOBAL PARTNER",
+    partnerProgram: "AUTHORIZED ACADEMIC PARTNER",
+    initiatives: [
+      "PAN-INDIA CAMPUS SCALING PRESENCE",
+      "STATE-WIDE DIGITAL UPSKILLING",
+    ],
     subBadge: "ECOSYSTEM PAN-INDIA SCALING PRESENCE",
     leadMessage: "Backed by technology giants including",
     subMessage: "Trusted active infrastructure matrix",

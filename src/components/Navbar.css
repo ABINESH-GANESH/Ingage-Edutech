@@ -49,9 +49,18 @@
   align-items: center;
   text-decoration: none;
   flex-shrink: 0;
-  padding: 2px 0;
-  margin-right: 8px;
+  padding: 0;
+  margin-right: 12px;
+  line-height: 1;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.navbar-brand .brand-logo-img {
+  height: 36px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  display: block;
 }
 
 .navbar-brand:hover {
@@ -709,22 +718,31 @@
 /* 6. Mobile Drawer */
 .mobile-nav-drawer {
   display: none;
-  pointer-events: auto;
+  pointer-events: none;
   position: absolute;
   top: calc(100% + 10px);
   left: 16px;
   right: 16px;
   background-color: #ffffff;
   border-radius: var(--radius-xl, 16px);
-  border: 1.5px solid var(--border-subtle, #e2e8f0);
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  border: none;
+  box-shadow: none;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s ease,
+              visibility 0.25s ease;
 }
 
 .mobile-nav-drawer.drawer-open {
+  pointer-events: auto;
   max-height: 720px;
+  opacity: 1;
+  visibility: visible;
+  border: 1.5px solid var(--border-subtle, #e2e8f0);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
 }
 
 .mobile-nav-inner {
@@ -949,6 +967,10 @@
     height: 50px;
     padding: 0 10px 0 14px;
   }
+  .navbar-brand .brand-logo-img {
+    height: 31px;
+    max-width: 100px;
+  }
   .nav-apply-now-btn {
     padding: 6px 10px;
     font-size: 11px;
@@ -967,9 +989,12 @@
     border-radius: 9999px;
   }
   .navbar-brand {
-    transform: scale(0.88);
-    transform-origin: left center;
-    margin-right: 2px;
+    transform: none;
+    margin-right: 4px;
+  }
+  .navbar-brand .brand-logo-img {
+    height: 27px;
+    max-width: 88px;
   }
   .nav-apply-now-btn {
     padding: 5px 8px;

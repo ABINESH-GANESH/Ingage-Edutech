@@ -17,7 +17,7 @@ export default function AboutPeople() {
                 src={image}
                 alt="InGage EduTech Team Collaboration and Culture"
                 className="people-img"
-                loading="lazy"
+                decoding="async"
               />
               <div className="people-img-overlay" />
               <div className="people-img-badge">

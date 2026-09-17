@@ -1,5 +1,5 @@
 import React from "react";
-import { Search, RotateCcw, Filter, Tag } from "lucide-react";
+import { Search, RotateCcw, Tag } from "lucide-react";
 import { courseCategories } from "../../data/coursesData";
 import "./CourseSearch.css";
 

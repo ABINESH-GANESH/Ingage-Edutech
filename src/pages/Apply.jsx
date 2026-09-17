@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import ApplyHero from "../components/apply/ApplyHero";
 import JourneySelector from "../components/apply/JourneySelector";
 import OpportunityTypes from "../components/apply/OpportunityTypes";
@@ -6,7 +6,7 @@ import OpportunitySearch from "../components/apply/OpportunitySearch";
 import OpportunityCard from "../components/apply/OpportunityCard";
 import ApplicationForm from "../components/apply/ApplicationForm";
 import ApplicationSuccess from "../components/apply/ApplicationSuccess";
-import { sampleOpportunities, careerJourneys } from "../data/applyData";
+import { sampleOpportunities } from "../data/applyData";
 import { Sparkles, ArrowRight, RotateCcw } from "lucide-react";
 import "./Apply.css";
 

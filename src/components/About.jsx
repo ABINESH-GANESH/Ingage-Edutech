@@ -3,9 +3,18 @@ import { useTranslation } from "react-i18next";
 import { approvedData } from "../data/approvedData";
 import "./About.css";
 
-export default function About() {
+export default function About({ onNavigate }) {
   const { t } = useTranslation();
   const { brand, aboutCards } = approvedData;
+
+  const handleLinkClick = (e, path) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate(path);
+    } else {
+      window.location.pathname = path;
+    }
+  };
 
   return (
     <section className="section section-white about-root" id="about">
@@ -33,11 +42,19 @@ export default function About() {
 
           {/* CTA Buttons */}
           <div className="about-cta-group">
-            <a href="/courses" className="btn btn-about-cta">
+            <a
+              href="/courses"
+              className="btn btn-about-cta"
+              onClick={(e) => handleLinkClick(e, "/courses")}
+            >
               <span>Explore Courses</span>
               <span className="cta-arrow">→</span>
             </a>
-            <a href="/center-of-excellence" className="btn btn-about-cta">
+            <a
+              href="/center-of-excellence"
+              className="btn btn-about-cta"
+              onClick={(e) => handleLinkClick(e, "/center-of-excellence")}
+            >
               <span>Set Up a CoE</span>
               <span className="cta-arrow">→</span>
             </a>

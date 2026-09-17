@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import CoursesHero from "../components/courses/CoursesHero";
 import CourseSearch from "../components/courses/CourseSearch";
 import CourseFilters from "../components/courses/CourseFilters";
@@ -7,7 +7,7 @@ import CourseDetailModal from "../components/courses/CourseDetailModal";
 import LearningSection from "../components/courses/LearningSection";
 import PartnersSection from "../components/courses/PartnersSection";
 import CoursesCTA from "../components/courses/CoursesCTA";
-import { coursesList, coursesHeroData } from "../data/coursesData";
+import { coursesList } from "../data/coursesData";
 import "./CoursesPage.css";
 
 export default function CoursesPage({ onNavigate }) {

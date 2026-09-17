@@ -7,7 +7,6 @@ import {
   Wrench,
   Briefcase,
   UserCheck,
-  Sparkles,
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";

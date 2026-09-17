@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, Clock, Award } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import "./CourseCard.css";
 
 export default function CourseCard({ course, onSelectCourse }) {
@@ -35,7 +35,9 @@ export default function CourseCard({ course, onSelectCourse }) {
           src={image}
           alt={title}
           className="course-card-img"
-          loading="lazy"
+          decoding="async"
+          width="400"
+          height="225"
         />
         <div className="course-card-media-overlay" />
 

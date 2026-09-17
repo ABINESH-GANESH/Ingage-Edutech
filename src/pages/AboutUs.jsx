@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import AboutHero from "../components/about/AboutHero";
-import AboutIntro from "../components/about/AboutIntro";
-import AboutMission from "../components/about/AboutMission";
-import AboutVision from "../components/about/AboutVision";
-import AboutValues from "../components/about/AboutValues";
-import AboutPeople from "../components/about/AboutPeople";
-import AboutEcosystem from "../components/about/AboutEcosystem";
-import AboutPartners from "../components/about/AboutPartners";
-import AboutJourney from "../components/about/AboutJourney";
-import AboutCTA from "../components/about/AboutCTA";
+import AboutHero from "../components/About/AboutHero";
+import AboutIntro from "../components/About/AboutIntro";
+import AboutMission from "../components/About/AboutMission";
+import AboutVision from "../components/About/AboutVision";
+import AboutValues from "../components/About/AboutValues";
+import AboutPeople from "../components/About/AboutPeople";
+import AboutEcosystem from "../components/About/AboutEcosystem";
+import AboutPartners from "../components/About/AboutPartners";
+import AboutJourney from "../components/About/AboutJourney";
+import AboutCTA from "../components/About/AboutCTA";
 import "./AboutUs.css";
 
 export default function AboutUs({ onNavigate }) {

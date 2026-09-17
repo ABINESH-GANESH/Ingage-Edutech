@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Sparkles, ArrowRight, Mail, Send, X, User, GraduationCap, BookOpen, Phone, Upload, FileText } from "lucide-react";
-import { internshipDomains } from "../../data/internshipData";
+import { Sparkles, ArrowRight, Mail, Send, X, User, GraduationCap, Phone, Upload } from "lucide-react";
 import { sendContactMessage, fileToBase64 } from "../../utils/contactEmailService";
 import "./InternshipCTA.css";
 

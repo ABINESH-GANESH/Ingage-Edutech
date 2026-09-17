@@ -32,7 +32,7 @@ export default function InternshipDomains({ onSelectDomain }) {
                     src={domain.image}
                     alt={domain.title}
                     className="domain-card-img"
-                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="domain-card-badge">
                     <span>{domain.badge}</span>

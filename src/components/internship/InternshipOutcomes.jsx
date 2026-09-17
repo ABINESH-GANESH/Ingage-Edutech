@@ -1,6 +1,6 @@
 import React from "react";
 import { whatYouTakeWithYou } from "../../data/internshipData";
-import { Check, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 import "./InternshipOutcomes.css";
 
 export default function InternshipOutcomes() {

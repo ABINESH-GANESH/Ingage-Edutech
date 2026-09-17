@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  Calendar,
   Clock,
   Video,
   Sparkles,
@@ -12,8 +11,6 @@ import {
   MessageSquare,
   Compass,
   Users,
-  Play,
-  Pause,
   Award,
   ShieldCheck,
   Zap,
@@ -375,7 +372,7 @@ export default function WebinarPage({ onNavigate }) {
                   src={webinarData.posterImage}
                   alt="InGage EduTech Career Readiness Workshop Official Poster"
                   className="official-workshop-poster-image"
-                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
