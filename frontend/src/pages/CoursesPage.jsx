@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from "react";
-import CoursesHero from "../components/courses/CoursesHero";
-import CourseSearch from "../components/courses/CourseSearch";
-import CourseFilters from "../components/courses/CourseFilters";
-import CourseGrid from "../components/courses/CourseGrid";
-import CourseDetailModal from "../components/courses/CourseDetailModal";
-import LearningSection from "../components/courses/LearningSection";
-import PartnersSection from "../components/courses/PartnersSection";
-import CoursesCTA from "../components/courses/CoursesCTA";
+import CoursesHero from "../components/Courses/CoursesHero";
+import CourseSearch from "../components/Courses/CourseSearch";
+import CourseFilters from "../components/Courses/CourseFilters";
+import CourseGrid from "../components/Courses/CourseGrid";
+import CourseDetailModal from "../components/Courses/CourseDetailModal";
+import LearningSection from "../components/Courses/LearningSection";
+import PartnersSection from "../components/Courses/PartnersSection";
+import CoursesCTA from "../components/Courses/CoursesCTA";
 import { coursesList } from "../data/coursesData";
 import "./CoursesPage.css";
 
