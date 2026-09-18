@@ -85,7 +85,7 @@ export default function Ecosystem() {
         <div className="section-header center-text" style={{ maxWidth: "820px", marginTop: "36px" }}>
           <h2 className="section-title">National Transformation Ecosystem</h2>
           <p className="section-subtitle">
-            {leadMsg} Google, Oracle, IBM, Skill India, and ICT Academy — operating a {subMsg} delivering verified career outcomes across India's premier academic institutions.
+            {leadMsg} Google, Oracle, IBM, Skill India, and ICT Academy, operating a {subMsg} delivering verified career outcomes across India's premier academic institutions.
           </p>
         </div>
 

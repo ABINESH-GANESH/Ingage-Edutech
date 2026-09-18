@@ -96,7 +96,7 @@ export const webinarData = {
       timecode: "0:05 - 0:18",
       phase: "THE REALITY CHECK",
       speaker: "Avatar & Motion Visual",
-      dialogue: "Every fresher is competing with hundreds or even thousands of other candidates. Having a degree is important—but it doesn't automatically make your profile stand out.",
+      dialogue: "Every fresher is competing with hundreds or even thousands of other candidates. Having a degree is important, but it doesn't automatically make your profile stand out.",
       visualCue: "Funnel Graphic: 100s of Resumes → Recruiter Filter → Only a Few Shortlisted. Avatar returns: 'So what actually makes a fresher stand out?'",
     },
     {

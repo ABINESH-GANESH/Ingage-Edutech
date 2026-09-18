@@ -496,7 +496,7 @@ export default function ApplicationForm({
                   <div className="dropzone-file-selected">
                     <span className="file-name">{formData.resumeFile.name}</span>
                     <span className="file-size">
-                      ({(formData.resumeFile.size / 1024).toFixed(1)} KB) — Click to replace
+                      ({(formData.resumeFile.size / 1024).toFixed(1)} KB) • Click to replace
                     </span>
                   </div>
                 ) : (

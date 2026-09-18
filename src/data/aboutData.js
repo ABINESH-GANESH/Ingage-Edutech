@@ -16,7 +16,7 @@ export const aboutIntroData = {
   heading: "WE CONNECT LEARNING WITH REAL-WORLD OPPORTUNITY.",
   paragraphs: [
     "InGage EduTech bridges the critical gap between academic learning and industry expectations by building immersive, experiential learning environments, dedicated Centers of Excellence (CoE), and vendor-certified technical curricula.",
-    "We empower students, engineering graduates, and professionals with hands-on exposure to Augmented & Virtual Reality (AR/VR), Artificial Intelligence, Industrial IoT, robotics, and cloud engineering — transforming theoretical knowledge into production-ready capability.",
+    "We empower students, engineering graduates, and professionals with hands-on exposure to Augmented & Virtual Reality (AR/VR), Artificial Intelligence, Industrial IoT, robotics, and cloud engineering, transforming theoretical knowledge into production-ready capability.",
     "By partnering with premier academic institutions, state skill development initiatives (such as Tamil Nadu's TN Skill / TNSDC Mission), and global technology leaders (including Google Cloud, Oracle, IBM, and NVIDIA), InGage prepares India's next generation of engineers for high-impact careers.",
   ],
   metrics: [

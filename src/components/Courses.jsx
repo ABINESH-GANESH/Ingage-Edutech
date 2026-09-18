@@ -49,7 +49,7 @@ export default function Courses({ onNavigate }) {
             </h2>
 
             <p className="courses-editorial-sub">
-              {t("courses.subtitle", { defaultValue: "InGage is Google's Official Training Partner in India — delivering 6 certified course tracks on campus with instructor-led sessions, real Cloud lab access, 5+ industry projects, and an exclusive 50% discount on Google certification exams." })}
+              {t("courses.subtitle", { defaultValue: "InGage is Google's Official Training Partner in India, delivering 6 certified course tracks on campus with instructor-led sessions, real Cloud lab access, 5+ industry projects, and an exclusive 50% discount on Google certification exams." })}
             </p>
           </div>
 

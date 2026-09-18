@@ -84,7 +84,7 @@ export default function WebinarPage({ onNavigate }) {
 
             <p className="webinar-hero-description">
               Every fresher is competing with hundreds of applicants with identical degrees. 
-              Having a degree is essential—but it doesn't automatically make your profile stand out. 
+              Having a degree is essential, but it doesn't automatically make your profile stand out. 
               Discover the <strong>4 critical pillars</strong> recruiters evaluate before offering technical interviews.
             </p>
 

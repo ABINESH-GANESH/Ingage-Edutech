@@ -159,9 +159,9 @@
   top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%) translateY(6px) scale(0.97);
-  min-width: 320px;
-  width: 340px;
-  max-width: 350px;
+  width: max-content;
+  max-width: min(520px, calc(100vw - 24px));
+  box-sizing: border-box;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -203,6 +203,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   padding: 2px 6px 6px 6px;
   border-bottom: 1px solid #f1f5f9;
   margin-bottom: 2px;
@@ -220,12 +221,14 @@
   letter-spacing: 0.08em;
   color: #0b3272;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .nav-dropdown-header-title {
   font-size: 10px;
   font-weight: 500;
   color: #64748b;
+  white-space: nowrap;
 }
 
 .nav-dropdown-verified-pill {
@@ -240,6 +243,8 @@
   align-items: center;
   gap: 4px;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .verified-dot {
@@ -297,8 +302,8 @@
 }
 
 .courses-dropdown-menu {
-  width: 320px;
-  max-width: 330px;
+  width: max-content;
+  max-width: max-content;
 }
 
 .icon-box-google {
@@ -395,25 +400,30 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-wrap: wrap;
+  min-width: 0;
 }
 
 .nav-dropdown-item-title {
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 700;
   color: #0f172a;
   letter-spacing: -0.01em;
+  word-break: break-word;
 }
 
 .nav-dropdown-badge {
   font-size: 8.5px;
   font-weight: 700;
-  padding: 1.5px 5.5px;
+  padding: 1.5px 6px;
   border-radius: 9999px;
   letter-spacing: 0.02em;
   line-height: 1.15;
   display: inline-flex;
   align-items: center;
   gap: 3.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .badge-live-emerald,
@@ -490,11 +500,11 @@
 }
 
 .nav-dropdown-item-desc {
-  font-size: 10px;
+  font-size: 10.5px;
   color: #64748b;
-  line-height: 1.32;
-  margin-top: 1px;
-  white-space: normal;
+  line-height: 1.35;
+  margin-top: 1.5px;
+  word-break: break-word;
 }
 
 .nav-dropdown-arrow-wrap {
@@ -721,24 +731,27 @@
   pointer-events: none;
   position: absolute;
   top: calc(100% + 10px);
-  left: 16px;
-  right: 16px;
+  left: 14px;
+  right: 14px;
   background-color: #ffffff;
   border-radius: var(--radius-xl, 16px);
   border: none;
   box-shadow: none;
-  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   max-height: 0;
   opacity: 0;
   visibility: hidden;
   transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               opacity 0.25s ease,
               visibility 0.25s ease;
+  z-index: 1060;
+  box-sizing: border-box;
 }
 
 .mobile-nav-drawer.drawer-open {
   pointer-events: auto;
-  max-height: 720px;
+  max-height: min(760px, calc(100vh - 90px));
   opacity: 1;
   visibility: visible;
   border: 1.5px solid var(--border-subtle, #e2e8f0);
@@ -746,10 +759,11 @@
 }
 
 .mobile-nav-inner {
-  padding: 20px 18px;
+  padding: 16px 14px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  box-sizing: border-box;
 }
 
 .mobile-nav-links {
@@ -818,7 +832,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding-left: 10px;
+  padding-left: 6px;
   margin-top: 2px;
   max-height: 0;
   overflow: hidden;
@@ -827,7 +841,7 @@
 }
 
 .mobile-subnav-panel.panel-expanded {
-  max-height: 320px;
+  max-height: 600px;
   opacity: 1;
   padding-bottom: 6px;
 }
@@ -840,12 +854,14 @@
   border-radius: 10px;
   text-decoration: none;
   color: #334155;
-  transition: background 0.15s ease;
+  transition: all 0.15s ease;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .mobile-subnav-item:hover,
 .mobile-subnav-item.subnav-item-active {
-  background-color: #f1f5f9;
+  background-color: #f0f6ff;
   color: #15428f;
 }
 
@@ -863,31 +879,39 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  min-width: 0;
 }
 
 .mobile-subnav-title-row {
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-wrap: wrap;
+  min-width: 0;
 }
 
 .mobile-subnav-title {
   font-size: 12.5px;
   font-weight: 700;
   color: #0f172a;
+  word-break: break-word;
 }
 
 .mobile-subnav-badge {
-  font-size: 9px;
+  font-size: 8.5px;
   font-weight: 700;
   padding: 1px 6px;
   border-radius: 9999px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .mobile-subnav-desc {
   font-size: 11px;
   color: #64748b;
-  margin-top: 1px;
+  margin-top: 2px;
+  line-height: 1.35;
+  word-break: break-word;
 }
 
 .mobile-nav-bottom-cta {

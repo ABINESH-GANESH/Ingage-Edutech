@@ -117,7 +117,7 @@ export default function CenterOfExcellence({ onNavigateHome }) {
 
   return (
     <div className="coe-page-root">
-      {/* SECTION 1 — HERO / INSTITUTIONAL UPGRADE PORTAL */}
+      {/* SECTION 1: HERO / INSTITUTIONAL UPGRADE PORTAL */}
       <section className="coe-hero-section">
         <div className="container">
           <div className="coe-hero-header center-text">
@@ -136,7 +136,7 @@ export default function CenterOfExcellence({ onNavigateHome }) {
 
             {/* Supporting paragraph */}
             <p className="coe-hero-lead-text">
-              The InGage CoE transforms standard hardware installations into an industrial emerging technology hub. We handle end-to-end setups—from raw hardware procurement and licensing to custom curriculum design and specialized training delivery across five technical domains.
+              The InGage CoE transforms standard hardware installations into an industrial emerging technology hub. We handle end-to-end setups, from raw hardware procurement and licensing to custom curriculum design and specialized training delivery across five technical domains.
             </p>
           </div>
 
@@ -219,7 +219,7 @@ export default function CenterOfExcellence({ onNavigateHome }) {
         </div>
       </section>
 
-      {/* SECTION 2 — COMPLETE CENTER OF EXCELLENCE */}
+      {/* SECTION 2: COMPLETE CENTER OF EXCELLENCE */}
       <section className="section section-page coe-turnkey-section" id="coe-domains">
         <div className="container">
           <div className="section-header center-text">
@@ -280,7 +280,7 @@ export default function CenterOfExcellence({ onNavigateHome }) {
         </div>
       </section>
 
-      {/* SECTION 3 — INSTITUTIONAL VALUES */}
+      {/* SECTION 3: INSTITUTIONAL VALUES */}
       <section className="section section-white coe-values-section">
         <div className="container">
           <div className="section-header center-text">
@@ -323,7 +323,7 @@ export default function CenterOfExcellence({ onNavigateHome }) {
         </div>
       </section>
 
-      {/* SECTION 4 — SPECIAL OFFER ANNOUNCEMENT BANNER */}
+      {/* SECTION 4: SPECIAL OFFER ANNOUNCEMENT BANNER */}
       <section className="coe-special-offer-section">
         <div className="container">
           <div className="coe-special-offer-banner">
@@ -342,7 +342,7 @@ export default function CenterOfExcellence({ onNavigateHome }) {
         </div>
       </section>
 
-      {/* SECTION 5 — CTA */}
+      {/* SECTION 5: CTA */}
       <section className="coe-cta-section">
         <div className="container">
           <div className="coe-cta-box center-text">

@@ -22,7 +22,7 @@ export default function WhyIngage() {
               <p className="quote-text">
                 Every project at InGage is built at the intersection of deep engineering, spatial computing, and educational transformation.
               </p>
-              <span className="quote-author">— Engineering Leadership</span>
+              <span className="quote-author">Engineering Leadership</span>
             </div>
           </div>
 

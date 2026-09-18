@@ -314,7 +314,7 @@ export const termsConditionsData = {
       title: "Courses, Training & Certification Programs",
       lead: "Course information, syllabi, duration, and prerequisites are published for educational guidance.",
       paragraphs: [
-        "Course details displayed on our website—including curriculum outlines, project descriptions, batch timelines, instructional formats, and certification pathways—are provided for general informational guidance.",
+        "Course details displayed on our website, including curriculum outlines, project descriptions, batch timelines, instructional formats, and certification pathways, are provided for general informational guidance.",
         "InGage EduTech reserves the right to update curriculum frameworks, reschedule lecture batches, adjust instructional staff, or revise lab sandbox parameters to align with emerging industry technologies and partner certification updates.",
         "Official certification credentials (such as Google Career Certificates) are awarded subject to the candidate successfully completing all mandatory course milestones, lab assessments, and partner evaluation criteria.",
       ],

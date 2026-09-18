@@ -433,6 +433,8 @@
   gap: 8px;
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
   transition: transform 0.2s ease, border-color 0.2s ease;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .phase-card-pill:hover {
@@ -1002,18 +1004,20 @@
    5. Exact Responsive Viewport Breakpoints
    -------------------------------------------------------------------------- */
 
-/* Tablet : 768px – 991px */
-@media (min-width: 768px) and (max-width: 991px) {
+/* Tablet & Smaller Screens : <= 991px */
+@media (max-width: 991px) {
   .hackathons-hero-stats-row {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
   .phases-connected-grid,
   .expanded-details-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 14px;
   }
   .podium-cards-split {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 18px;
   }
   .archive-section-header {
     flex-direction: column;
@@ -1025,10 +1029,13 @@
   }
 }
 
-/* Large Mobile : 576px – 767px */
-@media (min-width: 576px) and (max-width: 767px) {
+/* Large Mobile : <= 767px */
+@media (max-width: 767px) {
   .hackathons-page-root {
     padding-top: 88px;
+  }
+  .hackathons-container {
+    padding: 0 16px;
   }
   .hackathons-hero-stats-row {
     grid-template-columns: repeat(2, 1fr);
@@ -1036,10 +1043,19 @@
   }
   .phases-connected-grid,
   .expanded-details-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 12px;
   }
   .podium-cards-split {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+  .hackathon-card-header,
+  .hackathon-overview-section,
+  .hackathon-timeline-wrap,
+  .hackathon-podium-wrap {
+    padding-left: 18px;
+    padding-right: 18px;
   }
   .host-cta-card {
     flex-direction: column;
@@ -1056,10 +1072,13 @@
   }
 }
 
-/* Mobile : 375px – 575px */
-@media (min-width: 375px) and (max-width: 575px) {
+/* Mobile : <= 575px */
+@media (max-width: 575px) {
   .hackathons-page-root {
     padding-top: 78px;
+  }
+  .hackathons-container {
+    padding: 0 12px;
   }
   .hackathons-hero-section {
     padding: 20px 0 32px 0;
@@ -1076,6 +1095,18 @@
     grid-template-columns: 1fr;
     gap: 8px;
   }
+  .archive-section-header {
+    margin-bottom: 24px;
+  }
+  .archive-main-heading {
+    font-size: 22px;
+  }
+  .archive-lead-desc {
+    font-size: 13.5px;
+  }
+  .previous-hackathons-list {
+    gap: 20px;
+  }
   .hackathon-card-header,
   .hackathon-overview-section,
   .hackathon-timeline-wrap,
@@ -1085,6 +1116,40 @@
   }
   .hackathon-card-title {
     font-size: 20px;
+    line-height: 1.25;
+  }
+  .hackathon-card-subtitle {
+    font-size: 13px;
+  }
+  .phases-connected-grid,
+  .expanded-details-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+  .phase-card-pill {
+    padding: 14px 14px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .phase-badge-name {
+    font-size: 13px;
+  }
+  .phase-simple-desc {
+    font-size: 12px;
+  }
+  .phase-quick-metric {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+  .podium-cards-split {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+  .winner-spotlight-card {
+    padding: 14px;
+  }
+  .winner-name-txt {
+    font-size: 17px;
   }
   .host-cta-card {
     padding: 20px 16px;
@@ -1100,13 +1165,13 @@
   }
 }
 
-/* Small Mobile : 320px – 374px */
+/* Small Mobile : <= 374px */
 @media (max-width: 374px) {
   .hackathons-page-root {
     padding-top: 70px;
   }
-  .hackathons-hero-section {
-    padding: 16px 0 24px 0;
+  .hackathons-container {
+    padding: 0 8px;
   }
   .hero-kicker-pill {
     font-size: 10px;
@@ -1128,14 +1193,11 @@
   .hero-stat-card {
     padding: 10px 12px;
   }
-  .stat-val {
-    font-size: 19px;
+  .hero-stat-number {
+    font-size: 20px;
   }
-  .stat-lbl {
+  .hero-stat-label {
     font-size: 9.5px;
-  }
-  .hackathon-showcase-card {
-    border-radius: 12px;
   }
   .hackathon-card-header {
     padding: 14px 12px;
@@ -1148,6 +1210,13 @@
   .hackathon-podium-wrap {
     padding-left: 12px;
     padding-right: 12px;
+  }
+  .phases-connected-grid,
+  .expanded-details-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .phase-card-pill {
+    padding: 10px 12px;
   }
   .host-cta-card {
     padding: 16px 12px;

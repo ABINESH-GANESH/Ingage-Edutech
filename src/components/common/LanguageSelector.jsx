@@ -73,7 +73,7 @@ export default function LanguageSelector({ variant = "navbar" }) {
             {SUPPORTED_LANGUAGES.map((lang) => {
               const isSelected = lang.code === currentLangCode;
               const displayLabel =
-                lang.code === "en" ? "English" : `${lang.name} — ${lang.nativeName}`;
+                lang.code === "en" ? "English" : `${lang.name} (${lang.nativeName})`;
 
               return (
                 <button

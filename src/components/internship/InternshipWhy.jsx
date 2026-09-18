@@ -20,7 +20,7 @@ export default function InternshipWhy() {
               <p className="intern-why-quote-text">
                 "{intro}"
               </p>
-              <span className="intern-why-quote-tag">— InGage Engineering Philosophy</span>
+              <span className="intern-why-quote-tag">InGage Engineering Philosophy</span>
             </div>
           </div>
 

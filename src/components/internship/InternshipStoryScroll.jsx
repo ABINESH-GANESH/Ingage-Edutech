@@ -46,7 +46,7 @@ export default function InternshipStoryScroll() {
                 <div className="story-bg-overlay" />
                 <div className="story-stage-floating-tag">
                   <span className="tag-dot" />
-                  <span>PHASE {step.number} — {step.tagline}</span>
+                  <span>PHASE {step.number}: {step.tagline}</span>
                 </div>
               </div>
             ))}

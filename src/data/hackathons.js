@@ -16,8 +16,8 @@ export const activeHackathons = [
       "Design and deploy hardened multi-region Kubernetes infrastructure capable of sustaining simulated zero-day attack vectors while maintaining 99.99% service availability under heavy telemetry loads.",
     prizePool: "₹3,50,000",
     registrationDeadline: "April 30, 2026",
-    finaleDate: "May 22–23, 2026",
-    teamSize: "2 – 4 Members",
+    finaleDate: "May 22-23, 2026",
+    teamSize: "2 - 4 Members",
     eligibility: "Engineering Students (B.E / B.Tech / M.E / M.Tech / MCA)",
     format: "Hybrid (Phase 1 & 2 Online, Grand Finale at InGage CoE Lab)",
   },
@@ -33,8 +33,8 @@ export const activeHackathons = [
       "Develop edge-quantized vision models executing on ultra-low-power microcontrollers for real-time obstacle avoidance and crop health anomaly scoring with zero cloud latency dependencies.",
     prizePool: "₹3,00,000",
     registrationDeadline: "May 15, 2026",
-    finaleDate: "June 12–13, 2026",
-    teamSize: "2 – 4 Members",
+    finaleDate: "June 12-13, 2026",
+    teamSize: "2 - 4 Members",
     eligibility: "Engineering & Polytechnic Students Across India",
     format: "Hybrid (Virtual Simulation + On-Bench Hardware Testing)",
   },
@@ -62,9 +62,9 @@ export const previousHackathons = [
     phases: [
       {
         number: "01",
-        name: "Phase 1 — Online",
+        name: "Phase 1: Online",
         mode: "Asynchronous Code Submission",
-        timing: "January 10 – 20, 2026",
+        timing: "January 10 - 20, 2026",
         overview: "Infrastructure as Code (IaC) Hardening & Automated Vulnerability Benchmarking",
         metrics: [
           { label: "Compliance Benchmark", value: "CIS GCP Foundation Benchmark ≥ 98%" },
@@ -76,9 +76,9 @@ export const previousHackathons = [
       },
       {
         number: "02",
-        name: "Phase 2 — Online / Offline",
+        name: "Phase 2: Online / Offline",
         mode: "48-Hour Synchronous Defense Simulation",
-        timing: "January 28 – 30, 2026",
+        timing: "January 28 - 30, 2026",
         overview: "Live Red/Blue Sandbox Attack Vector Simulation & Intrusion Defense",
         shortlist: "Top 15 Collegiate Teams selected out of 420+ preliminary submissions",
         metrics: [
@@ -91,9 +91,9 @@ export const previousHackathons = [
       },
       {
         number: "03",
-        name: "Phase 3 — Grand Finale",
+        name: "Phase 3: Grand Finale",
         mode: "In-Person 24-Hour Hackathon & Jury Defense",
-        timing: "February 14 – 15, 2026",
+        timing: "February 14 - 15, 2026",
         venue: "InGage Cloud Center of Excellence, Chennai",
         overview: "Live Stress-Testing, DDoS Resilience & Executive Architectural Defense",
         benchmarks: [
@@ -165,9 +165,9 @@ export const previousHackathons = [
     phases: [
       {
         number: "01",
-        name: "Phase 1 — Online",
+        name: "Phase 1: Online",
         mode: "Technical Concept Dossier & Spatial Prototype",
-        timing: "September 01 – 12, 2025",
+        timing: "September 01 - 12, 2025",
         overview: "Spatial Wireframing, Frame-Rate Budgets & 3D Asset Topology",
         metrics: [
           { label: "Polygon Budget", value: "< 100k Triangles per Scene" },
@@ -179,9 +179,9 @@ export const previousHackathons = [
       },
       {
         number: "02",
-        name: "Phase 2 — Online / Offline",
+        name: "Phase 2: Online / Offline",
         mode: "36-Hour Continuous Build Hackathon",
-        timing: "September 24 – 26, 2025",
+        timing: "September 24 - 26, 2025",
         overview: "Interactive Medical Simulation & Multi-User Digital Twin Environment",
         shortlist: "Top 12 Regional Teams selected across 350+ institutional entries",
         metrics: [
@@ -194,9 +194,9 @@ export const previousHackathons = [
       },
       {
         number: "03",
-        name: "Phase 3 — Grand Finale",
+        name: "Phase 3: Grand Finale",
         mode: "In-Person Headset Demonstration & Expert Review",
-        timing: "October 18 – 19, 2025",
+        timing: "October 18 - 19, 2025",
         venue: "InGage Immersive XR Sandbox Arena, Chennai",
         overview: "Live Medical Panel Evaluation & Industrial Safety Scenario Testing",
         benchmarks: [
@@ -268,9 +268,9 @@ export const previousHackathons = [
     phases: [
       {
         number: "01",
-        name: "Phase 1 — Online",
+        name: "Phase 1: Online",
         mode: "Schematic Review & Firmware Simulation",
-        timing: "June 10 – 22, 2025",
+        timing: "June 10 - 22, 2025",
         overview: "Power Budgeting, Sensor Interfacing Schematics & Telemetry Payload Design",
         metrics: [
           { label: "Active Power Budget", value: "< 15mA Active Consumption" },
@@ -282,9 +282,9 @@ export const previousHackathons = [
       },
       {
         number: "02",
-        name: "Phase 2 — Online / Offline",
+        name: "Phase 2: Online / Offline",
         mode: "40-Hour Physical Hardware Prototyping",
-        timing: "July 08 – 10, 2025",
+        timing: "July 08 - 10, 2025",
         overview: "Sensor Node Assembly, TinyML Edge Model Quantization & Gateway Transmission",
         shortlist: "Top 10 Hardware Finalist Teams selected from 290+ collegiate entries",
         metrics: [
@@ -297,9 +297,9 @@ export const previousHackathons = [
       },
       {
         number: "03",
-        name: "Phase 3 — Grand Finale",
+        name: "Phase 3: Grand Finale",
         mode: "Live Industrial Hardware Bench Stress-Testing",
-        timing: "July 25 – 26, 2025",
+        timing: "July 25 - 26, 2025",
         venue: "InGage Robotics & Embedded CoE Hub, Chennai",
         overview: "Physical Motor Fault Injection, Thermal Stress & Live Dashboard Evaluation",
         benchmarks: [

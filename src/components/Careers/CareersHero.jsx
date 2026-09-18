@@ -112,7 +112,7 @@ export default function CareersHero({ onExploreClick, onSectionJump }) {
 
         {/* Lead Narrative */}
         <p className="careers-hero-fullscreen-lead">
-          Learn, build and grow with a team exploring the technologies shaping tomorrow — across AR/VR, AI, IoT, robotics, and 3D digital twins.
+          Learn, build and grow with a team exploring the technologies shaping tomorrow, across AR/VR, AI, IoT, robotics, and 3D digital twins.
         </p>
 
         {/* Primary Action Buttons */}
@@ -157,7 +157,7 @@ export default function CareersHero({ onExploreClick, onSectionJump }) {
           </div>
           <div className="careers-active-beat-preview">
             <span className="active-beat-tag">{STORY_BEATS[activeBeatIndex].title}</span>
-            <span className="active-beat-sep">—</span>
+            <span className="active-beat-sep">•</span>
             <span className="active-beat-desc">{STORY_BEATS[activeBeatIndex].desc}</span>
           </div>
         </div>
