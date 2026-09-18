@@ -9,7 +9,7 @@ export function getHealth(req, res) {
 
   return res.status(200).json({
     success: true,
-    message: "InGage EduTech API is operational",
+    message: "InGage backend is running",
     uptime: process.uptime(),
     timestamp: new Date().toISOString(),
     database: {

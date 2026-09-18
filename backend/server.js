@@ -50,6 +50,7 @@ app.use(express.urlencoded({ limit: "25mb", extended: true }));
 // 3. API Routes
 app.use("/api/health", healthRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/api/apply", applicationRoutes);
 app.use("/api/applications", applicationRoutes);
 
 // 4. 404 Handler for undefined endpoints

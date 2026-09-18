@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { X, Upload, ArrowRight, FileText, Loader2, Sparkles } from "lucide-react";
-import { sendContactMessage, fileToBase64 } from "../../utils/contactEmailService";
+import { submitApplication, fileToBase64 } from "../../services/api";
 import "./ApplicationForm.css";
 
 export default function ApplicationForm({
@@ -142,12 +142,17 @@ export default function ApplicationForm({
         }
       }
 
-      await sendContactMessage({
+      await submitApplication({
         fullName: formData.fullName,
         email: formData.email,
         phone: formData.phone,
         college: formData.college || formData.currentRole || "Not specified",
-        enquiryType: `Application: ${oppTitle} [${journeyType}]`,
+        degree: formData.degree,
+        graduationYear: formData.graduationYear,
+        experienceLevel: formData.yearsExperience || formData.currentRole,
+        programType: journeyType,
+        preferredTrack: oppTitle,
+        linkedinUrl: formData.linkedin,
         message: candidateDetails,
         attachments,
       });
