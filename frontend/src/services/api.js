@@ -8,6 +8,8 @@ export const API_BASE_URL =
   (typeof import.meta !== "undefined" && import.meta.env && import.meta.env.VITE_API_URL) ||
   "http://localhost:5000/api";
 
+export const API_URL = API_BASE_URL;
+
 /**
  * Convert a Browser File or Blob object into a base64 attachment object for payload submission
  * @param {File|Blob} file 

@@ -60,13 +60,13 @@ app.use(notFoundHandler);
 app.use(globalErrorHandler);
 
 // 6. Start HTTP Server and initialize services
-app.listen(PORT, async () => {
+app.listen(PORT, "0.0.0.0", async () => {
   console.log(`===============================================`);
   console.log(`🚀 InGage EduTech Backend API is running!`);
   console.log(`📡 URL: http://localhost:${PORT}`);
   console.log(`🏥 Health Check: http://localhost:${PORT}/api/health`);
   console.log(`📬 Contact API: http://localhost:${PORT}/api/contact`);
-  console.log(`📝 Applications API: http://localhost:${PORT}/api/applications`);
+  console.log(`📝 Applications API: http://localhost:${PORT}/api/apply`);
   console.log(`===============================================`);
 
   // Initialize Database Pool & Tables
