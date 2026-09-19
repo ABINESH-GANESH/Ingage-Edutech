@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <style>
+      .txt-in {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Plus Jakarta Sans', sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        fill: #1E242B;
+        letter-spacing: -0.6px;
+      }
+      .txt-gage {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Plus Jakarta Sans', sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        fill: #76B82A;
+        letter-spacing: -0.6px;
+      }
+      .txt-edu {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Plus Jakarta Sans', sans-serif;
+        font-size: 18px;
+        font-weight: 900;
+        fill: #15428F;
+        letter-spacing: -0.4px;
+      }
+      @media (prefers-color-scheme: dark) {
+        .txt-in { fill: #FFFFFF; }
+        .txt-edu { fill: #60A5FA; }
+      }
+    </style>
+  </defs>
+
+  <!-- Transparent Background - Pure Text Only -->
+  <!-- Line 1: in + gage -->
+  <text x="32" y="28" text-anchor="middle">
+    <tspan class="txt-in">in</tspan><tspan class="txt-gage">gage</tspan>
+  </text>
+  
+  <!-- Line 2: EduTech -->
+  <text x="32" y="52" text-anchor="middle" class="txt-edu">EduTech</text>
+  
+  <!-- Signature Green Accent Dot inside 'c' -->
+  <circle cx="51.5" cy="44.5" r="2.4" fill="#76B82A"/>
+</svg>
