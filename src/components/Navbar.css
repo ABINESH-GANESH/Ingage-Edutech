@@ -319,19 +319,22 @@
   padding: 3px;
 }
 
-.icon-box-careers {
+.icon-box-careers,
+.icon-box-career {
   background-color: #eff6ff;
   border-color: #dbeafe;
   color: #0b3272;
 }
 
-.icon-box-internships {
+.icon-box-internships,
+.icon-box-internship {
   background-color: #f0fdf4;
   border-color: #dcfce7;
   color: #059669;
 }
 
-.icon-box-hackathons {
+.icon-box-hackathons,
+.icon-box-hackathon {
   background-color: #fffbeb;
   border-color: #fef3c7;
   color: #d97706;
@@ -357,7 +360,8 @@
   transform: scale(1.08);
 }
 
-.nav-dropdown-item:hover .icon-box-careers {
+.nav-dropdown-item:hover .icon-box-careers,
+.nav-dropdown-item:hover .icon-box-career {
   background: linear-gradient(135deg, #0b3272 0%, #1d4ed8 100%);
   color: #ffffff;
   border-color: transparent;
@@ -365,7 +369,8 @@
   transform: scale(1.05);
 }
 
-.nav-dropdown-item:hover .icon-box-internships {
+.nav-dropdown-item:hover .icon-box-internships,
+.nav-dropdown-item:hover .icon-box-internship {
   background: linear-gradient(135deg, #047857 0%, #059669 100%);
   color: #ffffff;
   border-color: transparent;
@@ -373,7 +378,8 @@
   transform: scale(1.05);
 }
 
-.nav-dropdown-item:hover .icon-box-hackathons {
+.nav-dropdown-item:hover .icon-box-hackathons,
+.nav-dropdown-item:hover .icon-box-hackathon {
   background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
   color: #ffffff;
   border-color: transparent;
@@ -427,21 +433,24 @@
 }
 
 .badge-live-emerald,
-.badge-careers {
+.badge-careers,
+.badge-career {
   background-color: #ecfdf5;
   color: #047857;
   border: 1px solid #a7f3d0;
 }
 
 .badge-subtle-blue,
-.badge-internships {
+.badge-internships,
+.badge-internship {
   background-color: #eff6ff;
   color: #1e40af;
   border: 1px solid #bfdbfe;
 }
 
 .badge-subtle-amber,
-.badge-hackathons {
+.badge-hackathons,
+.badge-hackathon {
   background-color: #fffbeb;
   color: #b45309;
   border: 1px solid #fde68a;

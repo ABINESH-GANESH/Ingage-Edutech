@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Search, ArrowRight, ChevronDown, Briefcase, GraduationCap, Trophy, Video, Sparkles } from "lucide-react";
+import { Search, ArrowRight, ChevronDown, Briefcase, GraduationCap, Trophy, Video } from "lucide-react";
 import BrandLogo from "./common/BrandLogo";
 import "./Navbar.css";
 
@@ -62,13 +62,13 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
-  const [careersDropdownOpen, setCareersDropdownOpen] = useState(false);
+  const [opportunitiesDropdownOpen, setOpportunitiesDropdownOpen] = useState(false);
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
-  const [mobileCareersOpen, setMobileCareersOpen] = useState(false);
+  const [mobileOpportunitiesOpen, setMobileOpportunitiesOpen] = useState(false);
   const [selectedCourseType, setSelectedCourseType] = useState("google");
 
-  const dropdownRef = useRef(null);
-  const dropdownTimeoutRef = useRef(null);
+  const opportunitiesDropdownRef = useRef(null);
+  const opportunitiesDropdownTimeoutRef = useRef(null);
   const coursesDropdownRef = useRef(null);
   const coursesDropdownTimeoutRef = useRef(null);
 
@@ -94,14 +94,14 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
   const isContactPage = currentPath === "/contact-us" || currentPath === "/contact";
   const isApplyPage = currentPath === "/apply";
 
-  const isAnyCareerActive = isCareersPage || isInternshipsPage || isHackathonsPage || isWebinarPage;
+  const isAnyOpportunityActive = isCareersPage || isInternshipsPage || isHackathonsPage || isWebinarPage;
 
   // Auto-expand mobile accordions if on corresponding pages
   useEffect(() => {
-    if (isAnyCareerActive) {
-      setMobileCareersOpen(true);
+    if (isAnyOpportunityActive) {
+      setMobileOpportunitiesOpen(true);
     }
-  }, [isAnyCareerActive]);
+  }, [isAnyOpportunityActive]);
 
   useEffect(() => {
     if (isCoursesPage) {
@@ -119,22 +119,22 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
       hasDropdown: true,
       targetId: "courses",
     },
-    { key: "coe", label: t("navbar.centerOfExcellence", { defaultValue: "CENTER OF EXCELLENCE" }), path: "/center-of-excellence", targetId: "coe" },
     {
-      key: "careers",
+      key: "opportunities",
       label: t("navbar.opportunities", { defaultValue: "OPPORTUNITIES" }),
       path: "/careers",
       hasDropdown: true,
     },
+    { key: "coe", label: t("navbar.centerOfExcellence", { defaultValue: "CENTER OF EXCELLENCE" }), path: "/center-of-excellence", targetId: "coe" },
     { key: "about", label: t("navbar.aboutUs", { defaultValue: "ABOUT US" }), path: "/about-us", targetId: "about" },
     { key: "contact", label: t("navbar.contactUs", { defaultValue: "CONTACT US" }), path: "/contact-us", targetId: "contact" },
   ];
 
-  // Courses Dropdown Sub-Items
+  // 1. Courses Dropdown Sub-Items (ONLY 2 items: Google Certified Course & InGage Certified Course)
   const coursesDropdownItems = [
     {
       key: "google",
-      label: "Google Certified Courses",
+      label: "Google Certified Course",
       desc: t("navbar.googleCoursesDesc", { defaultValue: "Official Google Cloud, AI & Gen AI curriculum" }),
       path: "/courses",
       icon: GoogleOfficialLogo,
@@ -143,7 +143,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
     },
     {
       key: "ingage",
-      label: "InGage Certified Courses",
+      label: "InGage Certified Course",
       desc: t("navbar.ingageCoursesDesc", { defaultValue: "Specialized AR/VR, IoT, Unity & Spatial Design" }),
       path: "/courses",
       icon: InGageOfficialLogo,
@@ -152,11 +152,11 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
     },
   ];
 
-  // Career Dropdown Sub-Items
-  const careerDropdownItems = [
+  // 2. Opportunities Dropdown Sub-Items (ONLY 4 items: Career, Internship, Hackathon, Webinar)
+  const opportunitiesDropdownItems = [
     {
-      key: "careers",
-      label: t("navbar.careersPortal", { defaultValue: "Careers & Job Openings" }),
+      key: "career",
+      label: "Career",
       desc: t("navbar.careersDesc", { defaultValue: "Explore full-time engineering, AR/VR & tech roles at InGage" }),
       path: "/careers",
       icon: Briefcase,
@@ -165,8 +165,8 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
       isActive: isCareersPage,
     },
     {
-      key: "internships",
-      label: t("navbar.internshipsPortal", { defaultValue: "Internship Programs" }),
+      key: "internship",
+      label: "Internship",
       desc: t("navbar.internshipsDesc", { defaultValue: "Live industrial project tracks with 1-on-1 expert mentorship" }),
       path: "/internships",
       icon: GraduationCap,
@@ -175,8 +175,8 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
       isActive: isInternshipsPage,
     },
     {
-      key: "hackathons",
-      label: t("navbar.hackathonsPortal", { defaultValue: "Hackathons & Challenges" }),
+      key: "hackathon",
+      label: "Hackathon",
       desc: t("navbar.hackathonsDesc", { defaultValue: "Compete in tech challenges, build prototypes & win prizes" }),
       path: "/hackathons",
       icon: Trophy,
@@ -186,7 +186,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
     },
     {
       key: "webinar",
-      label: t("navbar.webinarPortal", { defaultValue: "Live Masterclasses & Workshops" }),
+      label: "Webinar",
       desc: t("navbar.webinarDesc", { defaultValue: "Interactive sessions on interview prep, portfolio & emerging tech" }),
       path: "/webinar",
       icon: Video,
@@ -200,7 +200,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
     if (coursesDropdownTimeoutRef.current) {
       clearTimeout(coursesDropdownTimeoutRef.current);
     }
-    setCareersDropdownOpen(false);
+    setOpportunitiesDropdownOpen(false);
     setCoursesDropdownOpen(true);
   };
 
@@ -210,17 +210,17 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
     }, 180);
   };
 
-  const handleMouseEnterCareers = () => {
-    if (dropdownTimeoutRef.current) {
-      clearTimeout(dropdownTimeoutRef.current);
+  const handleMouseEnterOpportunities = () => {
+    if (opportunitiesDropdownTimeoutRef.current) {
+      clearTimeout(opportunitiesDropdownTimeoutRef.current);
     }
     setCoursesDropdownOpen(false);
-    setCareersDropdownOpen(true);
+    setOpportunitiesDropdownOpen(true);
   };
 
-  const handleMouseLeaveCareers = () => {
-    dropdownTimeoutRef.current = setTimeout(() => {
-      setCareersDropdownOpen(false);
+  const handleMouseLeaveOpportunities = () => {
+    opportunitiesDropdownTimeoutRef.current = setTimeout(() => {
+      setOpportunitiesDropdownOpen(false);
     }, 180);
   };
 
@@ -236,7 +236,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
 
   const handleSubItemClick = (e, path) => {
     e.preventDefault();
-    setCareersDropdownOpen(false);
+    setOpportunitiesDropdownOpen(false);
     setMobileMenuOpen(false);
     if (onNavigate) {
       onNavigate(path);
@@ -246,8 +246,8 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
   // Close dropdowns on outside click or escape key
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setCareersDropdownOpen(false);
+      if (opportunitiesDropdownRef.current && !opportunitiesDropdownRef.current.contains(e.target)) {
+        setOpportunitiesDropdownOpen(false);
       }
       if (coursesDropdownRef.current && !coursesDropdownRef.current.contains(e.target)) {
         setCoursesDropdownOpen(false);
@@ -255,7 +255,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
     };
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
-        setCareersDropdownOpen(false);
+        setOpportunitiesDropdownOpen(false);
         setCoursesDropdownOpen(false);
         setMobileMenuOpen(false);
       }
@@ -265,7 +265,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleKeyDown);
-      if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+      if (opportunitiesDropdownTimeoutRef.current) clearTimeout(opportunitiesDropdownTimeoutRef.current);
       if (coursesDropdownTimeoutRef.current) clearTimeout(coursesDropdownTimeoutRef.current);
     };
   }, []);
@@ -273,7 +273,8 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
   const handleLinkClick = (e, link) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    setCareersDropdownOpen(false);
+    setOpportunitiesDropdownOpen(false);
+    setCoursesDropdownOpen(false);
 
     if (link.path === "/courses") {
       if (onNavigate) onNavigate("/courses");
@@ -286,7 +287,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
     } else if (link.path === "/contact-us") {
       if (onNavigate) onNavigate("/contact-us");
     } else {
-      if (isCoEPage || isCareersPage || isInternshipsPage || isHackathonsPage || isCoursesPage || isAboutPage || isContactPage || isApplyPage) {
+      if (isCoEPage || isCareersPage || isInternshipsPage || isHackathonsPage || isWebinarPage || isCoursesPage || isAboutPage || isContactPage || isApplyPage) {
         if (onNavigate) {
           onNavigate("/");
           if (link.targetId && link.targetId !== "home") {
@@ -384,7 +385,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
                     {isCoursesPage && <span className="nav-active-bar" aria-hidden="true" />}
                   </button>
 
-                  {/* Floating Courses Dropdown Menu */}
+                  {/* Floating Courses Dropdown Menu (ONLY 2 items) */}
                   <div
                     className={`nav-dropdown-menu courses-dropdown-menu ${coursesDropdownOpen ? "dropdown-visible" : ""}`}
                     role="menu"
@@ -442,21 +443,21 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
               );
             }
 
-            // Dropdown Menu Item (Careers)
-            if (link.key === "careers") {
+            // Dropdown Menu Item (Opportunities)
+            if (link.key === "opportunities") {
               return (
                 <div
                   key={link.key}
                   className="nav-dropdown-wrapper"
-                  ref={dropdownRef}
-                  onMouseEnter={handleMouseEnterCareers}
-                  onMouseLeave={handleMouseLeaveCareers}
+                  ref={opportunitiesDropdownRef}
+                  onMouseEnter={handleMouseEnterOpportunities}
+                  onMouseLeave={handleMouseLeaveOpportunities}
                 >
                   <button
                     type="button"
-                    className={`nav-pill-link nav-dropdown-trigger ${isAnyCareerActive ? "nav-pill-active" : ""} ${careersDropdownOpen ? "dropdown-open" : ""}`}
-                    onClick={() => setCareersDropdownOpen((prev) => !prev)}
-                    aria-expanded={careersDropdownOpen}
+                    className={`nav-pill-link nav-dropdown-trigger ${isAnyOpportunityActive ? "nav-pill-active" : ""} ${opportunitiesDropdownOpen ? "dropdown-open" : ""}`}
+                    onClick={() => setOpportunitiesDropdownOpen((prev) => !prev)}
+                    aria-expanded={opportunitiesDropdownOpen}
                     aria-haspopup="true"
                     aria-label={`${link.label} menu`}
                   >
@@ -464,33 +465,33 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
                       <span>{link.label}</span>
                       <ChevronDown
                         size={13}
-                        className={`nav-dropdown-chevron ${careersDropdownOpen ? "chevron-rotated" : ""}`}
+                        className={`nav-dropdown-chevron ${opportunitiesDropdownOpen ? "chevron-rotated" : ""}`}
                         aria-hidden="true"
                       />
                     </span>
-                    {isAnyCareerActive && <span className="nav-active-bar" aria-hidden="true" />}
+                    {isAnyOpportunityActive && <span className="nav-active-bar" aria-hidden="true" />}
                   </button>
 
-                  {/* Floating Mega Dropdown Menu */}
+                  {/* Floating Mega Dropdown Menu (ONLY 4 items: Career, Internship, Hackathon, Webinar) */}
                   <div
-                    className={`nav-dropdown-menu ${careersDropdownOpen ? "dropdown-visible" : ""}`}
+                    className={`nav-dropdown-menu ${opportunitiesDropdownOpen ? "dropdown-visible" : ""}`}
                     role="menu"
-                    aria-label="Careers & Pathways Dropdown"
+                    aria-label="Opportunities Dropdown"
                   >
                     <div className="nav-dropdown-inner">
                       {/* Dropdown Header */}
                       <div className="nav-dropdown-header">
                         <div className="nav-dropdown-header-left">
-                          <span className="nav-dropdown-kicker">GROWTH & PATHWAYS</span>
-                          <span className="nav-dropdown-header-title">Opportunities for Students & Engineers</span>
+                          <span className="nav-dropdown-kicker">OPPORTUNITIES</span>
+                          <span className="nav-dropdown-header-title">Career & Growth Pathways</span>
                         </div>
                         <span className="nav-dropdown-verified-pill">
-                          <span className="verified-dot" aria-hidden="true" /> Verified Hub
+                          <span className="verified-dot" aria-hidden="true" /> Active Tracks
                         </span>
                       </div>
 
                       <div className="nav-dropdown-items-stack">
-                        {careerDropdownItems.map((item) => {
+                        {opportunitiesDropdownItems.map((item) => {
                           const IconComp = item.icon;
                           return (
                             <a
@@ -523,31 +524,6 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
                           );
                         })}
                       </div>
-
-                      {/* Dropdown Bottom Quick Callout */}
-                      <div
-                        className="nav-dropdown-footer-interactive"
-                        onClick={(e) => handleSubItemClick(e, "/apply")}
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter" || e.key === " ") handleSubItemClick(e, "/apply");
-                        }}
-                      >
-                        <div className="nav-dropdown-footer-left">
-                          <div className="nav-dropdown-footer-icon-pill">
-                            <Sparkles size={12} />
-                          </div>
-                          <div className="nav-dropdown-footer-texts">
-                            <span className="nav-dropdown-footer-title">Placement & Hiring Support</span>
-                            <span className="nav-dropdown-footer-sub">Portfolio reviews & hiring referrals</span>
-                          </div>
-                        </div>
-                        <span className="nav-dropdown-footer-cta">
-                          <span>Apply</span>
-                          <ArrowRight size={11} />
-                        </span>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -559,7 +535,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
               (link.path === "/center-of-excellence" && isCoEPage) ||
               (link.path === "/about-us" && isAboutPage) ||
               (link.path === "/contact-us" && isContactPage) ||
-              (link.path === "/" && !isCoEPage && !isCareersPage && !isInternshipsPage && !isHackathonsPage && !isCoursesPage && !isAboutPage && !isContactPage && !isApplyPage && link.targetId === "home");
+              (link.path === "/" && !isCoEPage && !isCareersPage && !isInternshipsPage && !isHackathonsPage && !isWebinarPage && !isCoursesPage && !isAboutPage && !isContactPage && !isApplyPage && link.targetId === "home");
 
             return (
               <a
@@ -575,7 +551,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
           })}
         </nav>
 
-        {/* Right: Search Action + Login Button */}
+        {/* Right: Search Action + Static Login Button */}
         <div className="navbar-right-actions">
           <button
             type="button"
@@ -614,6 +590,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
         <div className="mobile-nav-inner">
           <nav className="mobile-nav-links">
             {navLinks.map((link) => {
+              // Mobile Courses Accordion
               if (link.key === "courses") {
                 return (
                   <div key={link.key} className="mobile-nav-accordion-group">
@@ -666,14 +643,15 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
                 );
               }
 
-              if (link.key === "careers") {
+              // Mobile Opportunities Accordion
+              if (link.key === "opportunities") {
                 return (
                   <div key={link.key} className="mobile-nav-accordion-group">
                     <button
                       type="button"
-                      className={`mobile-nav-link mobile-nav-accordion-btn ${isAnyCareerActive ? "nav-link-active" : ""}`}
-                      onClick={() => setMobileCareersOpen((prev) => !prev)}
-                      aria-expanded={mobileCareersOpen}
+                      className={`mobile-nav-link mobile-nav-accordion-btn ${isAnyOpportunityActive ? "nav-link-active" : ""}`}
+                      onClick={() => setMobileOpportunitiesOpen((prev) => !prev)}
+                      aria-expanded={mobileOpportunitiesOpen}
                     >
                       <span className="mobile-nav-btn-text">
                         <Briefcase size={15} className="mobile-nav-prefix-icon" />
@@ -681,12 +659,12 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
                       </span>
                       <ChevronDown
                         size={16}
-                        className={`mobile-accordion-chevron ${mobileCareersOpen ? "chevron-open" : ""}`}
+                        className={`mobile-accordion-chevron ${mobileOpportunitiesOpen ? "chevron-open" : ""}`}
                       />
                     </button>
 
-                    <div className={`mobile-subnav-panel ${mobileCareersOpen ? "panel-expanded" : ""}`}>
-                      {careerDropdownItems.map((item) => {
+                    <div className={`mobile-subnav-panel ${mobileOpportunitiesOpen ? "panel-expanded" : ""}`}>
+                      {opportunitiesDropdownItems.map((item) => {
                         const ItemIcon = item.icon;
                         return (
                           <a
@@ -722,7 +700,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
                 (link.path === "/center-of-excellence" && isCoEPage) ||
                 (link.path === "/about-us" && isAboutPage) ||
                 (link.path === "/contact-us" && isContactPage) ||
-                (link.path === "/" && !isCoEPage && !isCareersPage && !isInternshipsPage && !isHackathonsPage && !isCoursesPage && !isAboutPage && !isContactPage && !isApplyPage && link.targetId === "home");
+                (link.path === "/" && !isCoEPage && !isCareersPage && !isInternshipsPage && !isHackathonsPage && !isWebinarPage && !isCoursesPage && !isAboutPage && !isContactPage && !isApplyPage && link.targetId === "home");
 
               return (
                 <a
