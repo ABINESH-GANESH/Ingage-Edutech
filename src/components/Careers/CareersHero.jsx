@@ -74,7 +74,6 @@ export default function CareersHero({ onExploreClick, onSectionJump }) {
             {/* Primary Source from public/videos/ */}
             <source src="/videos/career-animation.mp4" type="video/mp4" />
             <source src="/videos/Untitled video (17).mp4" type="video/mp4" />
-            <source src="/videos/careers-hero.mp4" type="video/mp4" />
           </video>
         ) : (
           <div className="careers-fullscreen-fallback-backdrop" />
