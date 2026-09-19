@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { sendContactMessage } from "../../utils/contactEmailService";
 import "./CourseInquiryModal.css";
 
 export default function CourseInquiryModal({ course, isOpen, onClose }) {
@@ -11,31 +10,17 @@ export default function CourseInquiryModal({ course, isOpen, onClose }) {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [lastData, setLastData] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen || !course) return null;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const snapshot = {
-      fullName: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      college: formData.institution,
-      enquiryType: `Course Track Inquiry: ${course.title} (${course.certification || "Google Certified"})`,
-      message: `Course: ${course.title}\nDuration: ${course.duration}\nProjects: ${course.projects}`,
-    };
-    try {
-      await sendContactMessage(snapshot);
-      setSubmitted(true);
-    } catch (err) {
-      console.error("Course inquiry dispatch error:", err);
-      alert("Unable to send inquiry. Please check your connection and try again.");
-    } finally {
+    setTimeout(() => {
       setIsSubmitting(false);
-    }
+      setSubmitted(true);
+    }, 300);
   };
 
   return (

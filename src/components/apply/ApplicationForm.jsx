@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { X, Upload, ArrowRight, FileText, Loader2, Sparkles } from "lucide-react";
-import { submitApplication, fileToBase64 } from "../../services/api";
 import "./ApplicationForm.css";
 
 export default function ApplicationForm({
@@ -95,68 +94,14 @@ export default function ApplicationForm({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
 
-    try {
-      const oppTitle = opportunity ? opportunity.title : "General Talent Network";
-      const oppDept = opportunity ? opportunity.department : "All Pathways";
-
-      let candidateDetails = `Journey Type: ${journeyType}\nTarget Opportunity: ${oppTitle} (${oppDept})\nCity: ${formData.city || "N/A"}\nDegree / Branch: ${formData.degree || "N/A"}\nGraduation Year: ${formData.graduationYear || "N/A"}`;
-      
-      if (formData.currentRole) {
-        candidateDetails += `\nCurrent Role / Organization: ${formData.currentRole}`;
-      }
-      if (formData.yearsExperience) {
-        candidateDetails += `\nYears of Experience: ${formData.yearsExperience}`;
-      }
-      if (formData.areaOfInterest) {
-        candidateDetails += `\nArea of Interest: ${formData.areaOfInterest}`;
-      }
-      if (formData.skills) {
-        candidateDetails += `\nSkills: ${formData.skills}`;
-      }
-      if (formData.projects) {
-        candidateDetails += `\nProjects / Highlights: ${formData.projects}`;
-      }
-      if (formData.linkedin) {
-        candidateDetails += `\nLinkedIn / Portfolio: ${formData.linkedin}`;
-      }
-      if (formData.resumeFile) {
-        candidateDetails += `\nAttached Resume: ${formData.resumeFile.name} (${(formData.resumeFile.size / 1024).toFixed(1)} KB)`;
-      }
-
-      // Convert resume file to base64 attachment for email delivery
-      let attachments = [];
-      if (formData.resumeFile) {
-        try {
-          const encodedFile = await fileToBase64(formData.resumeFile);
-          if (encodedFile) {
-            attachments.push(encodedFile);
-          }
-        } catch (fileErr) {
-          console.error("Failed to read resume attachment:", fileErr);
-        }
-      }
-
-      await submitApplication({
-        fullName: formData.fullName,
-        email: formData.email,
-        phone: formData.phone,
-        college: formData.college || formData.currentRole || "Not specified",
-        degree: formData.degree,
-        graduationYear: formData.graduationYear,
-        experienceLevel: formData.yearsExperience || formData.currentRole,
-        programType: journeyType,
-        preferredTrack: oppTitle,
-        linkedinUrl: formData.linkedin,
-        message: candidateDetails,
-        attachments,
-      });
-
+    setTimeout(() => {
+      setIsSubmitting(false);
       if (onSubmitSuccess) {
         onSubmitSuccess({
           opportunity: opportunity || { title: "General InGage Application", department: "Talent Network" },
@@ -164,12 +109,7 @@ export default function ApplicationForm({
           journeyType,
         });
       }
-    } catch (err) {
-      console.error("Application submission failed:", err);
-      alert("Unable to submit application. Please check your connection and try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    }, 400);
   };
 
   return (

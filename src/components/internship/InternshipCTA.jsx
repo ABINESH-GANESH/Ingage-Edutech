@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Sparkles, ArrowRight, Mail, Send, X, User, GraduationCap, Phone, Upload } from "lucide-react";
-import { sendContactMessage, fileToBase64 } from "../../utils/contactEmailService";
 import "./InternshipCTA.css";
 
 export default function InternshipCTA({ selectedTrack, onClearSelectedTrack }) {
@@ -50,36 +49,13 @@ export default function InternshipCTA({ selectedTrack, onClearSelectedTrack }) {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    try {
-      let attachments = [];
-      if (formData.resumeFile) {
-        try {
-          const encoded = await fileToBase64(formData.resumeFile);
-          if (encoded) attachments.push(encoded);
-        } catch (err) {
-          console.error("Resume file encoding error:", err);
-        }
-      }
-
-      await sendContactMessage({
-        fullName: formData.fullName,
-        email: formData.email,
-        phone: formData.phone,
-        college: formData.institution,
-        enquiryType: `Internship Application: ${formData.domain}`,
-        message: `Degree & Branch: ${formData.degreeBranch}\nYear of Study: ${formData.yearOfStudy}\nDomain Track: ${formData.domain}${formData.resumeFile ? `\nAttached Resume: ${formData.resumeFile.name}` : ""}\n\nTechnical Statement:\n${formData.note || "Not provided"}`,
-        attachments,
-      });
-      setFormSubmitted(true);
-    } catch (err) {
-      console.error("Internship application dispatch error:", err);
-      alert("Unable to submit application. Please check your connection and try again.");
-    } finally {
+    setTimeout(() => {
       setIsSubmitting(false);
-    }
+      setFormSubmitted(true);
+    }, 300);
   };
 
   return (

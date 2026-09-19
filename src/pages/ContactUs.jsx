@@ -26,7 +26,6 @@ import {
   Laptop,
   Check,
 } from "lucide-react";
-import { sendContactMessage, fileToBase64 } from "../utils/contactEmailService";
 import { contactData } from "../data/contactData";
 import { approvedData } from "../data/approvedData";
 import "./ContactUs.css";
@@ -174,7 +173,7 @@ export default function ContactUs({ onNavigate }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitError("");
 
@@ -188,30 +187,9 @@ export default function ContactUs({ onNavigate }) {
     }
 
     setIsSubmitting(true);
-    let attachments = [];
-    if (attachmentFile) {
-      try {
-        const encoded = await fileToBase64(attachmentFile);
-        if (encoded) {
-          attachments.push(encoded);
-        }
-      } catch (err) {
-        console.error("Attachment encoding error:", err);
-      }
-    }
 
-    const payload = {
-      fullName: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      college: formData.institution,
-      enquiryType: formData.enquiryType,
-      message: formData.message || "Institutional inquiry submitted via website contact form.",
-      attachments,
-    };
-
-    try {
-      await sendContactMessage(payload);
+    setTimeout(() => {
+      setIsSubmitting(false);
       setIsSuccess(true);
       setFormData({
         name: "",
@@ -223,12 +201,7 @@ export default function ContactUs({ onNavigate }) {
       });
       setAttachmentFile(null);
       setErrors({});
-    } catch (err) {
-      console.error("Submission dispatch error:", err);
-      setSubmitError("Unable to send your message right now. Please check your connection and try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    }, 400);
   };
 
   const handleResetSuccess = () => {

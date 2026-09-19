@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { X, MapPin, Briefcase, Clock, CheckCircle2, Send, Sparkles, User, Mail, Phone, Link2, Upload } from "lucide-react";
-import { sendContactMessage, fileToBase64 } from "../../utils/contactEmailService";
 import "./JobDetailModal.css";
 
 export default function JobDetailModal({ job, onClose }) {
@@ -46,36 +45,13 @@ export default function JobDetailModal({ job, onClose }) {
     }
   };
 
-  const handleApplySubmit = async (e) => {
+  const handleApplySubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    try {
-      let attachments = [];
-      if (formData.resumeFile) {
-        try {
-          const encoded = await fileToBase64(formData.resumeFile);
-          if (encoded) attachments.push(encoded);
-        } catch (err) {
-          console.error("Resume file encoding error:", err);
-        }
-      }
-
-      await sendContactMessage({
-        fullName: formData.fullName,
-        email: formData.email,
-        phone: formData.phone,
-        college: "Not specified",
-        enquiryType: `Job Application: ${job.title} (${job.department})`,
-        message: `Position: ${job.title}\nDepartment: ${job.department}\nLocation: ${job.location}\nExperience Level: ${job.experience}\nPortfolio / LinkedIn: ${formData.portfolio || "Not provided"}${formData.resumeFile ? `\nAttached Resume: ${formData.resumeFile.name}` : ""}\n\nCandidate Note:\n${formData.note || "Not provided"}`,
-        attachments,
-      });
-      setFormSubmitted(true);
-    } catch (err) {
-      console.error("Job application dispatch error:", err);
-      alert("Unable to submit application. Please check your connection and try again.");
-    } finally {
+    setTimeout(() => {
       setIsSubmitting(false);
-    }
+      setFormSubmitted(true);
+    }, 300);
   };
 
   return (

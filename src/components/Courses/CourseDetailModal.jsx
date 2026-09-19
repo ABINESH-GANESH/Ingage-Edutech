@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { X, Clock, Award, CheckCircle2, BookOpen, Layers, Send, User, Mail, Phone, Building } from "lucide-react";
-import { sendContactMessage } from "../../utils/contactEmailService";
 import "./CourseDetailModal.css";
 
 export default function CourseDetailModal({ course, isOpen, onClose }) {
@@ -37,24 +36,13 @@ export default function CourseDetailModal({ course, isOpen, onClose }) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    try {
-      await sendContactMessage({
-        name: formData.fullName,
-        email: formData.email,
-        phone: formData.phone,
-        institution: formData.institution,
-        enquiryType: `Course Enrollment Request: ${course.title}`,
-        message: `Applicant Role: ${formData.role}\nCourse: ${course.title}\nCategory: ${course.categoryLabel}\nDuration: ${course.duration}\nCertification: ${course.certification}`,
-      });
-    } catch (err) {
-      console.error("Course Detail Modal dispatch error:", err);
-    } finally {
+    setTimeout(() => {
       setIsSubmitting(false);
       setFormSubmitted(true);
-    }
+    }, 300);
   };
 
   return (

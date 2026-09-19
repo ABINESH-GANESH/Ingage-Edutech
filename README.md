@@ -1,6 +1,8 @@
-# InGage EduTech — Full-Stack Platform
+# InGage EduTech — Frontend Web Platform
 
-A modern, high-performance web platform for **InGage EduTech**, engineered with a clean, fully-separated full-stack architecture featuring a React + Vite frontend and a secure Node.js + Express + MySQL + Nodemailer backend.
+A modern, high-performance, completely **Frontend-Only** web application for **InGage EduTech**, built with **React**, **JavaScript**, and **Vite**.
+
+All navigation, interactive course exploration, Center of Excellence blueprints, careers/internship portals, hackathons, webinar registration showcases, and enquiry forms operate entirely client-side using React state, component architecture, and local data modules.
 
 ---
 
@@ -9,61 +11,74 @@ A modern, high-performance web platform for **InGage EduTech**, engineered with 
 ```text
 ingage-edutech/
 │
-├── frontend/                     # React + Vite Frontend Client
-│   ├── public/                   # Static assets (images, videos, icons, logos)
-│   │   ├── assets/
+├── public/                       # Static public assets (images, logos, videos)
+│   ├── assets/
+│   │   ├── brand/                # InGage logos and brand badges
 │   │   └── ...
-│   ├── src/
-│   │   ├── assets/               # Local images and graphic assets
-│   │   ├── components/           # Reusable UI components (Hero, Navbar, Modals, etc.)
-│   │   ├── pages/                # Page views (Home, About, Courses, COE, Hackathon, etc.)
-│   │   ├── data/                 # Course curriculums, event data, and content configs
-│   │   ├── services/             # Centralized API service layer (api.js)
-│   │   ├── styles/               # Global and component-specific stylesheets
-│   │   ├── utils/                # Helper utilities and compatibility bridges
-│   │   ├── App.jsx               # Main React Application router
-│   │   └── main.jsx              # React DOM entrypoint
-│   ├── index.html                # Single-page application template
-│   ├── vite.config.js            # Vite bundler configuration
-│   ├── package.json              # Frontend dependencies and scripts
-│   ├── .env.example              # Frontend environment template
-│   └── .env                      # Local frontend environment variables
+│   └── videos/                   # Masterclass and media assets
 │
-├── backend/                      # Node.js & Express REST API Server
-│   ├── config/                   # Configuration & Database connection pool (db.js)
-│   ├── controllers/              # Request handlers (contact, applications, health)
-│   ├── middleware/               # Express middleware (rate limiting, error handling)
-│   ├── models/                   # Database data access models (Contact.js, Application.js)
-│   ├── routes/                   # Modular API route definitions (contact, applications, health)
-│   ├── services/                 # Business logic & Nodemailer SMTP service (emailService.js)
-│   ├── utils/                    # Response helpers and data sanitizers
-│   ├── server.js                 # Express server bootstrap & listener
-│   ├── package.json              # Backend dependencies and scripts
-│   ├── .env.example              # Backend environment template
-│   └── .env                      # Local backend secrets (DB & SMTP credentials)
+├── src/                          # Application source code
+│   ├── assets/                   # Local media and SVGs
+│   ├── components/               # Reusable modular UI components
+│   │   ├── About/                # About sections & features
+│   │   ├── apply/                # Unified multi-journey application modals & forms
+│   │   ├── Careers/              # Job cards, category filters & JobDetailModal
+│   │   ├── common/               # Shared components
+│   │   ├── Courses/              # Course catalogs, search, filters & CourseDetailModal
+│   │   ├── Footer/               # Corporate responsive footer
+│   │   ├── Hackathons/           # Hackathon showcase & challenge tracks
+│   │   ├── internship/           # Internship domains & application modals
+│   │   ├── legal/                # Legal modal & subcomponents
+│   │   ├── CoESetupModal.jsx     # Institutional ₹1.5 Cr CoE Blueprint modal
+│   │   ├── Navbar.jsx            # Sticky navigation with course dropdowns & login UI
+│   │   └── ...
+│   ├── data/                     # Local data stores & static content
+│   │   ├── aboutData.js          # About Us content, leadership & vision
+│   │   ├── applyData.js          # Unified candidate journeys & roles
+│   │   ├── approvedData.js       # CoE domains, stats & certified credentials
+│   │   ├── careersData.js        # Career openings & role specifications
+│   │   ├── contactData.js        # Contact details & office info
+│   │   ├── coursesData.js        # Google & InGage certified course tracks
+│   │   ├── hackathons.js         # National hackathons & challenges
+│   │   ├── internshipData.js     # Structured engineering internships
+│   │   ├── legalContent.js       # Privacy Policy & Terms and Conditions
+│   │   └── webinarData.js        # Career Readiness Masterclass data & video script
+│   ├── i18n/                     # Internationalization configuration & translations
+│   ├── pages/                    # Page components
+│   │   ├── AboutUs.jsx           # Dedicated About Us page
+│   │   ├── Apply.jsx             # Dedicated Apply Now talent portal
+│   │   ├── CareersPage.jsx       # Dedicated Careers & Opportunities page
+│   │   ├── CenterOfExcellence.jsx# Dedicated CoE Lab infrastructure page
+│   │   ├── ContactUs.jsx         # Dedicated Contact Us & institutional enquiry
+│   │   ├── CoursesPage.jsx       # Dedicated Courses & Certifications catalog
+│   │   ├── Hackathons.jsx        # Dedicated Hackathons & challenges page
+│   │   ├── InternshipPage.jsx    # Dedicated Internship Experience page
+│   │   ├── PrivacyPolicy.jsx     # Privacy Policy portal
+│   │   ├── TermsAndConditions.jsx# Terms & Conditions portal
+│   │   └── WebinarPage.jsx       # Live Career Readiness Masterclass page
+│   ├── styles/                   # Design system tokens & utility stylesheets
+│   ├── utils/                    # Frontend helpers
+│   ├── App.jsx                   # Main layout and client-side page router
+│   ├── main.jsx                  # React DOM entrypoint
+│   └── index.css                 # Global styling & responsive typography
 │
-├── .gitignore                    # Monorepo-wide Git ignore rules
-└── README.md                     # Project documentation & developer guide
+├── index.html                    # Single-Page Application HTML5 template
+├── vite.config.js                # Vite bundler configuration
+├── package.json                  # Frontend dependencies and npm scripts
+└── README.md                     # Project documentation
 ```
 
 ---
 
 ## 🛠️ Technology Stack
 
-### **Frontend**
-- **Framework**: [React 18](https://react.dev/)
-- **Build Tool**: [Vite 6](https://vitejs.dev/)
-- **Routing**: [React Router 6](https://reactrouter.com/)
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool / Bundler**: [Vite 6](https://vitejs.dev/)
+- **Language**: JavaScript (ES Modules)
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **Styling**: Vanilla CSS3 with responsive layouts & modern design tokens
-- **API Client**: Native `fetch` with centralized error handling & base64 file upload support
-
-### **Backend**
-- **Runtime**: [Node.js](https://nodejs.org/) (ES Modules)
-- **Framework**: [Express 4](https://expressjs.com/)
-- **Database**: [MySQL 8](https://www.mysql.com/) via `mysql2/promise` (with automatic schema creation and offline fallback)
-- **Mailing Engine**: [Nodemailer](https://nodemailer.com/) (SMTP with HTML email rendering and attachment support)
-- **Security & Reliability**: `cors`, `express-rate-limit`, JSON payload limits up to 25MB
+- **Localization**: [i18next](https://www.i18next.com/) & `react-i18next`
+- **Styling**: Vanilla CSS3 with responsive fluid design tokens & modern aesthetics
+- **Architecture**: 100% Frontend-Only (Zero backend, zero database, zero external API servers)
 
 ---
 
@@ -72,182 +87,60 @@ ingage-edutech/
 ### Prerequisites
 - **Node.js** >= 18.0.0
 - **npm** >= 9.0.0
-- **MySQL** >= 8.0 *(Optional: backend automatically operates in SMTP-only mode if MySQL is not running)*
 
----
-
-### 1. Backend Setup
-
-1. Open a terminal and navigate to the `backend/` directory:
-   ```bash
-   cd backend
-   ```
-
-2. Install backend dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Create your `.env` configuration file from the example:
-   ```bash
-   cp .env.example .env
-   ```
-
-4. Configure your `.env` variables:
-   ```env
-   PORT=5000
-   NODE_ENV=development
-   FRONTEND_URL=http://localhost:5173,http://localhost:5174
-
-   # MySQL Database
-   DB_HOST=localhost
-   DB_PORT=3306
-   DB_USER=root
-   DB_PASSWORD=your_mysql_password
-   DB_NAME=ingage_edutech
-
-   # Nodemailer SMTP
-   SMTP_HOST=smtp.gmail.com
-   SMTP_PORT=587
-   SMTP_USER=your_email@gmail.com
-   SMTP_PASS=your_gmail_app_password
-   MAIL_FROM=your_email@gmail.com
-   MAIL_TO=info@ingageedutech.com,myingage@gmail.com
-   ```
-
-5. Start the backend development server:
-   ```bash
-   npm run dev
-   # Server runs at: http://localhost:5000
-   ```
-
----
-
-### 2. Frontend Setup
-
-1. Open a second terminal and navigate to the `frontend/` directory:
-   ```bash
-   cd frontend
-   ```
-
-2. Install frontend dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Create your `.env` configuration file:
-   ```bash
-   cp .env.example .env
-   ```
-
-4. Ensure your `frontend/.env` points to the backend API:
-   ```env
-   VITE_API_URL=http://localhost:5000/api
-   ```
-
-5. Start the Vite development server:
-   ```bash
-   npm run dev
-   # App runs at: http://localhost:5173
-   ```
-
----
-
-## 📡 REST API Documentation
-
-### **1. Health Check**
-- **Route**: `GET /api/health`
-- **Description**: Verifies API availability and database connection status.
-- **Sample Response**:
-  ```json
-  {
-    "success": true,
-    "message": "InGage EduTech API is operational",
-    "uptime": 128.45,
-    "timestamp": "2026-09-18T06:00:00.000Z",
-    "database": {
-      "connected": true,
-      "host": "localhost",
-      "database": "ingage_edutech"
-    }
-  }
-  ```
-
-### **2. Contact Form Submission**
-- **Route**: `POST /api/contact`
-- **Rate Limit**: 10 submissions / 15 minutes / IP
-- **Description**: Validates input, saves to `contacts` MySQL table, and sends HTML notification email.
-- **Request Body**:
-  ```json
-  {
-    "fullName": "Jane Doe",
-    "email": "jane@example.com",
-    "phone": "+91 9876543210",
-    "college": "Anna University",
-    "enquiryType": "Corporate Training",
-    "message": "We would like to explore institutional partnership opportunities.",
-    "attachments": []
-  }
-  ```
-
-### **3. Student & Job Application Submission**
-- **Route**: `POST /api/applications`
-- **Rate Limit**: 10 submissions / 15 minutes / IP
-- **Description**: Validates application, saves to `applications` MySQL table, and dispatches email with attached resume.
-- **Request Body**:
-  ```json
-  {
-    "fullName": "Alex Smith",
-    "email": "alex@example.com",
-    "phone": "+91 9876543210",
-    "programType": "AR/VR Development Track",
-    "preferredTrack": "XR & Metaverse",
-    "college": "IIT Madras",
-    "degree": "B.Tech Computer Science",
-    "graduationYear": "2025",
-    "experienceLevel": "Student / Beginner",
-    "portfolioUrl": "https://github.com/alexsmith",
-    "linkedinUrl": "https://linkedin.com/in/alexsmith",
-    "message": "Excited to apply for the immersive computing internship.",
-    "attachments": [
-      {
-        "filename": "Alex_Smith_Resume.pdf",
-        "content": "JVBERi0xLjQK...",
-        "contentType": "application/pdf"
-      }
-    ]
-  }
-  ```
-
----
-
-## 🗄️ Database Auto-Initialization
-
-The backend includes automatic schema setup in `backend/config/db.js`. When connected to MySQL, the server automatically provisions:
-1. **`contacts`**: Stores general inquiries, name, email, phone, college, and message.
-2. **`applications`**: Stores candidate/student applications, degree, tracks, portfolios, and notes.
-
-> **Zero-Downtime Fallback**: If MySQL is unavailable, submissions still dispatch seamlessly via Nodemailer SMTP.
-
----
-
-## 📦 Production Build & Deployment
-
-### Frontend Production Build
+### 1. Installation
+Install all frontend dependencies:
 ```bash
-cd frontend
+npm install
+```
+
+### 2. Development Server
+Start the local Vite development server:
+```bash
+npm run dev
+```
+Open your browser and visit: `http://localhost:5173`
+
+### 3. Production Build
+Generate optimized, minified production assets:
+```bash
 npm run build
-# Minified assets generated in frontend/dist/
+```
+The production bundle will be output to the `dist/` directory.
+
+### 4. Preview Production Build
+Preview the generated production build locally:
+```bash
+npm run preview
 ```
 
-### Backend Production Launch
-```bash
-cd backend
-npm start
-```
+---
+
+## 🌐 Features & Frontend Behavior
+
+- **Navigation & Routing**:
+  - Sticky header navigation with dropdowns for Google-Certified and InGage-Certified courses.
+  - Client-side routing with instant top scroll positioning.
+  - UI-only login button.
+- **Course Catalog & Filtering**:
+  - In-memory search and multi-category filtering (Google Cloud, AI/ML, AR/VR, Data Analytics, Cybersecurity).
+  - Interactive Course Detail modal with hands-on lab highlights and enrollment request state.
+- **Center of Excellence (CoE)**:
+  - 6 CoE laboratory domains and interactive CoE Blueprint Setup Modal.
+- **Careers & Opportunities**:
+  - Searchable job opportunities with domain and experience-level filters.
+  - Direct job application flow with client-side form validation and success confirmation.
+- **Internships & Hackathons**:
+  - Structured engineering tracks, project highlights, cash prize hackathons, and immersion application modals.
+- **Career Readiness Masterclass (Webinar)**:
+  - Video showcase, 4-pillar recruiter strategy blueprint, and QR code registration link.
+- **Contact Us & Institutional Inquiries**:
+  - Department desks, interactive office map, and client-validated inquiry forms with immediate visual confirmation.
+- **Responsive Layout**:
+  - Fluid mobile-first grid supporting small mobile (320px+), mobile (375px+), tablet (768px+), and desktop (992px+).
 
 ---
 
 ## 👥 Contributors & Maintainers
-- **InGage EduTech Development Team**
+- **InGage EduTech Team**
 - **Repository**: [ABINESH-GANESH/Ingage-Edutech](https://github.com/ABINESH-GANESH/Ingage-Edutech)

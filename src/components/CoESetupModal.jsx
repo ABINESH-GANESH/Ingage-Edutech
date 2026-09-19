@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { X, CheckCircle2, ShieldCheck, ArrowRight } from "lucide-react";
 import { approvedData } from "../data/approvedData";
-import { sendContactMessage } from "../utils/contactEmailService";
 import "./CoESetupModal.css";
 
 export default function CoESetupModal({ isOpen, onClose, preselectedDomain = null }) {
@@ -22,7 +21,6 @@ export default function CoESetupModal({ isOpen, onClose, preselectedDomain = nul
     targetSemester: "Upcoming Semester (Immediate)",
     comments: "",
   });
-  const [lastData, setLastData] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -75,26 +73,13 @@ export default function CoESetupModal({ isOpen, onClose, preselectedDomain = nul
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const snapshot = {
-      name: formData.contactName,
-      email: formData.officialEmail,
-      phone: formData.phone,
-      institution: `${formData.institutionName} (${formData.stateCity})`,
-      enquiryType: `CoE Setup Blueprint (${labTier}) - Domains: ${selectedDomains.join(", ")}`,
-      message: `Designation: ${formData.designation}\nStudent Strength: ${formData.studentStrength}\nTarget Semester: ${formData.targetSemester}\nComments: ${formData.comments || "N/A"}`,
-    };
-    setLastData(snapshot);
-    try {
-      await sendContactMessage(snapshot);
-    } catch (err) {
-      console.error("CoE Modal dispatch error:", err);
-    } finally {
+    setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }
+    }, 300);
   };
 
   const handleReset = () => {
