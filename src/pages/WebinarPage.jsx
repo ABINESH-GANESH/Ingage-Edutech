@@ -15,7 +15,8 @@ import {
   ShieldCheck,
   Zap,
   Share2,
-  Check
+  Check,
+  X
 } from "lucide-react";
 import { webinarData } from "../data/webinarData";
 import "./WebinarPage.css";
@@ -201,71 +202,180 @@ export default function WebinarPage({ onNavigate }) {
         </div>
       </section>
 
-      {/* 3. The Problem Visualizer: 100s of Resumes Funnel */}
-      <section className="webinar-problem-section">
+      {/* 3. The Comparison Visualizer: Traditional Pathway vs InGage 4-Pillar Strategy */}
+      <section className="webinar-problem-section" id="comparison-section">
         <div className="container">
           <div className="section-head-center">
-            <span className="section-kicker">THE HIRING REALITY</span>
-            <h2 className="section-title-large">Why Degrees Alone No Longer Guarantee Shortlists</h2>
+            <span className="section-kicker">THE DIFFERENCE</span>
+            <h2 className="section-title-large">Your Degree Gets You Started. Your Profile Gets You Noticed.</h2>
             <p className="section-lead-text">
-              Every technical opening receives hundreds of identical PDF resumes with standard course certificates. 
-              Here is how technical recruiters filter candidates in under 6 seconds:
+              Comparing a traditional applicant's uphill journey with InGage's structured 4-pillar career profile framework.
             </p>
           </div>
 
-          <div className="funnel-comparison-grid">
-            {/* Left: The Traditional Rejection Loop */}
-            <div className="funnel-column funnel-rejected">
-              <div className="funnel-col-header">
-                <div className="funnel-badge badge-warning">
-                  <AlertCircle size={14} />
-                  <span>TRADITIONAL APPLICANT PATHWAY</span>
-                </div>
-                <h3>The 90% Filter Barrier</h3>
-              </div>
-
-              <div className="funnel-flow-steps">
-                <div className="funnel-step-box step-red">
-                  <strong>100s of Generic Resumes</strong>
-                  <span>Standard degree, textbook theory, no GitHub / cloud proof.</span>
-                </div>
-                <div className="funnel-arrow-down">↓ ATS Keyword Reject</div>
-                <div className="funnel-step-box step-red">
-                  <strong>6-Second Recruiter Glance</strong>
-                  <span>Fails to find tangible metrics or live system architecture.</span>
-                </div>
-                <div className="funnel-arrow-down">↓ No Interview Call</div>
-                <div className="funnel-step-box step-outcome-red">
-                  <strong>❌ Stalled Career Opportunity</strong>
-                  <span>Months spent waiting without feedback or technical defense.</span>
-                </div>
-              </div>
+          <div className="comparison-wrapper">
+            {/* Center Visual Divider Indicator */}
+            <div className="comparison-vs-badge" aria-hidden="true">
+              <span className="vs-badge-text">VS</span>
             </div>
 
-            {/* Right: The InGage Career Profile Solution */}
-            <div className="funnel-column funnel-success">
-              <div className="funnel-col-header">
-                <div className="funnel-badge badge-success">
-                  <Award size={14} />
-                  <span>InGAGE 4-PILLAR PROFILE STRATEGY</span>
+            <div className="funnel-comparison-grid">
+              {/* Left Column: Traditional Applicant Pathway */}
+              <div className="funnel-column funnel-rejected">
+                <div className="funnel-col-header">
+                  <div className="funnel-badge badge-warning">
+                    <AlertCircle size={13} className="funnel-badge-icon" />
+                    <span>TRADITIONAL APPLICANT PATHWAY</span>
+                  </div>
+                  <h3 className="funnel-col-title">The 90% Filter Barrier</h3>
+                  <p className="funnel-col-subtitle">Generic credentials face automated screening drops & recruiter fatigue.</p>
                 </div>
-                <h3>The Shortlist Fast-Track</h3>
+
+                <div className="funnel-timeline-track">
+                  {/* Step 1 */}
+                  <div className="funnel-timeline-node">
+                    <div className="funnel-step-card card-rejected">
+                      <div className="funnel-card-header">
+                        <div className="funnel-step-icon-wrap icon-red">
+                          <FileText size={16} />
+                        </div>
+                        <h4 className="funnel-card-title">100s of Generic Resumes</h4>
+                      </div>
+                      <p className="funnel-card-desc">Standard degree, textbook theory, no GitHub / cloud proof.</p>
+                    </div>
+                  </div>
+
+                  {/* Connector 1 */}
+                  <div className="funnel-connector connector-red">
+                    <span className="connector-line" />
+                    <span className="connector-pill pill-red">
+                      <ArrowRight size={12} className="connector-arrow" />
+                      <span>ATS Keyword Reject</span>
+                    </span>
+                    <span className="connector-line" />
+                  </div>
+
+                  {/* Step 2 */}
+                  <div className="funnel-timeline-node">
+                    <div className="funnel-step-card card-rejected">
+                      <div className="funnel-card-header">
+                        <div className="funnel-step-icon-wrap icon-red">
+                          <Clock size={16} />
+                        </div>
+                        <h4 className="funnel-card-title">6-Second Recruiter Glance</h4>
+                      </div>
+                      <p className="funnel-card-desc">Fails to find tangible metrics or live system architecture.</p>
+                    </div>
+                  </div>
+
+                  {/* Connector 2 */}
+                  <div className="funnel-connector connector-red">
+                    <span className="connector-line" />
+                    <span className="connector-pill pill-red">
+                      <ArrowRight size={12} className="connector-arrow" />
+                      <span>No Interview Call</span>
+                    </span>
+                    <span className="connector-line" />
+                  </div>
+
+                  {/* Final Outcome Card */}
+                  <div className="funnel-timeline-node">
+                    <div className="funnel-step-card card-outcome-rejected">
+                      <div className="funnel-card-header">
+                        <div className="funnel-step-icon-wrap icon-outcome-red">
+                          <X size={17} />
+                        </div>
+                        <div className="funnel-outcome-title-wrap">
+                          <span className="outcome-tag tag-red">OUTCOME</span>
+                          <h4 className="funnel-card-title text-red">Stalled Career Opportunity</h4>
+                        </div>
+                      </div>
+                      <p className="funnel-card-desc">Months spent waiting without feedback or technical defense.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="funnel-flow-steps">
-                <div className="funnel-step-box step-green">
-                  <strong>Day-One Practical Skills</strong>
-                  <span>Hands-on cloud sandboxes, AI models, and IoT capstone repos.</span>
+              {/* Mobile Center Divider (stacked layout on mobile/tablet) */}
+              <div className="funnel-mobile-vs-divider" aria-hidden="true">
+                <span className="mobile-vs-line" />
+                <span className="mobile-vs-badge">VS</span>
+                <span className="mobile-vs-line" />
+              </div>
+
+              {/* Right Column: InGage 4-Pillar Profile Strategy */}
+              <div className="funnel-column funnel-success">
+                <div className="funnel-col-header">
+                  <div className="funnel-badge badge-success">
+                    <Award size={13} className="funnel-badge-icon" />
+                    <span>InGAGE 4-PILLAR PROFILE STRATEGY</span>
+                  </div>
+                  <h3 className="funnel-col-title">The Shortlist Fast-Track</h3>
+                  <p className="funnel-col-subtitle">Verifiable hands-on capstones that highlight problem-solving capability.</p>
                 </div>
-                <div className="funnel-arrow-down">↓ High ATS Match Score</div>
-                <div className="funnel-step-box step-green">
-                  <strong>Metric-Driven Resume &amp; Portfolio</strong>
-                  <span>Clear impact statements that highlight problem-solving rigor.</span>
-                </div>
-                <div className="funnel-arrow-down">↓ Priority Shortlist</div>
-                <div className="funnel-step-box step-outcome-green">
-                  <strong>✓ Direct Technical Interview Rounds</strong>
-                  <span>Confident defense of architecture, leading directly to job offers.</span>
+
+                <div className="funnel-timeline-track">
+                  {/* Step 1 */}
+                  <div className="funnel-timeline-node">
+                    <div className="funnel-step-card card-success">
+                      <div className="funnel-card-header">
+                        <div className="funnel-step-icon-wrap icon-green">
+                          <Cpu size={16} />
+                        </div>
+                        <h4 className="funnel-card-title">Day-One Practical Skills</h4>
+                      </div>
+                      <p className="funnel-card-desc">Hands-on cloud sandboxes, AI models, and IoT capstone repos.</p>
+                    </div>
+                  </div>
+
+                  {/* Connector 1 */}
+                  <div className="funnel-connector connector-green">
+                    <span className="connector-line" />
+                    <span className="connector-pill pill-green">
+                      <ArrowRight size={12} className="connector-arrow" />
+                      <span>High ATS Match Score</span>
+                    </span>
+                    <span className="connector-line" />
+                  </div>
+
+                  {/* Step 2 */}
+                  <div className="funnel-timeline-node">
+                    <div className="funnel-step-card card-success">
+                      <div className="funnel-card-header">
+                        <div className="funnel-step-icon-wrap icon-green">
+                          <CheckCircle2 size={16} />
+                        </div>
+                        <h4 className="funnel-card-title">Metric-Driven Resume &amp; Portfolio</h4>
+                      </div>
+                      <p className="funnel-card-desc">Clear impact statements that highlight problem-solving rigor.</p>
+                    </div>
+                  </div>
+
+                  {/* Connector 2 */}
+                  <div className="funnel-connector connector-green">
+                    <span className="connector-line" />
+                    <span className="connector-pill pill-green">
+                      <ArrowRight size={12} className="connector-arrow" />
+                      <span>Priority Shortlist</span>
+                    </span>
+                    <span className="connector-line" />
+                  </div>
+
+                  {/* Final Outcome Card */}
+                  <div className="funnel-timeline-node">
+                    <div className="funnel-step-card card-outcome-success">
+                      <div className="funnel-card-header">
+                        <div className="funnel-step-icon-wrap icon-outcome-green">
+                          <Check size={17} />
+                        </div>
+                        <div className="funnel-outcome-title-wrap">
+                          <span className="outcome-tag tag-green">VERIFIED OUTCOME</span>
+                          <h4 className="funnel-card-title text-green">Direct Technical Interview Rounds</h4>
+                        </div>
+                      </div>
+                      <p className="funnel-card-desc">Confident defense of architecture, leading directly to job offers.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
