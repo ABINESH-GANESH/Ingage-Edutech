@@ -9,7 +9,7 @@ import CenterOfExcellence from "./components/CenterOfExcellence";
 import Ecosystem from "./components/Ecosystem";
 import InternshipsHackathonsGallery from "./components/InternshipsHackathonsGallery";
 import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import CenterOfExcellencePage from "./pages/CenterOfExcellence";
 import CareersPage from "./pages/CareersPage";
 import InternshipPage from "./pages/InternshipPage";

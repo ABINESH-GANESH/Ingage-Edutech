@@ -174,11 +174,11 @@ export default function WebinarPage({ onNavigate }) {
                   preload="metadata"
                 >
                   <source
-                    src="/videos/WhatsApp%20Video%202026-09-04%20at%2010.51.33%20AM.mp4"
+                    src="/videos/WhatsApp%20Video%202026-09-04%20at%2010.51.33%20AM-compressed.mp4"
                     type="video/mp4"
                   />
                   <source
-                    src="/videos/WhatsApp Video 2026-09-04 at 10.51.33 AM.mp4"
+                    src="/videos/WhatsApp Video 2026-09-04 at 10.51.33 AM-compressed.mp4"
                     type="video/mp4"
                   />
                   Your browser does not support the video tag.

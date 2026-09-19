@@ -11,6 +11,7 @@ export const webinarData = {
   posterImage: "/assets/careers/career-workshop-poster.jpg",
   qrImage: "/assets/careers/workshop-registration-qr.png",
   logoImage: "/assets/branding/ingage-edutech-logo.png",
+  videoUrl: "/videos/WhatsApp%20Video%202026-09-04%20at%2010.51.33%20AM-compressed.mp4",
   
   eventDetails: {
     duration: "1 HOUR INTENSIVE",
