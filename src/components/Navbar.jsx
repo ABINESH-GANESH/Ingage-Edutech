@@ -130,68 +130,50 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
     { key: "contact", label: t("navbar.contactUs", { defaultValue: "CONTACT US" }), path: "/contact-us", targetId: "contact" },
   ];
 
-  // 1. Courses Dropdown Sub-Items (ONLY 2 items: Google Certified Course & InGage Certified Course)
+  // 1. Courses Dropdown Sub-Items (ONLY 2 clean items)
   const coursesDropdownItems = [
     {
       key: "google",
       label: "Google Certified Course",
-      desc: t("navbar.googleCoursesDesc", { defaultValue: "Official Google Cloud, AI & Gen AI curriculum" }),
       path: "/courses",
       icon: GoogleOfficialLogo,
-      badge: "Google Certified",
-      badgeType: "subtle-blue",
     },
     {
       key: "ingage",
       label: "InGage Certified Course",
-      desc: t("navbar.ingageCoursesDesc", { defaultValue: "Specialized AR/VR, IoT, Unity & Spatial Design" }),
       path: "/courses",
       icon: InGageOfficialLogo,
-      badge: "InGage Certified",
-      badgeType: "live-emerald",
     },
   ];
 
-  // 2. Opportunities Dropdown Sub-Items (ONLY 4 items: Career, Internship, Hackathon, Webinar)
+  // 2. Opportunities Dropdown Sub-Items (ONLY 4 clean items)
   const opportunitiesDropdownItems = [
     {
       key: "career",
       label: "Career",
-      desc: t("navbar.careersDesc", { defaultValue: "Explore full-time engineering, AR/VR & tech roles at InGage" }),
       path: "/careers",
       icon: Briefcase,
-      badge: "Hiring Now",
-      badgeType: "live-emerald",
       isActive: isCareersPage,
     },
     {
       key: "internship",
       label: "Internship",
-      desc: t("navbar.internshipsDesc", { defaultValue: "Live industrial project tracks with 1-on-1 expert mentorship" }),
       path: "/internships",
       icon: GraduationCap,
-      badge: "Active Cohorts",
-      badgeType: "subtle-blue",
       isActive: isInternshipsPage,
     },
     {
       key: "hackathon",
       label: "Hackathon",
-      desc: t("navbar.hackathonsDesc", { defaultValue: "Compete in tech challenges, build prototypes & win prizes" }),
       path: "/hackathons",
       icon: Trophy,
-      badge: "Open Sprints",
-      badgeType: "subtle-amber",
       isActive: isHackathonsPage,
     },
     {
       key: "webinar",
       label: "Webinar",
-      desc: t("navbar.webinarDesc", { defaultValue: "Interactive sessions on interview prep, portfolio & emerging tech" }),
       path: "/webinar",
       icon: Video,
-      badge: "Live Sessions",
-      badgeType: "subtle-purple",
       isActive: isWebinarPage,
     },
   ];
@@ -385,58 +367,34 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
                     {isCoursesPage && <span className="nav-active-bar" aria-hidden="true" />}
                   </button>
 
-                  {/* Floating Courses Dropdown Menu (ONLY 2 items) */}
+                  {/* Clean Courses Dropdown Menu */}
                   <div
-                    className={`nav-dropdown-menu courses-dropdown-menu ${coursesDropdownOpen ? "dropdown-visible" : ""}`}
+                    className={`nav-dropdown-menu ${coursesDropdownOpen ? "dropdown-visible" : ""}`}
                     role="menu"
                     aria-label="Courses Dropdown"
                   >
-                    <div className="nav-dropdown-inner">
-                      {/* Dropdown Header */}
-                      <div className="nav-dropdown-header">
-                        <div className="nav-dropdown-header-left">
-                          <span className="nav-dropdown-kicker">CERTIFIED PATHWAYS</span>
-                          <span className="nav-dropdown-header-title">Industry & Academic Certifications</span>
-                        </div>
-                        <span className="nav-dropdown-verified-pill">
-                          <span className="verified-dot" aria-hidden="true" /> Dual Tracks
-                        </span>
-                      </div>
-
-                      <div className="nav-dropdown-items-stack">
-                        {coursesDropdownItems.map((item) => {
-                          const IconComp = item.icon;
-                          const isItemActive = isCoursesPage && selectedCourseType === item.key;
-                          return (
-                            <a
-                              key={item.key}
-                              href={item.path}
-                              className={`nav-dropdown-item ${isItemActive ? "item-active" : ""}`}
-                              onClick={(e) => handleCourseItemClick(e, item)}
-                              role="menuitem"
-                            >
-                              <div className={`nav-dropdown-icon-box icon-box-${item.key}`}>
-                                <IconComp size={15} className="nav-item-icon" />
-                              </div>
-                              <div className="nav-dropdown-content">
-                                <div className="nav-dropdown-title-row">
-                                  <span className="nav-dropdown-item-title">{item.label}</span>
-                                  {item.badge && (
-                                    <span className={`nav-dropdown-badge badge-${item.badgeType || item.key}`}>
-                                      {item.badgeType === "live-emerald" && <span className="pulse-dot green" aria-hidden="true" />}
-                                      <span>{item.badge}</span>
-                                    </span>
-                                  )}
-                                </div>
-                                <span className="nav-dropdown-item-desc">{item.desc}</span>
-                              </div>
-                              <div className="nav-dropdown-arrow-wrap" aria-hidden="true">
-                                <ArrowRight size={13} className="nav-dropdown-arrow" />
-                              </div>
-                            </a>
-                          );
-                        })}
-                      </div>
+                    <div className="nav-dropdown-items-stack">
+                      {coursesDropdownItems.map((item) => {
+                        const IconComp = item.icon;
+                        const isItemActive = isCoursesPage && selectedCourseType === item.key;
+                        return (
+                          <a
+                            key={item.key}
+                            href={item.path}
+                            className={`nav-dropdown-item ${isItemActive ? "item-active" : ""}`}
+                            onClick={(e) => handleCourseItemClick(e, item)}
+                            role="menuitem"
+                          >
+                            <div className={`nav-dropdown-icon-box icon-box-${item.key}`}>
+                              <IconComp size={15} className="nav-item-icon" />
+                            </div>
+                            <span className="nav-dropdown-item-title">{item.label}</span>
+                            <div className="nav-dropdown-arrow-wrap" aria-hidden="true">
+                              <ArrowRight size={13} className="nav-dropdown-arrow" />
+                            </div>
+                          </a>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -472,58 +430,33 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
                     {isAnyOpportunityActive && <span className="nav-active-bar" aria-hidden="true" />}
                   </button>
 
-                  {/* Floating Mega Dropdown Menu (ONLY 4 items: Career, Internship, Hackathon, Webinar) */}
+                  {/* Clean Opportunities Dropdown Menu */}
                   <div
                     className={`nav-dropdown-menu ${opportunitiesDropdownOpen ? "dropdown-visible" : ""}`}
                     role="menu"
                     aria-label="Opportunities Dropdown"
                   >
-                    <div className="nav-dropdown-inner">
-                      {/* Dropdown Header */}
-                      <div className="nav-dropdown-header">
-                        <div className="nav-dropdown-header-left">
-                          <span className="nav-dropdown-kicker">OPPORTUNITIES</span>
-                          <span className="nav-dropdown-header-title">Career & Growth Pathways</span>
-                        </div>
-                        <span className="nav-dropdown-verified-pill">
-                          <span className="verified-dot" aria-hidden="true" /> Active Tracks
-                        </span>
-                      </div>
-
-                      <div className="nav-dropdown-items-stack">
-                        {opportunitiesDropdownItems.map((item) => {
-                          const IconComp = item.icon;
-                          return (
-                            <a
-                              key={item.key}
-                              href={item.path}
-                              className={`nav-dropdown-item ${item.isActive ? "item-active" : ""}`}
-                              onClick={(e) => handleSubItemClick(e, item.path)}
-                              role="menuitem"
-                            >
-                              <div className={`nav-dropdown-icon-box icon-box-${item.key}`}>
-                                <IconComp size={15} className="nav-item-icon" />
-                              </div>
-                              <div className="nav-dropdown-content">
-                                <div className="nav-dropdown-title-row">
-                                  <span className="nav-dropdown-item-title">{item.label}</span>
-                                  {item.badge && (
-                                    <span className={`nav-dropdown-badge badge-${item.badgeType || item.key}`}>
-                                      {item.badgeType === "live-emerald" && <span className="pulse-dot green" aria-hidden="true" />}
-                                      {item.badgeType === "subtle-purple" && <span className="pulse-dot purple" aria-hidden="true" />}
-                                      <span>{item.badge}</span>
-                                    </span>
-                                  )}
-                                </div>
-                                <span className="nav-dropdown-item-desc">{item.desc}</span>
-                              </div>
-                              <div className="nav-dropdown-arrow-wrap" aria-hidden="true">
-                                <ArrowRight size={13} className="nav-dropdown-arrow" />
-                              </div>
-                            </a>
-                          );
-                        })}
-                      </div>
+                    <div className="nav-dropdown-items-stack">
+                      {opportunitiesDropdownItems.map((item) => {
+                        const IconComp = item.icon;
+                        return (
+                          <a
+                            key={item.key}
+                            href={item.path}
+                            className={`nav-dropdown-item ${item.isActive ? "item-active" : ""}`}
+                            onClick={(e) => handleSubItemClick(e, item.path)}
+                            role="menuitem"
+                          >
+                            <div className={`nav-dropdown-icon-box icon-box-${item.key}`}>
+                              <IconComp size={15} className="nav-item-icon" />
+                            </div>
+                            <span className="nav-dropdown-item-title">{item.label}</span>
+                            <div className="nav-dropdown-arrow-wrap" aria-hidden="true">
+                              <ArrowRight size={13} className="nav-dropdown-arrow" />
+                            </div>
+                          </a>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -624,17 +557,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
                             <div className={`mobile-subnav-icon-badge icon-box-${item.key}`}>
                               <ItemIcon size={16} />
                             </div>
-                            <div className="mobile-subnav-text-block">
-                              <div className="mobile-subnav-title-row">
-                                <span className="mobile-subnav-title">{item.label}</span>
-                                {item.badge && (
-                                  <span className={`mobile-subnav-badge badge-${item.badgeType || item.key}`}>
-                                    {item.badge}
-                                  </span>
-                                )}
-                              </div>
-                              <span className="mobile-subnav-desc">{item.desc}</span>
-                            </div>
+                            <span className="mobile-subnav-title">{item.label}</span>
                           </a>
                         );
                       })}
@@ -676,17 +599,7 @@ export default function Navbar({ currentPath = "/", onNavigate }) {
                             <div className={`mobile-subnav-icon-badge icon-box-${item.key}`}>
                               <ItemIcon size={16} />
                             </div>
-                            <div className="mobile-subnav-text-block">
-                              <div className="mobile-subnav-title-row">
-                                <span className="mobile-subnav-title">{item.label}</span>
-                                {item.badge && (
-                                  <span className={`mobile-subnav-badge badge-${item.badgeType || item.key}`}>
-                                    {item.badge}
-                                  </span>
-                                )}
-                              </div>
-                              <span className="mobile-subnav-desc">{item.desc}</span>
-                            </div>
+                            <span className="mobile-subnav-title">{item.label}</span>
                           </a>
                         );
                       })}
