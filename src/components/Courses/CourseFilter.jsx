@@ -12,10 +12,17 @@ const CATEGORIES = [
 ];
 
 export default function CourseFilter({ activeCategory, onSelectCategory, counts = {} }) {
+  // Only show categories that have available courses
+  const availableCategories = CATEGORIES.filter((cat) => {
+    if (cat.id === "ALL") return true;
+    const count = counts[cat.id];
+    return count !== undefined && count > 0;
+  });
+
   return (
     <div className="course-filter-bar-wrap" role="tablist" aria-label="Course Categories">
       <div className="course-filter-track">
-        {CATEGORIES.map((cat) => {
+        {availableCategories.map((cat) => {
           const isActive = activeCategory === cat.id;
           const count = counts[cat.id] || (cat.id === "ALL" ? counts.total : 0);
 

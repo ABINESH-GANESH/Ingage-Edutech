@@ -5,14 +5,21 @@ import "./CourseFilters.css";
 export default function CourseFilters({
   activeCategory,
   onSelectCategory,
-  categoryCounts,
+  categoryCounts = {},
 }) {
+  // Only show categories that have available courses
+  const availableCategories = courseCategories.filter((cat) => {
+    if (cat.key === "ALL") return true;
+    const count = categoryCounts[cat.key];
+    return count !== undefined && count > 0;
+  });
+
   return (
     <div className="course-filters-sticky-wrap">
       <div className="container">
         <div className="course-filters-bar" role="tablist" aria-label="Course Categories">
           <div className="course-filters-scroll-area">
-            {courseCategories.map((cat) => {
+            {availableCategories.map((cat) => {
               const isSelected = activeCategory === cat.key;
               const count = categoryCounts[cat.key] ?? 0;
 
