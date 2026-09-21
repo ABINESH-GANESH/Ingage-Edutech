@@ -37,23 +37,26 @@ function GoogleOfficialLogo({ size = 18, className = "" }) {
   );
 }
 
-// Official InGage EduTech Logo Mark
+// Official InGage EduTech Logo Mark for Courses Dropdown
 function InGageOfficialLogo({ size = 20, className = "" }) {
   return (
-    <img
-      src="/assets/branding/ingage-edutech-logo.png"
-      alt="InGage Official Logo"
+    <svg
+      width={Math.round(size * 1.5)}
+      height={size}
+      viewBox="0 0 45 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       className={className}
-      style={{
-        width: "100%",
-        height: "100%",
-        maxHeight: `${size + 4}px`,
-        maxWidth: "26px",
-        objectFit: "contain",
-        display: "block",
-      }}
-      loading="eager"
-    />
+      aria-label="InGage"
+      style={{ shapeRendering: "geometricPrecision" }}
+    >
+      <text x="0" y="12" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="13" fontWeight="800" fill="#0F172A" letterSpacing="-0.3">
+        in<tspan fill="#76B82A">gage</tspan>
+      </text>
+      <text x="0" y="25" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="11" fontWeight="800" fill="#15428F" letterSpacing="-0.2">
+        EduTech
+      </text>
+    </svg>
   );
 }
 

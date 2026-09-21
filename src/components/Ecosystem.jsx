@@ -126,19 +126,26 @@ export default function Ecosystem() {
                 </div>
 
                 {/* IBM Logo */}
-                <div className="mini-logo-pill" title="IBM SkillsBuild">
-                  <svg width="26" height="13" viewBox="0 0 60 25" fill="#0F62FE" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 0h12v2.5H0zm0 3.5h12v2.5H0zm0 3.5h12v2.5H0zm0 3.5h12v2.5H0zm0 3.5h12v2.5H0zm0 3.5h12v2.5H0zm0 3.5h12v2.5H0zm0 3.5h12v2.5H0zm16-24h18c3 0 6 2 6 5 0 2-1 3-3 4 2 1 4 2 4 5 0 3-3 5-7 5H16zm6 3.5v2.5h8c1 0 2-1 2-1.25S31 6 30 6zm0 7v2.5h9c1 0 2-1 2-1.25s-1-1.25-2-1.25zm19-10.5h19v2.5H41zm0 3.5h5v18h-5zm14 0h5v18h-5zm-14 3.5h19v2.5H41zm0 3.5h19v2.5H41zm0 3.5h19v2.5H41z" />
-                  </svg>
+                <div className="mini-logo-pill" title="IBM">
+                  <img
+                    src="/assets/brand/ibm-logo.png"
+                    alt="IBM"
+                    style={{
+                      height: "14px",
+                      width: "auto",
+                      maxWidth: "36px",
+                      objectFit: "contain",
+                      display: "block",
+                    }}
+                    loading="eager"
+                  />
                 </div>
 
                 {/* Oracle Logo */}
                 <div className="mini-logo-pill" title="Oracle Global Partner">
-                  <img
-                    src="/assets/brand/oracle-logo.svg"
-                    alt="Oracle Logo"
-                    style={{ height: "13px", width: "auto" }}
-                  />
+                  <svg width="34" height="12" viewBox="0 0 270 40" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ shapeRendering: "geometricPrecision" }}>
+                    <path fill="#EA1B25" d="M16.74 37.5h19.4a16.74 16.74 0 0 0 0-33.48H16.74a16.74 16.74 0 1 0 0 33.48zm18.99-5.9h-18.57a10.84 10.84 0 0 1 0-21.68h18.57a10.84 10.84 0 0 1 0 21.68zM84.45 26.68a11.27 11.27 0 0 0 0-22.54H56.32v33.48h6.43V6.25h20.98a5.42 5.42 0 0 1 0 10.84H65.93l19.23 16.53h9.34l-13.7-11.77h3.65zm27.7 -0.97h17.17l-9.08-14.65-8.09 14.65zm-8.56 11.79h-7.63l20.28-31.75a4.83 4.83 0 0 1 7.89-.06l20.57 31.81h-7.58l-3.57-5.91h-26.38l-3.58 5.91zm45.82 0h19.86l3.76-5.9h-19.34a10.84 10.84 0 1 1 0-21.68h18.88l3.81-5.9h-23.41a16.74 16.74 0 1 0 0 33.48zm33 0V4.02h-6.44v30.29a3.11 3.11 0 0 0 .96 2.25 3.26 3.26 0 0 0 2.34.98h29.31l3.82-5.9h-29.99zm45.72-5.9a10.84 10.84 0 0 1-10.44-7.89h27.52l3.79-5.9h-31.31a10.83 10.83 0 0 1 10.44-7.89h18.89l3.77-5.9h-23.1a16.74 16.74 0 0 0 0 33.48h19.87l3.77-5.9h-23.2z"/>
+                  </svg>
                 </div>
 
                 {/* Skill India Logo */}

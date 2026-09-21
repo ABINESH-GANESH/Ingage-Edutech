@@ -85,9 +85,27 @@ function NvidiaBadgeVector({ className = "tech-vector-icon" }) {
 
 function OracleBadgeVector({ className = "tech-vector-icon" }) {
   return (
-    <svg viewBox="0 0 120 20" className={className} aria-label="Oracle" role="img">
-      <path fill="#EA1B25" d="M14.88 20H32.15a9.9 9.9 0 0 0 0-19.8H14.88a9.9 9.9 0 1 0 0 19.8m16.88-3.5H15.26a6.4 6.4 0 0 1 0-12.8h16.5a6.4 6.4 0 1 1 0 12.8M50 0v20h3.8v-3.7h8.8l11.4 3.7h5.5l-11.4-3.7a6.7 6.7 0 0 0 4.5-6.3V6.7A6.7 6.7 0 0 0 75.9 0zm3.8 3.7h22.1a3 3 0 0 1 3 3v3.6a3 3 0 0 1-3 3H53.8z" />
+    <svg viewBox="0 0 270 40" className={className} aria-label="Oracle" role="img">
+      <path fill="#EA1B25" d="M16.74 37.5h19.4a16.74 16.74 0 0 0 0-33.48H16.74a16.74 16.74 0 1 0 0 33.48zm18.99-5.9h-18.57a10.84 10.84 0 0 1 0-21.68h18.57a10.84 10.84 0 0 1 0 21.68zM84.45 26.68a11.27 11.27 0 0 0 0-22.54H56.32v33.48h6.43V6.25h20.98a5.42 5.42 0 0 1 0 10.84H65.93l19.23 16.53h9.34l-13.7-11.77h3.65zm27.7 -0.97h17.17l-9.08-14.65-8.09 14.65zm-8.56 11.79h-7.63l20.28-31.75a4.83 4.83 0 0 1 7.89-.06l20.57 31.81h-7.58l-3.57-5.91h-26.38l-3.58 5.91zm45.82 0h19.86l3.76-5.9h-19.34a10.84 10.84 0 1 1 0-21.68h18.88l3.81-5.9h-23.41a16.74 16.74 0 1 0 0 33.48zm33 0V4.02h-6.44v30.29a3.11 3.11 0 0 0 .96 2.25 3.26 3.26 0 0 0 2.34.98h29.31l3.82-5.9h-29.99zm45.72-5.9a10.84 10.84 0 0 1-10.44-7.89h27.52l3.79-5.9h-31.31a10.83 10.83 0 0 1 10.44-7.89h18.89l3.77-5.9h-23.1a16.74 16.74 0 0 0 0 33.48h19.87l3.77-5.9h-23.2z"/>
     </svg>
+  );
+}
+
+function IBMBadgeVector({ className = "tech-vector-icon" }) {
+  return (
+    <img
+      src="/assets/brand/ibm-logo.png"
+      alt="IBM"
+      className={className}
+      style={{
+        height: "22px",
+        width: "auto",
+        maxWidth: "54px",
+        objectFit: "contain",
+        display: "inline-block",
+      }}
+      loading="eager"
+    />
   );
 }
 
@@ -158,6 +176,7 @@ const HERO_COURSE_TRACKS = [
 // Marquee Brand Logos Array
 const MARQUEE_TECH_ITEMS = [
   { name: "Google Cloud", Icon: GoogleCloudVector, color: "#4285F4" },
+  { name: "IBM SkillsBuild", Icon: IBMBadgeVector, color: "#1F70C1" },
   { name: "Python", Icon: PythonVector, color: "#387EB8" },
   { name: "TensorFlow", Icon: TensorFlowVector, color: "#FF6F00" },
   { name: "Figma", Icon: FigmaVector, color: "#A259FF" },

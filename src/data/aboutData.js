@@ -281,11 +281,11 @@ export const verifiedPartnersList = [
     color: "#EA1B25",
   },
   {
-    name: "IBM SkillsBuild",
+    name: "IBM",
     role: "Official Partner",
     focus: "Cloud Fundamentals, Cybersecurity Defense & Applied AI Credentials",
-    logo: "/assets/brand/ibm-skillsbuild-logo.svg",
-    color: "#0F62FE",
+    logo: "/assets/brand/ibm-logo.png",
+    color: "#1F70C1",
   },
   {
     name: "NVIDIA",

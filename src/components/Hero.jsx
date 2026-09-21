@@ -1,140 +1,166 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Hero.css";
 
+// 1. Official Google Cloud 4-Color Logo Mark
+function GoogleCloudLogoMark({ size = 18 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Google Cloud">
+      <path d="M26.5 12.6c-.7-3.9-4.2-6.8-8.3-6.8-3.3 0-6.2 1.9-7.6 4.6-3.5.4-6.1 3.3-6.1 6.8 0 3.7 3.1 6.8 6.8 6.8h14.7c3.1 0 5.7-2.5 5.7-5.7 0-2.9-2.3-5.3-5.2-5.7z" fill="#4285F4"/>
+      <path d="M26.5 12.6c-.7-3.9-4.2-6.8-8.3-6.8-1.8 0-3.5.5-4.7 1.6l4.8 4.8c.4-.1.7-.1 1.2-.1 2.1 0 3.9 1.8 3.9 3.9 0 .4 0 .7-.1 1.2l3.3 3.3c1.3-1 2.1-2.6 2.1-4.5 0-2.9-2.3-5.3-5.2-5.7z" fill="#EA4335"/>
+      <path d="M10.6 10.4c-1.4 2.7-1.4 5.9 0 8.6l5-5c-.5-.6-1-1.5-1.3-2.4l-3.7-1.2z" fill="#FBBC05"/>
+      <path d="M10.6 19c.8 1.7 2.3 2.9 4.1 3.5l4-4c-.5-.2-1.2-.4-1.6-.9l-6.5 1.4z" fill="#34A853"/>
+    </svg>
+  );
+}
+
+// 2. Official Google 4-Color 'G' Logo Mark
+function GoogleOfficialMark({ size = 18 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Google">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05" />
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335" />
+    </svg>
+  );
+}
+
+// 3. Official InGage EduTech Brand Mark Emblem
+function InGageLogoMark({ size = 18 }) {
+  return (
+    <svg width={Math.round(size * 1.5)} height={size} viewBox="0 0 45 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="InGage" style={{ shapeRendering: "geometricPrecision" }}>
+      <text x="0" y="12" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="13" fontWeight="800" fill="#0F172A" letterSpacing="-0.3">
+        in<tspan fill="#76B82A">gage</tspan>
+      </text>
+      <text x="0" y="25" fontFamily="'Plus Jakarta Sans', sans-serif" fontSize="11" fontWeight="800" fill="#15428F" letterSpacing="-0.2">
+        EduTech
+      </text>
+    </svg>
+  );
+}
+
+// 4. Official Unity 3D Engine Logo Mark
+function UnityLogoMark({ size = 18 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="#0F172A" xmlns="http://www.w3.org/2000/svg" aria-label="Unity 3D">
+      <path d="M12 2L2 7.5v9L12 22l10-5.5v-9L12 2zm-1 3.27l6.5 3.58-2.5 1.38L11 8.2v-2.93zm2 0v2.93l-4 2.03-2.5-1.38L13 5.27zM4 9.17l5 2.75v5.5l-5-2.75V9.17zm16 0v5.5l-5 2.75v-5.5l5-2.75z"/>
+    </svg>
+  );
+}
+
+// 5. Official NVIDIA Green Tech Logo Mark
+function NvidiaLogoMark({ size = 18 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="NVIDIA">
+      <path d="M43.2 16.5c-9.1 1.2-16.7 6.6-20.7 14.7-3.3 6.6-3.7 13.9-1.2 20.8 3.7 10.3 12.8 17.6 23.7 19 3.5.5 8.7.2 12.1-.6 4.9-1.2 9.5-3.6 13.1-7l2.2-2.1-1.6-1.5c-.9-.8-2.6-2.2-3.8-3.1l-2.1-1.6-2 1.8c-4.4 3.9-9.8 5.7-15.6 5.1-6.9-.7-12.7-5.1-15-11.4-1.1-2.9-1.3-6.6-.5-9.6 1.4-5.3 5.4-9.5 10.5-11.2 4.1-1.4 8.7-1.1 12.7.7 2.6 1.2 4.9 3.1 6.6 5.5l1.4 2 8.3-7.5-1.5-1.5c-4.9-5.2-11.5-8.5-18.7-9.4-2.8-.4-6.2-.4-8.8-.1zm-1.8 14.5c-4.3 1.1-7.5 4.5-8.4 8.8-.7 3.3-.2 6.6 1.4 9.4 2 3.6 5.6 5.8 9.7 6 3.7.2 7.1-1.5 9.4-4.6.9-1.2 1.3-2.1 1.3-3.7s-.4-2.5-1.3-3.7c-2.3-3.1-5.7-4.8-9.4-4.6-.9 0-1.8.2-2.7.4z" fill="#76B900" />
+      <path d="M68.2 10.2C59.6 3.6 48.9.2 38.1.7 23.2 1.4 9.9 10.6 4.2 24.3.4 33.3-.7 43.6 1.2 53.1c3.5 17.5 16.5 31.2 33.4 35.2 7.9 1.9 16.5 1.6 24.3-.9 11-3.6 20.3-11.7 25.8-22.3 2.8-5.4 4.3-11.5 4.3-17.6 0-3.3-.4-6.6-1.3-9.8l-1.1-3.9-9.8 8.7.6 2.4c.8 3.2.9 6.8.2 10-1.6 7.4-6.8 13.5-13.8 16.2-5.4 2.1-11.3 2.1-16.7.1-8.5-3.1-14.7-10.4-16.1-19.4-.7-4.4-.1-9 1.7-13.1 3.2-7.3 9.4-12.4 17.1-14 3.7-.8 7.6-.6 11.2.6 5 1.7 9.4 5 12.3 9.4l1.5 2.3 9.4-8.4-1.7-1.8c-4.4-4.6-9.8-8.1-15.8-10.3-4.4-1.6-8.9-2.4-13.6-2.4z" fill="#76B900" />
+    </svg>
+  );
+}
+
+// 6. Official IBM Logo Mark
+function IbmLogoMark({ size = 32 }) {
+  return (
+    <img
+      src="/assets/brand/ibm-logo.png"
+      alt="IBM"
+      style={{
+        height: `${Math.round(size * 0.42)}px`,
+        width: "auto",
+        maxWidth: `${size}px`,
+        objectFit: "contain",
+        display: "inline-block",
+        verticalAlign: "middle",
+      }}
+      loading="eager"
+    />
+  );
+}
+
+// 7. Official Oracle Red Logo Mark
+function OracleLogoMark({ size = 26 }) {
+  return (
+    <svg width={size} height={10} viewBox="0 0 270 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Oracle" style={{ shapeRendering: "geometricPrecision" }}>
+      <path fill="#EA1B25" d="M16.74 37.5h19.4a16.74 16.74 0 0 0 0-33.48H16.74a16.74 16.74 0 1 0 0 33.48zm18.99-5.9h-18.57a10.84 10.84 0 0 1 0-21.68h18.57a10.84 10.84 0 0 1 0 21.68zM84.45 26.68a11.27 11.27 0 0 0 0-22.54H56.32v33.48h6.43V6.25h20.98a5.42 5.42 0 0 1 0 10.84H65.93l19.23 16.53h9.34l-13.7-11.77h3.65zm27.7 -0.97h17.17l-9.08-14.65-8.09 14.65zm-8.56 11.79h-7.63l20.28-31.75a4.83 4.83 0 0 1 7.89-.06l20.57 31.81h-7.58l-3.57-5.91h-26.38l-3.58 5.91zm45.82 0h19.86l3.76-5.9h-19.34a10.84 10.84 0 1 1 0-21.68h18.88l3.81-5.9h-23.41a16.74 16.74 0 1 0 0 33.48zm33 0V4.02h-6.44v30.29a3.11 3.11 0 0 0 .96 2.25 3.26 3.26 0 0 0 2.34.98h29.31l3.82-5.9h-29.99zm45.72-5.9a10.84 10.84 0 0 1-10.44-7.89h27.52l3.79-5.9h-31.31a10.83 10.83 0 0 1 10.44-7.89h18.89l3.77-5.9h-23.1a16.74 16.74 0 0 0 0 33.48h19.87l3.77-5.9h-23.2z"/>
+    </svg>
+  );
+}
+
+// 8. Enterprise Cyber Defense Shield Mark
+function CyberSecurityMark({ size = 18 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Cyber Security">
+      <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z" fill="#15428F" fillOpacity="0.15" stroke="#15428F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 12l2 2 4-4" stroke="#76B82A" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
 const CATEGORIES = [
   {
-    id: "gen-ai",
-    label: "Gen AI",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-      </svg>
-    ),
-    path: "/courses#gen-ai",
-  },
-  {
-    id: "data-analytics",
-    label: "Data Analytics",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="18" y1="20" x2="18" y2="10" />
-        <line x1="12" y1="20" x2="12" y2="4" />
-        <line x1="6" y1="20" x2="6" y2="14" />
-      </svg>
-    ),
-    path: "/courses#data-analytics",
-  },
-  {
-    id: "cyber-security",
-    label: "Cyber Security",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-    path: "/courses#cyber-security",
-  },
-  {
     id: "gccf",
-    label: "GCCF",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-      </svg>
-    ),
+    label: "GCCF (Google Cloud)",
+    icon: <GoogleCloudLogoMark size={19} />,
     path: "/courses#gccf",
   },
   {
     id: "ace",
-    label: "ACE",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="8" r="6" />
-        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
-      </svg>
-    ),
+    label: "Google ACE Cloud",
+    icon: <GoogleOfficialMark size={17} />,
     path: "/courses#ace",
   },
   {
-    id: "ar-vr",
-    label: "AR/VR",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="7" width="20" height="10" rx="3" />
-        <circle cx="8" cy="12" r="2" />
-        <circle cx="16" cy="12" r="2" />
-      </svg>
-    ),
-    path: "/courses#ar-vr",
+    id: "gen-ai",
+    label: "Gen AI & Vertex AI",
+    icon: <GoogleCloudLogoMark size={19} />,
+    path: "/courses#gen-ai",
   },
   {
     id: "unity-developer",
-    label: "Unity Developer",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-        <line x1="12" y1="22.08" x2="12" y2="12" />
-      </svg>
-    ),
+    label: "Unity 3D Developer",
+    icon: <UnityLogoMark size={17} />,
     path: "/courses#unity",
   },
   {
     id: "ai-ml",
-    label: "AI/ML",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="18" cy="5" r="3" />
-        <circle cx="6" cy="12" r="3" />
-        <circle cx="18" cy="19" r="3" />
-        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-      </svg>
-    ),
+    label: "AI/ML (NVIDIA Tech)",
+    icon: <NvidiaLogoMark size={18} />,
     path: "/courses#ai-ml",
   },
   {
+    id: "ar-vr",
+    label: "AR/VR Spatial Tech",
+    icon: <InGageLogoMark size={18} />,
+    path: "/courses#ar-vr",
+  },
+  {
+    id: "data-analytics",
+    label: "Data Analytics (IBM)",
+    icon: <IbmLogoMark size={28} />,
+    path: "/courses#data-analytics",
+  },
+  {
+    id: "cyber-security",
+    label: "Cyber Security & Defense",
+    icon: <CyberSecurityMark size={17} />,
+    path: "/courses#cyber-security",
+  },
+  {
     id: "iot-embedded",
-    label: "IOT & Embedded",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="4" y="4" width="16" height="16" rx="2" />
-        <rect x="9" y="9" width="6" height="6" />
-        <line x1="9" y1="1" x2="9" y2="4" />
-        <line x1="15" y1="1" x2="15" y2="4" />
-        <line x1="9" y1="20" x2="9" y2="23" />
-        <line x1="15" y1="20" x2="15" y2="23" />
-        <line x1="20" y1="9" x2="23" y2="9" />
-        <line x1="20" y1="14" x2="23" y2="14" />
-        <line x1="1" y1="9" x2="4" y2="9" />
-        <line x1="1" y1="14" x2="4" y2="14" />
-      </svg>
-    ),
+    label: "IOT & Embedded Systems",
+    icon: <InGageLogoMark size={18} />,
     path: "/courses#iot",
   },
   {
     id: "technical-trainer",
-    label: "Technical Trainer & Lab Consultant",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
+    label: "InGage CoE Lab Consultant",
+    icon: <InGageLogoMark size={18} />,
     path: "/center-of-excellence",
   },
   {
     id: "spatial-designer",
-    label: "3D Spatial Designer",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="12 2 2 7 12 12 22 7 12 2" />
-        <polyline points="2 17 12 22 22 17" />
-        <polyline points="2 12 12 17 22 12" />
-      </svg>
-    ),
+    label: "3D Spatial & Digital Twins",
+    icon: <InGageLogoMark size={18} />,
     path: "/courses#3d-designer",
   },
 ];

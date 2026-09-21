@@ -407,17 +407,29 @@
 }
 
 .chip-icon {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand-navy, #15428f);
-  transition: color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.chip-icon svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.chip-icon img {
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .chip-text {
   letter-spacing: -0.01em;
   color: #0f172a;
   transition: color 0.2s ease;
+  font-weight: 600;
 }
 
 .hero-category-chip:hover {
@@ -428,8 +440,7 @@
 }
 
 .hero-category-chip:hover .chip-icon {
-  color: var(--brand-green, #76b82a);
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
 .hero-category-chip:hover .chip-text {

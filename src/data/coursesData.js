@@ -308,8 +308,8 @@ export const enterprisePartnersData = {
       id: "ibm",
       name: "IBM",
       brand: "IBM",
-      logo: "/assets/brand/ibm-skillsbuild-logo.svg",
-      logoText: "IBM SkillsBuild",
+      logo: "/assets/brand/ibm-logo.png",
+      logoText: "IBM",
       programCount: "Official Partner",
       description:
         "IBM SkillsBuild digital credentials empowering learners across cloud fundamentals, enterprise cybersecurity defense, and artificial intelligence.",

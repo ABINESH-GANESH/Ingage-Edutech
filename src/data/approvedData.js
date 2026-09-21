@@ -235,8 +235,8 @@ export const approvedData = {
         details: "Official Oracle University curriculum covering OCI Architecture, Autonomous Database, and Enterprise AI workflows.",
       },
       {
-        brand: "IBM SkillsBuild",
-        logo: "/assets/brand/ibm-skillsbuild-logo.svg",
+        brand: "IBM",
+        logo: "/assets/brand/ibm-logo.png",
         headline: "15+ Programs • Digital Credentials",
         badgeColor: "blue",
         features: ["Cybersecurity", "Cloud & DevOps"],

@@ -15,6 +15,18 @@
   transform: translateZ(0);
 }
 
+.brand-logo-svg {
+  display: block;
+  height: auto;
+  max-height: 44px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.ingage-brand-logo:hover .brand-logo-svg {
+  transform: scale(1.02);
+}
+
 .brand-logo-img {
   height: 36px;
   width: auto;
